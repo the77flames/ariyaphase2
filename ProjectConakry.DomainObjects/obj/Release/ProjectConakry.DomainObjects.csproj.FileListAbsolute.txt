@@ -1,0 +1,8 @@
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\bin\Release\ProjectConakry.DomainObjects.dll
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\bin\Release\ProjectConakry.DomainObjects.pdb
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\bin\Release\MongoDB.Bson.dll
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.dll
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\bin\Release\MongoDB.Bson.xml
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.xml
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.dll
+C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.pdb

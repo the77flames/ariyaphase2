@@ -1,0 +1,12 @@
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\ProjectConakry.Data.dll.config
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\ProjectConakry.Data.dll
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\ProjectConakry.Data.pdb
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\MongoDB.Bson.dll
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\MongoDB.Driver.dll
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\ProjectConakry.DomainObjects.dll
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\ProjectConakry.DomainObjects.pdb
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\MongoDB.Bson.xml
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\bin\Debug\MongoDB.Driver.xml
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\obj\Debug\ProjectConakry.Data.csprojResolveAssemblyReference.cache
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\obj\Debug\ProjectConakry.Data.dll
+c:\users\tosin.ogundare\documents\visual studio 2012\Projects\ProjectConakry\ProjectConakry.Data\obj\Debug\ProjectConakry.Data.pdb
