@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ProjectConakry.BusinessServices
 {
-    public class CustomerManagermentService : ICustomerManagementService
+    public class CustomerManagementService : ICustomerManagementService
     {
         private CustomerRepository _customerRepository;
 
-        public CustomerManagermentService(CustomerRepository cusotmerRepository)
+        public CustomerManagementService(CustomerRepository cusotmerRepository)
         {
             _customerRepository = cusotmerRepository;
         }

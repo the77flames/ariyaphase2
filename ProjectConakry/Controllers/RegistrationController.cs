@@ -19,6 +19,12 @@ namespace ProjectConakry.Controllers
         }
 
         [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
         public ActionResult CheckEmailExist(string email)
         {
             return Json(_customerManagementService.CheckCustomerExist(email), JsonRequestBehavior.AllowGet);

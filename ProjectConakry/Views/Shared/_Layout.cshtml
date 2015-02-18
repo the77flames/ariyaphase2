@@ -1,432 +1,140 @@
-﻿<!DOCTYPE html>
-<!--[if IE 7]> <html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Ship to Nigeria</title>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- CSS Global Compulsory-->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/headers/header1.css">
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="/assets/css/style_responsive.css">
-    <link rel="stylesheet" href="/assets/css/service-hover.css">
-    <link rel="shortcut icon" href="favicon.ico">
-    <!-- CSS Implementing Plugins -->    
-    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="/assets/css/img-hover-effect.css"> 
-    <!--<link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css" type="text/css" media="screen">    	
-    <link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css" type="text/css">-->
-    <!-- CSS Theme -->    
-    <link rel="stylesheet" href="/assets/css/themes/default.css" id="style_color">
-    <link rel="stylesheet" href="/assets/css/themes/headers/default.css" id="style_color-header-1"> 
-    
-    <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.js" type="text/javascript"></script>
-
-<style type="text/css">
-    .team .thumbnail-style {
-        padding: 0 1px 12px 0px;
-        border-right: 1px solid #bbbbbb;
-    }
-</style>
-  
-<script language="javascript">
-
-      function Check(form)
-
-      {
-
-          if(document.getElementById("fname").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter first name';
-
-              document.getElementById('fname').style.borderColor='yellow';
-
-              document.getElementById("fname").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('fname').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("lname").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter last name';
-
-              document.getElementById('lname').style.borderColor='yellow';
-
-              document.getElementById("lname").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('lname').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("lname").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter last name';
-
-              document.getElementById('lname').style.borderColor='yellow';
-
-              document.getElementById("lname").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('lname').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("address").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter your address';
-
-              document.getElementById('address').style.borderColor='yellow';
-
-              document.getElementById("address").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('address').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("state").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter your state';
-
-              document.getElementById('state').style.borderColor='yellow';
-
-              document.getElementById("state").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('state').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("postal").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter your postal no';
-
-              document.getElementById('postal').style.borderColor='yellow';
-
-              document.getElementById("postal").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('postal').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("postal").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter your postal no';
-
-              document.getElementById('postal').style.borderColor='yellow';
-
-              document.getElementById("postal").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('postal').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("email").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='Please Enter Your email id';
-
-              document.getElementById('email').style.borderColor='yellow';
-
-              document.getElementById("email").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('email').style.borderColor='';
-
-          }
-
-          var emailRegxp = /^([\w]+)(.[\w]+)*/; //'at([\w]+)(.[\w]{2,3}){1,2}$'
-
-          if (emailRegxp.test(document.getElementById('email').value)!= true)   
-
-          {
-
-              document.getElementById('msg_error').innerHTML="Please enter your valid Email ID."; 
-
-              document.getElementById('email').style.background="yellow"; 
-
-              document.getElementById('email').focus();
-
-              return false;
-
-          }	
-
-          else {document.getElementById('email').style.background=""; }
-	
-          if(document.getElementById("phone").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='please enter your phone no';
-
-              document.getElementById('phone').style.borderColor='yellow';
-
-              document.getElementById("phone").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('phone').style.borderColor='';
-
-          }
-	
-          var numbers = /^[0-9]+$/;  
-          if(document.getElementById("phone").value.match(numbers))
-          {
-              document.getElementById('phone').style.borderColor='';
-              return true;
-          }
-          else
-          {
-	  
-              document.getElementById('msg_error').innerHTML='please enter a perfect phone no';
-
-              document.getElementById('phone').style.background='yellow';
-
-              document.getElementById("phone").focus();
-
-              return false;
-	  
-          }
-	
-	
-      }
-</script>
-        		
-<script language="javascript">
-
-      function Check1(form)
-
-      {
-
-          if(document.getElementById("userid").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='';
-
-              document.getElementById('userid').style.borderColor='yellow';
-
-              document.getElementById("userid").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('userid').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("pass").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='';
-
-              document.getElementById('pass').style.borderColor='yellow';
-
-              document.getElementById("pass").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('pass').style.borderColor='';
-
-          }
-	
-          if(document.getElementById("sel").value=="")
-
-          {		
-
-              document.getElementById('msg_error').innerHTML='';
-
-              document.getElementById('sel').style.borderColor='yellow';
-
-              document.getElementById("sel").focus();
-
-              return false;
-
-          }
-
-          else
-
-          {
-
-              document.getElementById('sel').style.borderColor='';
-
-          }
-	
-      }
-	</script>
-  
-</head>	
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ariya | relax | enjoy</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
+    <script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-522955913726e62c" async="async"></script>
+    <!-- jQuery library (served from Google) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- bxSlider Javascript file -->
+    <script src="js/jquery.bxslider.js"></script>
+    <!-- bxSlider CSS file -->
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.gallery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dg-container').gallery({
+                autoplay: true
+            });
+
+            $('.home-listing').bxSlider({
+                minSlides: 4,
+                maxSlides: 4,
+                controls: false,
+                moveSlides: 4,
+                slideWidth: 192,
+                slideMargin: 10
+            });
+
+            $('.sidebar-slider').bxSlider({
+            });
+
+
+
+        });
+
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+</head>
 <body>
+    <section id="header-wrapp">
+        <!--head-->
+        <section id="head">
+            <div class="logo"><a href="index.html"><img src="images/Logo.png" /></a></div>
+            <div class="product-search">
+                <div class="members-prod">
+                    <input name="Members, Products" type="text" value="Members, Products" class="members-field" />
+                </div>
+                <div class="login-cart">
+                    <ul>
+                        <li> <a href="#"></a> </li>
+                        <li> <a href="/Account">LOG IN</a> </li>
+                        <li> <a href="/Registration">SIGN UP</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!---headEND-->
+        <div class="clr"></div>
+        <!--nav-->
+        <section id="nav">
+            <div class="menu">
+                <ul>
+                    <li><a href="/Home" class="active">Home</a></li>
+                    <li><a href="#">Ariya Ball</a></li>
+                    <li><a href="#">Ariya Lomo</a></li>
+                    <li><a href="#">Ariya Hall</a></li>
+                    <li><a href="#">Ariya Play</a></li>
+                    <li><a href="#">Ariya Zone</a></li>
+                    <li><a href="#">Ariya Buzz</a></li>
+                </ul>
+            </div>
+        </section>
+        <!--navEND-->
+        <div class="clr"></div>
+        <!--slider-->
+    </section>
+    <!--header-wrapEND-->
+    <div class="clr"></div>
+    @RenderBody()
 
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+    <!--footer-->
+    <footer>
+        <section id="footer-inn">
+            <div class="fsocialmedia-icons">
+                <div class="flogo"><a href="index.html"><img src="images/flogo.png" /></a></div>
+                <div class="socialmedia-icons">
+                    <ul>
+                        <li><a href="#"><img src="images/sm-1.png" /></a></li>
+                        <li><a href="#"><img src="images/sm-2.png" /></a></li>
+                        <li><a href="#"><img src="images/sm-3.png" /></a></li>
+                        <li><a href="#"><img src="images/sm-4.png" /></a></li>
+                        <li><a href="#"><img src="images/sm-5.png" /></a></li>
+                        <li><a href="#"><img src="images/sm-6.png" /></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fright-colmn">
+                <div class="colmn-1">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Experience</a></li>
+                        <li><a href="#">Exploit</a></li>
+                        <li><a href="#">Express</a></li>
+                    </ul>
+                </div>
+                <div class="colmn-1">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Chat</a></li>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="colmn-1">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </section>
+    </footer>
+    <div class="clr"></div>
+    <section id="copywright">
+        <div class="inner-sec">
+            © 2015 <a href="index.html">ariya</a> relax - enjoy. All Rights Reserved
         </div>
-    
-
-    <!--=== Copyright ===-->
-
-
-<div class="copyright2">
-	<div class="container">
-		<div class="row-fluid">
-			
-			<div class="span9">	
-				
-			</div>
-            <div class="span3 copy-right-new">						
-	            <p>   Copyright © Ship to Nigeria 2014  
-               
-                </p>
-			</div>
-		</div><!--/row-fluid-->
-	</div><!--/container-->	
-</div><!--/copyright-->	
-<!--=== End Copyright ===-->
-
-<!-- JS Global Compulsory -->			
-<script type="text/javascript" src="/assets/js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="/assets/js/modernizr.custom.js"></script>	
-<script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>	
-<!-- JS Implementing Plugins -->         
-<script type="text/javascript" src="/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>  
-<!--<script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>-->
-<!--<script type="text/javascript" src="assets/plugins/parallax-slider/js/modernizr.js"></script>-->
-<!--<script type="text/javascript" src="assets/plugins/parallax-slider/js/jquery.cslider.js"></script> -->
-<script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
-<!-- JS Page Level -->           
-<!--<script type="text/javascript" src="assets/js/services-hover.js"></script>-->
-<script type="text/javascript" src="/assets/js/app.js"></script>
-<!--<script type="text/javascript" src="assets/js/pages/index.js"></script>-->
-
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        App.init();
-    });
-</script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        App.init();
-        App.initFancybox();
-    });
-</script>
-<!--[if lt IE 9]>
-    <script src="assets/js/respond.js"></script>
-<![endif]-->
-
+    </section>
+    <!--footerEND-->
 </body>
 </html>

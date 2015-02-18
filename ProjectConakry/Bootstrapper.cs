@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
+using ProjectConakry.BusinessServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace ProjectConakry
         public static Assembly[] LoadAssemblies()
         {
             // assemblies are loaded as they are needed. but I need to load 3 assemblies to build my DI configuration.
-            return new[] { Assembly.GetAssembly(typeof(DomainObjects.IMongoEntity)), Assembly.GetAssembly(typeof(BusinessServices.AuthenticationService)), Assembly.GetAssembly(typeof(Data.CustomerRepository)) };
+            return new[] { Assembly.GetAssembly(typeof(DomainObjects.IMongoEntity)), Assembly.GetAssembly(typeof(IAuthenticationService)), Assembly.GetAssembly(typeof(Data.CustomerRepository)) };
         }
 
         public static UnityContainer RegisterTypes()

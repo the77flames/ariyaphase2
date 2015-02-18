@@ -12,3 +12,17 @@ C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\Pro
 C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.Data.UnitTests\bin\Release\MongoDB.Bson.xml
 C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.Data.UnitTests\obj\Release\ProjectConakry.Data.UnitTests.dll
 C:\Users\tosin.ogundare\Documents\Visual Studio 2012\Projects\ProjectConakry\ProjectConakry.Data.UnitTests\obj\Release\ProjectConakry.Data.UnitTests.pdb
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.Data.UnitTests.dll.config
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.Data.UnitTests.dll
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.Data.UnitTests.pdb
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.Data.dll
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.DomainObjects.dll
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\MongoDB.Driver.dll
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\MongoDB.Bson.dll
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.Data.pdb
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\ProjectConakry.DomainObjects.pdb
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\MongoDB.Driver.xml
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\bin\Release\MongoDB.Bson.xml
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\obj\Release\ProjectConakry.Data.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\obj\Release\ProjectConakry.Data.UnitTests.dll
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.Data.UnitTests\obj\Release\ProjectConakry.Data.UnitTests.pdb
