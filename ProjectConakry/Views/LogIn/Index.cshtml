@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--header-wrapEND-->
+<div class="clr"></div>
+
+<!--content-->
+<section id="content">
+
+    <!--content-inner-->
+    <div id="content-inner">
+        <!--news-->
+        <section id="signup-form">
+            <h1>LOG IN</h1>
+            <div class="signup-form-content">
+                <form action="LogIn\TryLogIn" method="POST">
+                    <div class="form-field"><input type="email" placeholder="Email" name="email" /></div>
+                    <div class="form-field"><input type="password" placeholder="Password" name="password" /></div>
+                    <div class="form-field">
+                        <label>Account</label>
+                        <span class="select-container">
+                            <select name="account">
+                                <option>ACT</option>
+                                <option>FAN</option>
+                                <option>PUBLIC</option>
+                            </select>
+                        </span><span class="what-is"><a href="#">What's this?</a></span>
+                    </div>
+                    <div class="form-field"><label>&nbsp;</label> <input type="submit" value="Log In" name="submit" /></div>
+                </form>
+
+                <div class="form-field">
+                    <label>&nbsp;</label>
+                    <span>
+                        <a href="signup.html">Not a Member? Sign Up</a><br />
+                        <a href="#">Forgot your Password?</a>
+                    </span>
+                </div>
+            <div class="clr"></div>        
+            </div>
+        </section>
+        <!--rightsidebarEND-->
+    </div>
+    <!--content-innerEND-->
+    <div class="clr"></div>
+</section>
+<!--contentEND-->
+<div class="clr"></div>
