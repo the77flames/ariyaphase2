@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjectConakry.Controllers
+namespace ProjectConakry.Web.Ariya.Controllers
 {
     public class RegistrationController : Controller
     {

@@ -3,11 +3,17 @@ using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Net.Http;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace ProjectConakry.Controllers
 {
@@ -26,11 +32,12 @@ namespace ProjectConakry.Controllers
         }
 
         [HttpPost]
-        public ActionResult TryLogIn(string email, string passWord)
+        [AllowAnonymous]
+        public async Task<ActionResult> TryLogIn(string email, string passWord)
         {           
             if (_authenticationService.Authenticate(email, passWord))
             {
-                LogInUser(email);
+                await LogInUser(email);
                 return RedirectToAction("Index", "Account");
             }
 
@@ -38,27 +45,31 @@ namespace ProjectConakry.Controllers
         }
 
 
-        private void LogInUser(string userName)
+        private async Task LogInUser(string email)
         {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
 
-            FormsAuthentication.SetAuthCookie(
-                    userName, true);
+            //authenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+            var claims = new List<Claim> { new Claim("email", email) };
+            var identity = new ClaimsIdentity(claims);
 
-            FormsAuthenticationTicket authTicket =
-            new FormsAuthenticationTicket(
-                    1,           // version
-                    userName,   // get username  from the form
-                    DateTime.Now,                        // issue time is now
-                    DateTime.Now.AddMinutes(10),         // expires in 10 minutes
-                    false,  // cookie is not persistent
-                    null
-                    );
-            HttpCookie authCookie = new HttpCookie(
-            FormsAuthentication.FormsCookieName,
-            FormsAuthentication.Encrypt(authTicket));
+            await Task.Factory.StartNew( () => authenticationManager.SignIn(
+                new AuthenticationProperties()
+                {
+                    IsPersistent = false
+                }, identity));
 
-            Response.Cookies.Add(authCookie);
+                        
+        }
 
+        public ActionResult SignOut()
+        {           
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            System.Web.HttpContext.Current.Session["currentUser"] = null;
+            System.Web.HttpContext.Current.Session.Abandon();
+            return RedirectToAction("Index", "Home");
+                
         }
 
 

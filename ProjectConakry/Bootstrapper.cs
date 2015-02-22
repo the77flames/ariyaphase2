@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjectConakry
+namespace ProjectConakry.Web.Ariya
 {
     public class Bootstrapper
     {

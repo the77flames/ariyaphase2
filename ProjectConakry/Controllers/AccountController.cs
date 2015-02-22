@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjectConakry.Controllers
+namespace ProjectConakry.Web.Ariya.Controllers
 {
     public class AccountController : Controller
     {
@@ -21,7 +21,7 @@ namespace ProjectConakry.Controllers
             loggedInUser = principal == null ? null : principal.Customer;
         }
 
-        //[ConakryAuthorize]
+        [ConakryAuthorize]
         public ActionResult Index()
         {
             

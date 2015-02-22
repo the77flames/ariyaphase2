@@ -20,10 +20,10 @@ namespace ProjectConakry.Data.UnitTests
             var customerID = (int)new Random().Next(10000, 3000000);
             var customer = new Customer
             {
-                LogInName="addy@test.com",
-                Password="addy",
-                FirstName = "Adeola",
-                LastName = DateTime.Now.Ticks.ToString(),
+                LogInName="uncleKay@okayhouse.com",
+                Password="password",
+                FirstName = "Uncle Kay",
+                LastName = "Kay",
                 CustomerID = customerID
             };
             

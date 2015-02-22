@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerAddress.cs" />
+    <Compile Include="CustomPrincipal.cs" />
     <Compile Include="Interfaces\IMongoEntity.cs" />
     <Compile Include="MongoEntity.cs" />
     <Compile Include="Order.cs" />

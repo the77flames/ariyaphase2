@@ -25,7 +25,7 @@ namespace ProjectConakry.BusinessServices
             if (customer == null)
                 return false;
             CustomPrincipal principal = new CustomPrincipal(new GenericIdentity(customer.LogInName, "User"), new string[] { "User" });
-            principal.Customer = customer;
+            principal.Customer = customer;            
             System.Web.HttpContext.Current.Session["currentUser"] = principal;
             return true;
         }

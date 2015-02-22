@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ProjectConakry
+namespace ProjectConakry.Web.Ariya
 {
     public class BundleConfig
     {

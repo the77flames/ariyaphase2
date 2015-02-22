@@ -12,6 +12,6 @@ C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\bi
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.dll
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Bson.xml
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.xml
-C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.csprojResolveAssemblyReference.cache
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.dll
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.pdb
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.csprojResolveAssemblyReference.cache
