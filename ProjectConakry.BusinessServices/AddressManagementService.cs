@@ -1,4 +1,5 @@
-﻿using ProjectConakry.Data;
+﻿using MongoDB.Bson;
+using ProjectConakry.Data;
 using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace ProjectConakry.BusinessServices
             _addressRepostory.Create(customerAddress);
          }
 
-        public CustomerAddress GetAddressByCustomerId(int customerId)
+        public CustomerAddress GetAddressByCustomerId(ObjectId customerId)
         {
            return _addressRepostory.GetAddressByCustomerId(customerId);
         }

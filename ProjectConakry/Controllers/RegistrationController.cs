@@ -31,30 +31,36 @@ namespace ProjectConakry.Web.Ariya.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult Register(string FirstName, string LastName, string  Email, string Phone, 
-                                        string Street, string City, string State, string Password, string PostalCode)
+        public ActionResult Register(string firstname, string lastname, string email, string phone,
+                        string gender, string dob, string accounttype, string password)
         {
+            var dateofbirth = new DateTime();
+            DateTime.TryParse(dob, out dateofbirth);
             var customer = new Customer
                 {
-                    FirstName = FirstName,
-                    LastName = LastName,
-                    Email = Email,
-                    PhoneNumber = Phone,
-                    Password = Password
+                    FirstName = firstname,
+                    LastName = lastname,
+                    Email = email,
+                    PhoneNumber = phone,
+                    Password = password,
+                    Gender = gender,
+                    DOB = dateofbirth,
+                    AccountType = accounttype
+                    
                 };
             try
             {
                 
                 _customerManagementService.Enroll(customer);
-                customer = _customerManagementService.GetCustomerByEmail(Email);
-                _addressManagementService.AddNewAddress(new CustomerAddress { Street = Street, City = City, State = State, CustomerID = customer.CustomerID, ZipCode = PostalCode  });
-                return Json(false, JsonRequestBehavior.AllowGet);
+                customer = _customerManagementService.GetCustomerByEmail(email);
+                _addressManagementService.AddNewAddress(new CustomerAddress { CustomerID = customer.Id  });
+                return RedirectToAction("Index", "LogIn");
             }
             catch (Exception)
             {
                 if (customer != null)
                     _customerManagementService.RemoveCustomer(customer.Id.ToString());
-                return Json(false, JsonRequestBehavior.AllowGet);
+                return RedirectToAction("Index");
             }
 
         }

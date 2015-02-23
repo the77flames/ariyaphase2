@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver.Builders;
+﻿using MongoDB.Bson;
+using MongoDB.Driver.Builders;
 using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace ProjectConakry.Data
     public class AddressRepository : GenericRepository<CustomerAddress>
     {
 
-        public CustomerAddress GetAddressByCustomerId(int customerID)
+        public CustomerAddress GetAddressByCustomerId(ObjectId customerID)
         {
             var query = Query<CustomerAddress>.EQ(e => e.CustomerID, customerID);
             var gamesCursor = this.MongoConnectionManager.MongoCollection.FindAs<CustomerAddress>(query);

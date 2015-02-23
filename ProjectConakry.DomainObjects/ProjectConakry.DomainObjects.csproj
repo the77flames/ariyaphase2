@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminUser.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerAddress.cs" />
     <Compile Include="CustomPrincipal.cs" />
     <Compile Include="Interfaces\IMongoEntity.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="MongoEntity.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />

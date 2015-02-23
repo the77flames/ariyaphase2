@@ -18,7 +18,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         public AccountController()
         {
             CustomPrincipal principal = System.Web.HttpContext.Current.Session["currentUser"] as CustomPrincipal;
-            loggedInUser = principal == null ? null : principal.Customer;
+            loggedInUser = principal == null ? null : principal.Customer as Customer;
         }
 
         [ConakryAuthorize]

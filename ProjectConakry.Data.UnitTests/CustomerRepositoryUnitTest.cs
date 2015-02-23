@@ -20,17 +20,15 @@ namespace ProjectConakry.Data.UnitTests
             var customerID = (int)new Random().Next(10000, 3000000);
             var customer = new Customer
             {
-                LogInName="uncleKay@okayhouse.com",
+                Email ="uncleKay@okayhouse.com",
                 Password="password",
                 FirstName = "Uncle Kay",
-                LastName = "Kay",
-                CustomerID = customerID
+                LastName = "Kay"
             };
             
            _customerRepository.Create(customer);
-           var customerFromDB = _customerRepository.GetCustomerByCustomerID(customerID);
+           var customerFromDB = _customerRepository.GetCustomerByUserNamePassword("uncleKay@okayhouse.com", "password");
            Assert.IsNotNull(customerFromDB);
-           Assert.AreEqual(customerID, customerFromDB.CustomerID);
             
         }
     }

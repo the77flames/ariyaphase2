@@ -20,13 +20,13 @@ namespace ProjectConakry.Data
                 .SetSortOrder(SortBy<Customer>.Descending(g => g.CreatedDate))
                 .SetLimit(limit)
                 .SetSkip(skip)
-                .SetFields(Fields<Customer>.Include(g => g.Id, g => g.CustomerID, g => g.LastName, g => g.FirstName));
+                .SetFields(Fields<Customer>.Include(g => g.Id, g => g.LastName, g => g.FirstName));
             return gamesCursor;
         }
 
-        public Customer GetCustomerByCustomerID(int CustomerID)
+        public Customer GetCustomerByCustomerID(ObjectId CustomerID)
         {
-            var query = Query<Customer>.EQ(e => e.CustomerID, CustomerID);
+            var query = Query<Customer>.EQ(e => e.Id, CustomerID);
             var gamesCursor = this.MongoConnectionManager.MongoCollection.FindAs<Customer>(query);
 
             if (!gamesCursor.Any())
@@ -35,9 +35,9 @@ namespace ProjectConakry.Data
             return gamesCursor.FirstOrDefault();
         }
 
-        public Customer GetCustomerByUserNamePassword(string UserName, string Password)
+        public Customer GetCustomerByUserNamePassword(string email, string password)
         {
-            var query = Query.And(Query<Customer>.EQ(e => e.LogInName, UserName), Query<Customer>.EQ( f => f.Password, Password));
+            var query = Query.And(Query<Customer>.EQ(e => e.Email, email), Query<Customer>.EQ( f => f.Password, password));
             var gamesCursor = this.MongoConnectionManager.MongoCollection.FindAs<Customer>(query);
 
             if (!gamesCursor.Any())

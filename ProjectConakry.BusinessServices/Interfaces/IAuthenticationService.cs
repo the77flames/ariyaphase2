@@ -9,6 +9,6 @@ namespace ProjectConakry.BusinessServices
 {
     public interface IAuthenticationService
     {
-        bool Authenticate(string UserName, string Password);
+        bool Authenticate(string UserName, string Password, bool IsAdmin = false);
     }
 }

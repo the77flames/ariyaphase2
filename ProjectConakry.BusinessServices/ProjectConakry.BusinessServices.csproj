@@ -52,8 +52,10 @@
   <ItemGroup>
     <Compile Include="AddressManagementService.cs" />
     <Compile Include="AuthenticationService.cs" />
+    <Compile Include="AdminUserManagermentService.cs" />
     <Compile Include="CustomerManagermentService.cs" />
     <Compile Include="Interfaces\IAddressManagementService.cs" />
+    <Compile Include="Interfaces\IAdminUserManagementService.cs" />
     <Compile Include="Interfaces\ICustomerManagementService.cs" />
     <Compile Include="Interfaces\IAuthenticationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

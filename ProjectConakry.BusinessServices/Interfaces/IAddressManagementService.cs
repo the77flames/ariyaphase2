@@ -1,4 +1,5 @@
-﻿using ProjectConakry.DomainObjects;
+﻿using MongoDB.Bson;
+using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace ProjectConakry.BusinessServices
     public interface IAddressManagementService
     {
         void AddNewAddress(CustomerAddress customerAddress);
-        CustomerAddress GetAddressByCustomerId(int customerId);
+        CustomerAddress GetAddressByCustomerId(ObjectId customerId);
     }
 }

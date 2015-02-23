@@ -14,7 +14,7 @@ namespace ProjectConakry.DomainObjects
         {
         }
 
-        public Customer Customer { get; set; }
+        public IPerson Customer { get; set; }
         
     }
 }
