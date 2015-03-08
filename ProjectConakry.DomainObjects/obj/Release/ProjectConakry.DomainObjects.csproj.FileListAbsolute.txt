@@ -14,3 +14,12 @@ C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\bi
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.xml
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.dll
 C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.pdb
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\bin\Release\ProjectConakry.DomainObjects.dll
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\bin\Release\ProjectConakry.DomainObjects.pdb
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Bson.dll
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.dll
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Bson.xml
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB.Driver.xml
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.dll
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.pdb
+C:\workspaces\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.csprojResolveAssemblyReference.cache

@@ -58,6 +58,8 @@
     <Compile Include="Interfaces\IAdminUserManagementService.cs" />
     <Compile Include="Interfaces\ICustomerManagementService.cs" />
     <Compile Include="Interfaces\IAuthenticationService.cs" />
+    <Compile Include="Interfaces\IEntityService.cs" />
+    <Compile Include="MovieService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -46,10 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUser.cs" />
+    <Compile Include="Admin\AriyaEntity.cs" />
+    <Compile Include="Interfaces\IAriyaEntity.cs" />
+    <Compile Include="Admin\Artist.cs" />
+    <Compile Include="Admin\Movie.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerAddress.cs" />
     <Compile Include="CustomPrincipal.cs" />
+    <Compile Include="Enums\Sections.cs" />
     <Compile Include="Interfaces\IMongoEntity.cs" />
+    <Compile Include="Interfaces\IMovie.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="MongoEntity.cs" />
     <Compile Include="Order.cs" />

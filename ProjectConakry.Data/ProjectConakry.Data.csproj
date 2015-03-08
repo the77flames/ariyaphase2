@@ -51,6 +51,8 @@
     <Compile Include="CustomerRepository.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs.cs" />
+    <Compile Include="Interfaces\IAriyaEntityRepository.cs" />
+    <Compile Include="Interfaces\MovieRepository.cs" />
     <Compile Include="MongoDBConnectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
