@@ -11,6 +11,5 @@ namespace ProjectConakry.DomainObjects.Admin
 
          string Name { get; set; }
          ObjectId Id { get; set; }
-         List<Artist> Artists { get; set; }
     }
 }

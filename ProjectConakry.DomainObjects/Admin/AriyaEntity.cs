@@ -11,9 +11,6 @@ namespace ProjectConakry.DomainObjects.Admin
     public class AriyaEntity : MongoEntity, IAriyaEntity
     {
         public string Name { get; set; }
-        public ObjectId Id { get; set; }
         public Sections SectionId { get; set; }
-
-        public List<Artist> Artists { get; set; }
     }
 }

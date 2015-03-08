@@ -10,7 +10,8 @@ namespace ProjectConakry.DomainObjects.Enums
     {
         Top10,
         Featured,
-        New
+        New,
+        Trending
 
     }
 }
