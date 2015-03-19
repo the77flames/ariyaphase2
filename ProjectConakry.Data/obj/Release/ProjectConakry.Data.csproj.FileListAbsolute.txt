@@ -34,3 +34,15 @@ C:\workspaces\ariyademo\ProjectConakry.Data\bin\Release\MongoDB.Driver.xml
 C:\workspaces\ariyademo\ProjectConakry.Data\obj\Release\ProjectConakry.Data.csprojResolveAssemblyReference.cache
 C:\workspaces\ariyademo\ProjectConakry.Data\obj\Release\ProjectConakry.Data.dll
 C:\workspaces\ariyademo\ProjectConakry.Data\obj\Release\ProjectConakry.Data.pdb
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\ProjectConakry.Data.dll.config
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\ProjectConakry.Data.dll
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\ProjectConakry.Data.pdb
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\MongoDB.Bson.dll
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\MongoDB.Driver.dll
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\ProjectConakry.DomainObjects.dll
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\ProjectConakry.DomainObjects.pdb
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\MongoDB.Bson.xml
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\bin\Release\MongoDB.Driver.xml
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\obj\Release\ProjectConakry.Data.csprojResolveAssemblyReference.cache
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\obj\Release\ProjectConakry.Data.dll
+C:\Users\Monrovia '77\ariyademo\ProjectConakry.Data\obj\Release\ProjectConakry.Data.pdb

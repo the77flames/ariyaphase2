@@ -1,17 +1,15 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver.Builders;
-using ProjectConakry.DomainObjects.Admin;
-using ProjectConakry.DomainObjects.Enums;
-using ProjectConakry.DomainObjects.Interfaces;
+using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectConakry.Data.Interfaces
+namespace ProjectConakry.Data
 {
-    public class MovieRepository :GenericRepository<Movie>, IAriyaEntityRepository<Movie>    {
+    public class MovieRepository : GenericRepository<Movie>, IAriyaAdminRepository<Movie>    {
 
 
         public List<Movie> GetAll(Sections sectionId)

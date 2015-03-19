@@ -1,9 +1,7 @@
 ﻿using MongoDB.Bson;
-using ProjectConakry.BusinessServices.Interfaces;
-using ProjectConakry.Data.Interfaces;
-using ProjectConakry.DomainObjects.Admin;
-using ProjectConakry.DomainObjects.Enums;
-using ProjectConakry.DomainObjects.Interfaces;
+using ProjectConakry.BusinessServices;
+using ProjectConakry.Data;
+using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProjectConakry.BusinessServices
 {
-    public class MovieService : IAriyaEntityService<Movie>
+    public class MovieService : IAriyaAdminService<Movie>
     {
         private MovieRepository _movieRepository;
 
@@ -20,11 +18,14 @@ namespace ProjectConakry.BusinessServices
         {
             _movieRepository = movieRepository;
         }
-
-
-        public void AddMovie(Movie entity)
+        
+        public void Add(Movie entity)
         {
             _movieRepository.Create(entity);
+        }
+        public List<Movie> GetAll()
+        {
+            return _movieRepository.GetAll();
         }
 
         public List<Movie> GetAll(Sections sectionId)

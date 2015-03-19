@@ -16,5 +16,8 @@ namespace ProjectConakry.Data
         T GetById(string id);
 
         void Update(T entity);
+
+
+        List<T> GetAll();
     }
 }

@@ -5,20 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectConakry.DomainObjects.Admin
+namespace ProjectConakry.DomainObjects
 {
-    public class Artist: IMongoEntity
+    public class Artist : MongoEntity
     {
-        public ObjectId Id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }

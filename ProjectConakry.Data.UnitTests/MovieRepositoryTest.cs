@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectConakry.Data.Interfaces;
-using ProjectConakry.DomainObjects.Admin;
-using ProjectConakry.DomainObjects.Enums;
+using ProjectConakry.Data;
+using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

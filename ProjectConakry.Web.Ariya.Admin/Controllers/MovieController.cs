@@ -1,6 +1,5 @@
 ﻿using ProjectConakry.BusinessServices;
-using ProjectConakry.BusinessServices.Interfaces;
-using ProjectConakry.DomainObjects.Admin;
+using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,18 +19,18 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
             _movieService = movieService;
         }
 
-
+        [ConakryAdminAuthorize]
         public ActionResult Index()
         {
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Add(MovieModel movieModel)
-        //{
-
-        //    return "";
-        //}
+        [HttpPost]
+        public ActionResult Add(Movie movie)
+        {
+            _movieService.Add(movie);
+            return RedirectToAction("Index");
+        }
 
 
     }

@@ -56,5 +56,10 @@ namespace ProjectConakry.Data
         }
  
         public abstract void Update(T entity);
+
+        public List<T> GetAll()
+        {
+            return this.MongoConnectionManager.MongoCollection.FindAllAs<T>().ToList();
+        }
     }
 }

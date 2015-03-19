@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectConakry.DomainObjects.Enums
+namespace ProjectConakry.DomainObjects
 {
     public enum Sections
     {

@@ -195,7 +195,6 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="ConakryAdmin.cs" />
     <Compile Include="Controllers\MovieController.cs" />
-    <Compile Include="Models\MovieModel.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
@@ -635,6 +634,7 @@
     <Folder Include="files\untitled folder 3\untitled folder\untitled folder\untitled folder 1\" />
     <Folder Include="files\untitled folder 3\untitled folder\untitled folder\untitled folder\fwfewfew\" />
     <Folder Include="Filters\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Registration\" />
   </ItemGroup>
   <ItemGroup>
@@ -686,6 +686,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Movie\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Movie\AddMovie.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
