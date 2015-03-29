@@ -1,0 +1,36 @@
+﻿@using ProjectConakry.DomainObjects
+@model Song
+
+<style type="text/css">
+    .labelX{
+        padding-left: 5px;
+    }
+</style>
+
+<table style="width: 90%">
+    <tr>
+        <td><i class ="fa fa-film fa-2x"></i><span class="labelX">Movie Name</span></td>
+        <td>@Html.TextAreaFor(Model => Model.Name, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Smaller Thumb Nail Image Path</span></td>
+        <td>@Html.TextAreaFor(Model => Model.ThumbNailImagePath, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Big ThumbNail Image Path</span></td>
+        <td>@Html.TextAreaFor(Model => Model.BiggerThumbNailImagePath, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-calendar fa-2x"></i><span class="labelX">Release Date</span></td>
+        <td>@Html.TextAreaFor(Model => Model.ReleaseDate, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Image Full-Size Path</span></td>
+        <td>@Html.TextAreaFor(Model => Model.FullSizeImagePath, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-male fa-2x"></i><span class="labelX">Cover Artist Display Name</span></td>
+        <td>@Html.TextAreaFor(Model => Model.CoverArtistDisplayName, new { @class = "form-control input-sm" })</td>
+    </tr>
+</table>
+

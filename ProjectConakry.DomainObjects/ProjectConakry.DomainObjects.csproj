@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="AdminUser.cs" />
     <Compile Include="Admin\Artist.cs" />
+    <Compile Include="Admin\Book.cs" />
+    <Compile Include="Admin\Song.cs" />
     <Compile Include="Admin\Movie.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerAddress.cs" />

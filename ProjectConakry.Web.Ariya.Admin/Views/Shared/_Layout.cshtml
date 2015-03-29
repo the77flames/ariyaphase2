@@ -8,7 +8,7 @@
     <meta name="description" content="Violate Responsive Admin Template">
     <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
     <title>Ariya Admin</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
@@ -54,7 +54,6 @@
 
         <!-- Sidebar -->
         <aside id="sidebar">
-
             <!-- Sidbar Widgets -->
             <div class="side-widgets overflow">
                 <!-- Profile Menu -->
@@ -68,17 +67,12 @@
                     @if (customer != null)
                     {
                         <h4 class="m-0">@(customer.Customer.FirstName + " " + @customer.Customer.LastName)</h4>                   
-                    }
-                    
-
+                    }   
                 </div>
-
                 <!-- Calendar -->
                 <div class="s-widget m-b-25">
                     <div id="sidebar-calendar"></div>
                 </div>
-
-                
             </div>
             <!-- Side Menu -->
             <ul class="list-unstyled side-menu">
@@ -93,12 +87,12 @@
                     </a>
                 </li>
                 <li>
-                    <a class="sa-side-ui"  href="#">
+                    <a class="sa-side-ui" href="@Url.Action("Index", "Song")">
                         <span class="menu-item">Songs</span>
                     </a>
                 </li>
                 <li>
-                    <a class="sa-side-table" href="#">
+                    <a class="sa-side-table" href="@Url.Action("Index", "Book")">
                         <span class="menu-item">Books</span>
                     </a>
                 </li>
@@ -107,13 +101,13 @@
                         <span class="menu-item">Manage Content</span>
                     </a>
                     <ul class="list-unstyled menu-item">
-                        <li><a href="#">Top 10</a></li>
-                        <li><a href="#">Trending</a></li>
-                        <li><a href="#">Featured</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Ads</a></li>
-                        <li><a href="#">Animation</a></li>
+                        <li><a href="@Url.Action("Index", "Top10")">Top 10</a></li>
+                        <li><a href="@Url.Action("Index", "Trending")">Trending</a></li>
+                        <li><a href="@Url.Action("Index", "Featured")">Featured</a></li>
+                        <li><a href="@Url.Action("Index", "News")">News</a></li>
+                        <li><a href="@Url.Action("Index", "Events")">Events</a></li>
+                        <li><a href="@Url.Action("Index", "Ads")">Ads</a></li>
+                        <li><a href="@Url.Action("Index", "Animation")">Animation</a></li>
                     </ul>
                 </li>                
             </ul>

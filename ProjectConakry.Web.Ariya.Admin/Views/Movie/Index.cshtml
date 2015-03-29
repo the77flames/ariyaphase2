@@ -5,6 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#AddMovieButton').click(function () {
+
+            $('#AddMovieForm').submit();
+        });
+
+    });
+
+</script>
 <!-- Content -->
 <section id="content" class="container">
     <div class="tile">
@@ -51,19 +62,20 @@ else
     <div tabindex="-1" class="modal fade" id="modalDefault" role="dialog" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form role="form" action="Movie\Add" method="POST">
+                @using(Html.BeginForm("Add", "Movie", FormMethod.Post, new { id = "AddMovieForm"}))
+                {
                     <div class="modal-header">
                         <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
                         <h4 class="modal-title">Add New Movie</h4>
                     </div>
                     <div class="modal-body">
-                        @{ Html.RenderPartial("AddMovie"); }
+                        @{ Html.RenderPartial("AddMovie", new Movie()); }
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-sm" type="button">Save changes</button>
+                        <button id="AddMovieButton" class="btn btn-sm" type="button">Save changes</button>
                         <button class="btn btn-sm" type="button" data-dismiss="modal">Close</button>
                     </div>
-                </form>
+                }
              </div>
         </div>
     </div> 

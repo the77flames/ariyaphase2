@@ -8,10 +8,10 @@ namespace ProjectConakry.DomainObjects
 {
     public enum Sections
     {
+        UnClassified,
         Top10,
         Featured,
         New,
         Trending
-
     }
 }

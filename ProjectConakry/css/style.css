@@ -89,7 +89,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	}
 	
 .product-search{
-	width:665px;
+	width:500px;
 	margin:16px 0;
 	float:right;
 	}
@@ -191,41 +191,75 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
     width: 100%;
 }
 
-.menu{
-	width:1195px;
-	margin:auto;
-	}
-	
 
 
-.menu ul {
-    float: left;
-    margin-top: 13px;
+.n-logo {
+  position: relative;
+  margin: 0 auto;
+  top: -30px;
+  left: -1.8em;
+  background: #004505;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 }
-.menu ul li{
+
+.n-logo img {
+margin: 15px;
+}
+
+.left {
+  float: left;
+  position: absolute;
+  left: 4.7em;
+  top: 80px;
+  padding: 15px;
+  margin: 0 auto;
+  width: 516px;
+}
+
+.right {
+  float: right;
+  position: absolute;
+  right: 1em;
+  top: 80px;
+  margin: 0 auto;
+  padding: 15px;
+  width: 561px;
+}
+.navbar ul li{
 	float:left;
-	margin-right:46px;
+	margin-right:45px;
 	}
 
-.menu ul li:last-child{
+.navbar ul li:last-child{
 	margin-right:0;	}
 
-.menu ul li a{
-	font-family:Raleway-SemiBold;
-	font-size:16px;
-	text-decoration:none;
-	color:#bef2c3;
-	text-transform:uppercase;
+.navbar ul li a{
+        position: relative;
+        left: 12px;
+	font-family: Roboto;
+	font-size: 18px;
+	text-decoration: none;
+	color: #bef2c3;
+	text-transform: uppercase;
 	text-shadow: 1px 1px 1px #004004;
 	}
 
-.menu ul li a:hover{
+.navbar ul li a:hover, .navbar ul li a:active {
 	color:#fff;
 	}
 
-.menu ul li a.active{
-	color:#fff;
-	}
+.toplisting-inner{
+	
+}
+
+
+#nav navbar::after {
+position: absolute;
+top: 5px
+}
 .toplisting-inner{
 	
 }
@@ -233,7 +267,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	width:100%;
 	background:url(../images/main-bg.gif) no-repeat;
 	background-size:cover;
-	height:475px;
+	height:410px;
 	border-bottom:4px solid #000;
 	}
 	
@@ -243,7 +277,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	}
 	
 .addcallertunez{
-	padding-top:15px;
+	padding-top:65px;
 	float:left;
 	
 	}
@@ -257,10 +291,10 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	margin:auto;
 	background:url(../images/wrapper-inner-bg.png) repeat-y;
 	}
-body.signup #content{
+#signupcontent{
 	width:100%;
 	margin:auto;
-	background: url(/images/signup-bg.png) no-repeat center top !important;
+	background:url(../images/signup-bg.png) no-repeat center top;
 	}
 body.billing #content{
 	width:100%;
@@ -268,7 +302,7 @@ body.billing #content{
 	background:url(../images/billing-bg.png) no-repeat center top;
 	}
 
-body.login #content{
+#logincontent{
 	width:100%;
 	padding-bottom:120px;
 	margin:auto;

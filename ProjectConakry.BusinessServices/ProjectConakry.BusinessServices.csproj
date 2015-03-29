@@ -59,7 +59,9 @@
     <Compile Include="Interfaces\ICustomerManagementService.cs" />
     <Compile Include="Interfaces\IAuthenticationService.cs" />
     <Compile Include="Interfaces\IAriyaAdminService.cs" />
-    <Compile Include="MovieService.cs" />
+    <Compile Include="SongManagementService.cs" />
+    <Compile Include="BookManagementService.cs" />
+    <Compile Include="MovieManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

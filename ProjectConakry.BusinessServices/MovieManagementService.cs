@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace ProjectConakry.BusinessServices
 {
-    public class MovieService : IAriyaAdminService<Movie>
+    public class MovieManagementService : IAriyaAdminService<Movie>
     {
         private MovieRepository _movieRepository;
 
-        public MovieService(MovieRepository movieRepository)
+        public MovieManagementService(MovieRepository movieRepository)
         {
             _movieRepository = movieRepository;
         }

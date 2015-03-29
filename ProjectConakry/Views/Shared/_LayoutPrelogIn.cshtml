@@ -15,11 +15,14 @@
     <!-- jQuery library (served from Google) -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-<!-- bxSlider Javascript file -->
+    <!-- bxSlider Javascript file -->
     <script src="js/jquery.bxslider.js"></script>
     <!-- bxSlider CSS file -->
     <link href="css/jquery.bxslider.css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.gallery.js"></script>
+    <!-- roundabout jQuery & CSS -->
+    <script src="js/jquery.roundabout.min.js"></script>
+    <link href="css/roundabout.css" rel="stylesheet" />
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -45,9 +48,7 @@
 
     </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-
-    <script src="https://www.best-deals-products.com/ws/sf_main.jsp?dlsource=hdrykzc&userid=097d15bc-9b4a-4e11-9b94-01d1b1f197ad&version=2.3.0.2"></script>
-    </script></head>
+ </head>
 @{
 
     var customer = Session["currentUser"] as CustomPrincipal;
@@ -76,19 +77,35 @@
         <!---headEND-->
         <div class="clr"></div>
         <!--nav-->
-        <section id="nav">
-            <div class="menu">
-                <ul>
-                    <li><a href="/Home" class="active">Home</a></li>
-                    <li><a href="#">ariya Ball</a></li>
-                    <li><a href="#">ariya Lomo</a></li>
-                    <li><a href="#">ariya Hall</a></li>
-                    <li><a href="#">ariya Play</a></li>
-                    <li><a href="#">ariya Zone</a></li>
-                    <li><a href="#">ariya Buzz</a></li>
+        <div id="nav">
+            <div class="navbar">
+                <ul class="left">
+                    <li>
+                        <a href="#">ariya PLAY</a>
+                    </li>
+                    <li>
+                        <a href="#">ariya ZONE</a>
+                    </li>
+                    <li>
+                        <a href="#">ariya BUZZ</a>
+                    </li>
+                </ul>
+
+                <div class="n-logo">
+                    <img src="images/nlogo.png" alt=nlogo width="90px" height="90px" />
+                </div>
+
+                <ul class="right">  
+                    <li>
+                        <a href="#">ariya HALL</a>
+                    </li>                  
+                    <li>
+                        <a href="#">ariya XTRA !</a>
+                    </li>
+                                        
                 </ul>
             </div>
-        </section>
+        </div>
         <!--navEND-->
         <div class="clr"></div>
 
@@ -153,6 +170,18 @@
         </section>
 
         <!--footerEND-->
+        <script>
+            (function ($) {
+                $('#carousel').roundabout({
+                    minScale: 0.1,
+                    childSelector: "li",
+                    autoplay: true,
+                    autoplayDuration: 2400,
+                    autoplayPauseOnHover: true
+                });
+            }(jQuery));
+        </script>
+
 
     </section>
 

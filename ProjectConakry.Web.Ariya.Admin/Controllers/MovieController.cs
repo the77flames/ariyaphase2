@@ -13,8 +13,8 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         //
         // GET: /Movie/
 
-        private readonly MovieService _movieService;
-        public MovieController(MovieService movieService)
+        private readonly MovieManagementService _movieService;
+        public MovieController(MovieManagementService movieService)
         {
             _movieService = movieService;
         }
@@ -22,7 +22,8 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         [ConakryAdminAuthorize]
         public ActionResult Index()
         {
-            return View();
+            var movies = _movieService.GetAll();
+            return View(movies);
         }
 
         [HttpPost]
