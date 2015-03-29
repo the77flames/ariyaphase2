@@ -1,5 +1,5 @@
 ﻿@using ProjectConakry.DomainObjects
-@model IEnumerable<Movie>
+@model IEnumerable<Song>
 @{
     ViewBag.Title = "Movie";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,18 +19,18 @@
 <!-- Content -->
 <section id="content" class="container">
     <div class="tile">
-        <h2 class="tile-title">All Movies</h2>
+        <h2 class="tile-title">All Songs</h2>
         <div class="tile-config dropdown">
             <a title="" class="tooltips tile-menu" href="" data-original-title="Options" data-toggle="dropdown"></a>
             <ul class="dropdown-menu pull-right text-right">
-                <li><a href="#modalDefault" data-toggle="modal">Add New Movie</a></li>
+                <li><a href="#modalDefault" data-toggle="modal">Add New Song</a></li>
             </ul>
         </div>
 
         <div class="listview narrow sortable ui-sortable">
             @if (Model == null || !Model.Any())
 {
-    <span style="padding-left: 40px;"> There are no movies in the database ! </span>
+    <span style="padding-left: 40px;"> There are no songs in the database ! </span>
 }
 else
 {
@@ -69,7 +69,7 @@ else
                         <h4 class="modal-title">Add New Movie</h4>
                     </div>
                     <div class="modal-body">
-                        @{ Html.RenderPartial("AddMovie", new Song()); }
+                        @{ Html.RenderPartial("AddSong", new Song()); }
                     </div>
                     <div class="modal-footer">
                         <button id="AddSongButton" class="btn btn-sm" type="button">Save changes</button>

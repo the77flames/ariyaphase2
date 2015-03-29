@@ -18,7 +18,7 @@ namespace ProjectConakry.DomainObjects
         public DateTime? ReleaseDate { get; set; }
         public Sections SectionId { get; set; }
         public List<Artist> Artists { get; set; }
-
+        public string StreamingUrl { get; set; }
 
        
     }
