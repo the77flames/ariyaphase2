@@ -13,6 +13,14 @@ var sectionddl = new List<SelectListItem>{ new SelectListItem{ Text = "UnClassif
                                            new SelectListItem{ Text = "Featured" , Value = "2" },
                                            new SelectListItem{ Text = "New" , Value = "3" },
                                            new SelectListItem{ Text = "Trending" , Value = "4" }  };
+
+var genresddl = new List<SelectListItem>{ new SelectListItem{ Text = "HipHop" , Value = "7" },
+                                           new SelectListItem{ Text = "Afrobeat" , Value = "8" },
+                                           new SelectListItem{ Text = "Fuji" , Value = "9" },
+                                           new SelectListItem{ Text = "Highlife" , Value = "10" },
+                                           new SelectListItem{ Text = "Soul" , Value = "11" },
+                                           new SelectListItem{ Text = "Opera" , Value = "12" } ,
+                                           new SelectListItem{ Text = "Rap" , Value = "13" }  };
 }
 <table style="width: 90%">
     <tr>
@@ -42,6 +50,10 @@ var sectionddl = new List<SelectListItem>{ new SelectListItem{ Text = "UnClassif
     <tr>
         <td><i class="fa fa-apple fa-2x"></i><span class="labelX">Section</span></td>
         <td>@Html.DropDownListFor(Model => Model.SectionId, sectionddl, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-beer fa-2x"></i><span class="labelX">Genre</span></td>
+        <td>@Html.DropDownListFor(Model => Model.Genre, genresddl, new { @class = "form-control input-sm" })</td>
     </tr>
     <tr>
         <td><i class="fa fa-male fa-2x"></i><span class="labelX">Cover Artist Display Name</span></td>

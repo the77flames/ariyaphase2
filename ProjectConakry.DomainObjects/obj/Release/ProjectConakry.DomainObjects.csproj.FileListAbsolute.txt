@@ -32,3 +32,4 @@ C:\Users\Monrovia '77\ariyademo\ProjectConakry.DomainObjects\bin\Release\MongoDB
 C:\Users\Monrovia '77\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.csprojResolveAssemblyReference.cache
 C:\Users\Monrovia '77\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.dll
 C:\Users\Monrovia '77\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.pdb
+C:\Users\Monrovia '77\Documents\GitHub\ariyademo\ProjectConakry.DomainObjects\obj\Release\ProjectConakry.DomainObjects.csprojResolveAssemblyReference.cache

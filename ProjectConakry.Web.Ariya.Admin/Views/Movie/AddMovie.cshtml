@@ -12,6 +12,14 @@
                                            new SelectListItem{ Text = "Featured" , Value = "2" },
                                            new SelectListItem{ Text = "New" , Value = "3" },
                                            new SelectListItem{ Text = "Trending" , Value = "4" }  };
+
+    var genresddl = new List<SelectListItem>{ new SelectListItem{ Text = "Romance" , Value = "0" },
+                                           new SelectListItem{ Text = "Comedy" , Value = "1" },
+                                           new SelectListItem{ Text = "Horror" , Value = "2" },
+                                           new SelectListItem{ Text = "Documentary" , Value = "3" },
+                                           new SelectListItem{ Text = "History" , Value = "4" },
+                                           new SelectListItem{ Text = "Crime" , Value = "5" } ,
+                                           new SelectListItem{ Text = "Thriller" , Value = "6" }  };
 }
 <table style="width: 90%">
     <tr>
@@ -41,6 +49,10 @@
     <tr>
         <td><i class="fa fa-apple fa-2x"></i><span class="labelX">Section</span></td>
         <td>@Html.DropDownListFor(Model => Model.SectionId, sectionddl, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-beer fa-2x"></i><span class="labelX">Genre</span></td>
+        <td>@Html.DropDownListFor(Model => Model.Genre, genresddl, new { @class = "form-control input-sm" })</td>
     </tr>
     <tr>
         <td><i class="fa fa-male fa-2x"></i><span class="labelX">Cover Artist Display Name</span></td>

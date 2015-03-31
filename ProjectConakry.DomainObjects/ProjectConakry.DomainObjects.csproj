@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUser.cs" />
+    <Compile Include="Enums\Genres.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="Artist.cs" />
     <Compile Include="Book.cs" />
