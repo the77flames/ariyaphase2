@@ -10,16 +10,12 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
 {
     public class FeaturedController : Controller
     {
-        private readonly BookManagementService _bookService;
-        private readonly SongManagementService _songService;
-        private readonly MovieManagementService _movieService;
-        public FeaturedController(BookManagementService bookService, SongManagementService songService,
-                                                                     MovieManagementService movieService)
-        {
-            _bookService = bookService;
-            _songService = songService;
-            _movieService = movieService;
-        }
+       private readonly CategoryManagementService _categoryManagementService;
+       public FeaturedController(CategoryManagementService categoryManagementService)
+       {
+           _categoryManagementService = categoryManagementService;
+           
+       }
 
         [ConakryAdminAuthorize]
         public ActionResult Index()

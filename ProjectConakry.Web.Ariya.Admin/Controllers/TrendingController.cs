@@ -10,22 +10,18 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
 {
     public class TrendingController : Controller
     {
-       private readonly BookManagementService _bookService;
-       private readonly SongManagementService _songService;
-       private readonly MovieManagementService _movieService;
-       public TrendingController(BookManagementService bookService, SongManagementService songService,
-                                                                    MovieManagementService movieService)
+       private readonly CategoryManagementService _categoryManagementService;
+       public TrendingController(CategoryManagementService categoryManagementService)
        {
-           _bookService = bookService;
-           _songService = songService;
-           _movieService = movieService;
+           _categoryManagementService = categoryManagementService;
+           
        }
        
-        [ConakryAdminAuthorize]
-        public ActionResult Index()
-        {
+       [ConakryAdminAuthorize]
+       public ActionResult Index()
+       {
             return View();
-        }
+       }
                
     }
 }

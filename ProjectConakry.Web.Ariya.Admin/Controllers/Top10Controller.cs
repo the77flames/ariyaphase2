@@ -10,15 +10,11 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
 {
     public class Top10Controller : Controller
     {
-        private readonly BookManagementService _bookService;
-        private readonly SongManagementService _songService;
-        private readonly MovieManagementService _movieService;
-       public Top10Controller(BookManagementService bookService, SongManagementService songService,
-                                                                    MovieManagementService movieService)
+        private readonly CategoryManagementService _categoryManagementService;
+        public Top10Controller(CategoryManagementService categoryManagementService)
        {
-           _bookService = bookService;
-           _songService = songService;
-           _movieService = movieService;
+           _categoryManagementService = categoryManagementService;
+           
        }
 
         [ConakryAdminAuthorize]
