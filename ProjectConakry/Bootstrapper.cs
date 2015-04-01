@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace ProjectConakry.Web.Ariya
@@ -33,7 +34,9 @@ namespace ProjectConakry.Web.Ariya
         {
             var container = RegisterTypes();
             container.RegisterInstance<HttpContextBase>(new HttpContextWrapper(HttpContext.Current));
-            DependencyResolver.SetResolver(new Unity.Mvc3.UnityDependencyResolver(container));
+            DependencyResolver.SetResolver(new Unity.Mvc4.UnityDependencyResolver(container));
+            GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);
+
         }
     }
 }
