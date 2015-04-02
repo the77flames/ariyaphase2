@@ -1,0 +1,69 @@
+﻿<!--slider-->
+<!--slider-->
+<div id="slider-wrap">
+    <div class="thumbs-block">
+        <div class="addcallertunez"><!-- <img src="images/addcallertunez.png" /> --> </div> 
+        <div class="clr"></div>
+        <div id="carousel-wrap">
+            <ul id="carousel" class="top_slider roundabout-holder" data-bind="roundabout: ''">
+                <li> <img src="images/slide1.png" alt="image01"> </li>
+                <li> <img src="images/slide2.png" alt="image02"> </li>
+                <li> <img src="images/slide3.png" alt="image03"> </li>
+                <li> <img src="images/slide4.png" alt="image04"> </li>
+                <li> <img src="images/slide5.png" alt="image01"> </li>
+                <li> <img src="images/slide6.png" alt="image01"> </li>
+                <li> <img src="images/slide1.png" alt="image01"> </li>
+                <li> <img src="images/slide2.png" alt="image01"> </li>
+                <li> <img src="images/slide3.png" alt="image01"> </li>
+                <li> <img src="images/slide4.png" alt="image01"> </li>
+            </ul>
+        </div>
+        <!--thumbsEND-->
+    </div>
+</div>
+<!--sliderEND-->
+<div class="clr"></div>
+<!--header-wrapEND-->
+<div class="clr"></div>
+
+<script type="text/html" id="listingInnerTmpl">
+    <li class="toplisting">
+        <div class="toplisting-inner">
+            <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width:192px; height: 136px" />
+            <div class="artist-detials">
+                <h2 data-bind="text: Name"></h2>
+                <h4>Artist: 2face Idibia</h4>
+            </div>
+        </div>
+        <div class="social-buttons">
+            <ul>
+                <li>
+                    <div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div>
+                </li>
+                <li><a href="detail.html ">
+                    <img src="images/addtocart-btn.png" /></a></li>
+            </ul>
+        </div>
+    </li>
+</script>
+
+<!--content-->
+<section id="content">
+
+    <!--content-inner-->
+    <div id="content-inner">
+
+        <!--container-->
+        <section id="container">
+            <!--listing-wrapp-->
+            <div class="listing-wrap">
+                <h1>TOP TEN</h1>
+                <!--topten-->
+                <ul class="home-listing" data-bind="foreach: categories">
+                    <!-- ko template: 'listingInnerTmpl' -->  <!--/ko-->                    
+                </ul>
+            </div>
+        </section>
+    </div>
+</section>
+

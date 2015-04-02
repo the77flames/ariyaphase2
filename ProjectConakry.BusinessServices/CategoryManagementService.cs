@@ -13,29 +13,30 @@ namespace ProjectConakry.BusinessServices
         private readonly SongManagementService _songService;
         private readonly MovieManagementService _movieService;
 
-        public CategoryManagementService(BookManagementService bookService, SongManagementService songService,
-                                                                    MovieManagementService movieService)
+        public CategoryManagementService(
+            BookManagementService bookService,
+            SongManagementService songService,
+            MovieManagementService movieService)
         {
             _bookService = bookService;
             _songService = songService;
             _movieService = movieService;
         }
+
         public IEnumerable<Media> GetData(Sections section, int count)
         {
-            foreach(var book in  _bookService.GetAll(section))
+            foreach (var book in  _bookService.GetAll(section) ?? new List<Book>())
             {
                 yield return book;
             }
-            foreach (var movie in _movieService.GetAll(section))
+            foreach (var movie in _movieService.GetAll(section) ?? new List<Movie>())
             {
                 yield return movie;
             }
-            foreach (var song in _songService.GetAll(section))
+            foreach (var song in _songService.GetAll(section) ?? new List<Song>())
             {
                 yield return song;
             }
         }
-
-       
     }
 }
