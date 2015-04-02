@@ -22,15 +22,19 @@ namespace ProjectConakry.BusinessServices
         }
         public IEnumerable<Media> GetData(Sections section, int count)
         {
-            foreach(var book in  _bookService.GetAll(section))
+            var applicableBooks = _bookService.GetAll(section) ?? Enumerable.Empty<Book>();
+            var applicableSongs = _songService.GetAll(section) ?? Enumerable.Empty<Song>();
+            var applicableMovies = _movieService.GetAll(section) ?? Enumerable.Empty<Movie>();
+
+            foreach(var book in applicableBooks )
             {
                 yield return book;
             }
-            foreach (var movie in _movieService.GetAll(section))
+            foreach (var movie in applicableMovies)
             {
                 yield return movie;
             }
-            foreach (var song in _songService.GetAll(section))
+            foreach (var song in applicableSongs)
             {
                 yield return song;
             }
