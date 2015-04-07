@@ -27,7 +27,7 @@ namespace ProjectConakry.Data.UnitTests
 
             foreach (Sections item in list)
             {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 24; i++)
                 {
                     var movie = new Movie()
                     {

@@ -12,7 +12,7 @@
         return vm;
 
         function get(observableList) {
-            var url = service + 'get?section=1&count=4'
+            var url = service + 'get?section=0&count=20';
             var promise = http.get(url);
 
             return promise.then(function(data) {

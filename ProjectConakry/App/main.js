@@ -9,7 +9,8 @@
         'jquery': '../Scripts/jquery-1.8.2',
         'toastr': '../Scripts/toastr',
         'moment': '../Scripts/moment',
-        'roundabout': '../js/jquery.roundabout.min'
+        'roundabout': '../js/jquery.roundabout.min',
+        'bxslider': '../js/jquery.bxslider.min'
     },
     shim: {
         'bootstrap': {
@@ -17,6 +18,9 @@
             exports: 'jQuery'
         },
         'roundabout': {
+            deps: ['jquery']
+        },
+        'bxslider': {
             deps: ['jquery']
         }
     }
