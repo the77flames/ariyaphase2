@@ -1,0 +1,55 @@
+﻿<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="row" data-bind="with: product">
+    <div class="well profile">
+        <div class="col-sm-12">
+            <div class="col-xs-12 col-sm-8">
+                <h2 data-bind="text: Name">Nicole Pearson</h2>
+                <p data-bind="with: category"><strong>Category: </strong><span data-bind="text: Name"></span></p>
+                <p><strong>Description: </strong><span data-bind="html: Description"></span></p>
+                <p><strong>Tags: </strong>
+                    <span class="tags">html5</span> 
+                    <span class="tags">css3</span>
+                    <span class="tags">jquery</span>
+                    <span class="tags">bootstrap3</span>
+                </p>
+                <div class="col-xs-12 divider text-center">
+                    <div class="col-xs-12 col-sm-4">
+                        <h2><strong></strong></h2>                    
+                        <p><small></small></p>
+                        <button class="btn btn-success btn-block" data-bind="click: $root.addToCart"><span class="fa fa-plus-circle"></span> Buy </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h2><strong></strong></h2>                    
+                        <p><small></small></p>
+                        <button class="btn btn-info btn-block" data-bind="click: $root.addToWishList"><span class="fa fa-user"></span> Wish List </button>
+                    </div>
+                </div>
+            </div>             
+            <div class="col-xs-12 col-sm-4 text-center">
+                <figure>
+                    <img src="" alt="" class="img-circle img-responsive" data-bind="attr: { src: $root.productImageUrl(ImageFile2) }">
+                    <figcaption class="ratings">
+                        <p>Ratings
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                            <a href="#">
+                                <span class="fa fa-star-o"></span>
+                            </a> 
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>                    
+    </div>                 
+</div>
