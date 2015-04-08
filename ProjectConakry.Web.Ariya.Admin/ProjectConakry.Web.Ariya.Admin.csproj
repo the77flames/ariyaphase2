@@ -200,6 +200,7 @@
     <Compile Include="ConakryAdmin.cs" />
     <Compile Include="Controllers\AnimationController.cs" />
     <Compile Include="Controllers\AdsController.cs" />
+    <Compile Include="Controllers\LoungeController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\FeaturedController.cs" />
@@ -714,6 +715,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Song\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Events\AddEvent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Events\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\AddNews.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lounge\AddLounge.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lounge\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

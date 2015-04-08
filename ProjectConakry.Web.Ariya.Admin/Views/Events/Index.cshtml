@@ -1,0 +1,82 @@
+﻿@using ProjectConakry.DomainObjects
+@model IEnumerable<Events>
+@{
+    ViewBag.Title = "Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#AddEventButton').click(function () {
+
+            $('#AddEventForm').submit();
+        });
+
+    });
+
+</script>
+<!-- Content -->
+<section id="content" class="container">
+    <div class="tile">
+        <h2 class="tile-title">All Events</h2>
+        <div class="tile-config dropdown">
+            <a title="" class="tooltips tile-menu" href="" data-original-title="Options" data-toggle="dropdown"></a>
+            <ul class="dropdown-menu pull-right text-right">
+                <li><a href="#modalDefault" data-toggle="modal">Add New Event</a></li>
+            </ul>
+        </div>
+
+        <div class="listview narrow sortable ui-sortable">
+            @if (Model == null || !Model.Any())
+{
+    <span style="padding-left: 40px;"> There are no events in the database ! </span>
+}
+else
+{
+
+    foreach (var eventItem in Model)
+    {
+                    <div class="media p-l-5">
+                        <div class="pull-left">
+                            <img width="40" alt="" src='@eventItem.ImageThumbNailPath'>
+                        </div>
+                        <div class="media-body">
+                            <small class="text-muted">@eventItem.EventDate</small><br>
+                            <a class="t-overflow" href="">@eventItem.EventName</a>
+
+                        </div>
+                    </div>
+                } 
+            }
+            <div class="media p-5 text-center l-100">
+                <a href="#"><small>VIEW ALL</small></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="block-area" id="modal">    
+    <!-- Modal Default -->
+    <div tabindex="-1" class="modal fade" id="modalDefault" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                @using(Html.BeginForm("Add", "Events", FormMethod.Post, new { id = "AddEventForm"}))
+                {
+                    <div class="modal-header">
+                        <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">Add New Event</h4>
+                    </div>
+                    <div class="modal-body">
+                        @{ Html.RenderPartial("AddEvent", new Events()); }
+                    </div>
+                    <div class="modal-footer">
+                        <button id="AddEventButton" class="btn btn-sm" type="button">Save changes</button>
+                        <button class="btn btn-sm" type="button" data-dismiss="modal">Close</button>
+                    </div>
+                }
+             </div>
+        </div>
+    </div> 
+</div>

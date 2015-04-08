@@ -8,12 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectConakry.BusinessServices
 {
-    public interface IAriyaAdminService<T> where T : IMongoEntity
+    public interface IRecommendationsService
     {
-        void Add(T entity);
-        List<T> GetAll(Sections sectionId);
-        T GetById(ObjectId id);
-
-        List<T> GetAllByDate(DateTime date);
     }
 }

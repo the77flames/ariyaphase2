@@ -1,0 +1,29 @@
+﻿@using ProjectConakry.DomainObjects
+@model News
+
+<style type="text/css">
+    .labelX{
+        padding-left: 5px;
+    }
+</style>
+ 
+
+<table style="width: 90%">
+    <tr>
+        <td><i class ="fa fa-film fa-2x"></i><span class="labelX">News Title</span></td>
+        <td>@Html.TextAreaFor(Model => Model.Caption, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Image Path</span></td>
+        <td>@Html.TextAreaFor(Model => Model.ImagePath, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Text</span></td>
+        <td>@Html.TextAreaFor(Model => Model.Text, new { @class = "form-control input-sm" , @cols = "10"})</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-calendar fa-2x"></i><span class="labelX">Expire Date</span></td>
+        <td>@Html.TextAreaFor(Model => Model.ExpireDate, new { @class = "form-control input-sm" })</td>
+    </tr>
+</table>
+

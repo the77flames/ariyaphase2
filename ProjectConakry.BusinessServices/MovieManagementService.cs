@@ -38,6 +38,11 @@ namespace ProjectConakry.BusinessServices
         {
             throw new NotImplementedException();
         }
+
+        public List<Movie> GetAllByDate(DateTime date)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

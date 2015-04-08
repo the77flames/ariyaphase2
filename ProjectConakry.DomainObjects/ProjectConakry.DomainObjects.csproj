@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUser.cs" />
+    <Compile Include="LoungeItem.cs" />
+    <Compile Include="News.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Enums\Genres.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="Artist.cs" />
