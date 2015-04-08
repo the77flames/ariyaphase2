@@ -101,62 +101,15 @@
             <section id="news">
                 <h1>NEWS</h1>
                 <div class="news-content">
-                    <ul class="sidebar-slider">
+                    <ul class="sidebar-slider" data-bind="foreach: newsSections">
                         <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
+                            <ul data-bind="foreach: List">
+                                <li><a href="#" data-bind="text: Text"></a></li>
+                                <br />                              
                             </ul>
                         </li>
                     </ul>
                 </div>
-
             </section>
             <!--newsEND-->
             <!--event-->

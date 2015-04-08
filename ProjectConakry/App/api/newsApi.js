@@ -1,6 +1,6 @@
 ﻿define(['durandal/system', 'services/logger', 'services/global', 'knockout', 'plugins/http', 'services/scripts'],
     function (system, logger, global, ko, http, scripts) {
-        var service = global.serviceUrl + 'CategoryManagementServiceRESTAPI/';
+        var service = global.serviceUrl + 'NewsServiceRESTAPI/';
 
         var vm = {
             get: get,
@@ -11,9 +11,9 @@
 
         return vm;
 
-        function get(observableList) {
-            var url = service + 'get?section=0&count=20';
-            var promise = http.get(url);
+        function get(observableList, d) {
+            var model = { date: d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate() };
+            var promise = http.get(service, model);
 
             return promise.then(function(data) {
                 observableList(data);
