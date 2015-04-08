@@ -1,0 +1,42 @@
+﻿@using ProjectConakry.DomainObjects
+@model Events
+
+
+
+<style type="text/css">
+    .labelX{
+        padding-left: 5px;
+    }
+</style>
+
+<table style="width: 90%">
+    <tr>
+        <td><i class ="fa fa-film fa-2x"></i><span class="labelX">Event Name</span></td>
+        <td>@Html.TextAreaFor(Model => Model.EventName, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Thumb Nail Image Path</span></td>
+        <td>@Html.TextAreaFor(Model => Model.ImageThumbNailPath, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Big ThumbNail Image Path</span></td>
+        <td>@Html.TextAreaFor(Model => Model.ImageBigPath, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-calendar fa-2x"></i><span class="labelX">Event Date</span></td>
+        <td>@Html.TextAreaFor(Model => Model.EventDate, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-file fa-2x"></i><span class="labelX">Venue</span></td>
+        <td>@Html.TextAreaFor(Model => Model.Venue, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-male fa-2x"></i><span class="labelX">Time</span></td>
+        <td>@Html.TextAreaFor(Model => Model.Time, new { @class = "form-control input-sm" })</td>
+    </tr>
+    <tr>
+        <td><i class="fa fa-male fa-2x"></i><span class="labelX">Ticket Price</span></td>
+        <td>@Html.TextAreaFor(Model => Model.TicketPrice, new { @class = "form-control input-sm" })</td>
+    </tr>
+</table>
+
