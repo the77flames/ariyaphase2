@@ -267,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\api\categoryApi.js" />
+    <Content Include="App\api\baseApi.js" />
+    <Content Include="App\api\eventsApi.js" />
+    <Content Include="App\api\loungeApi.js" />
     <Content Include="App\api\newsApi.js" />
     <Content Include="App\kobindings\roundabout.js" />
     <Content Include="App\main.js" />

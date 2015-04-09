@@ -1,5 +1,5 @@
-﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'api/newsApi', 'kobindings/roundabout'],
-    function (app, navigating, ko, $, logger, categoryApi, newsApi) {
+﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'api/newsApi', 'api/loungeApi', 'api/eventsApi', 'kobindings/roundabout'],
+    function (app, navigating, ko, $, logger, categoryApi, newsApi, loungeApi, eventsApi) {
 
         var sections = ["", "Top 10", "Featured", "New", "Trending"];
 
@@ -45,6 +45,18 @@
                     function () {
                         var list = groupItems(vm.news(), 5);
                         vm.newsSections(list);
+                    }).then(function () {
+                        return eventsApi.get(vm.events, new Date()).then(
+                        function () {
+                            var list = groupItems(vm.events(), 4);
+                            vm.eventsSections(list);
+                        });
+                    }).then(function () {
+                        return loungeApi.get(vm.loungeItems, new Date()).then(
+                        function () {
+                            var list = groupItems(vm.loungeItems(), 4);
+                            vm.loungeSections(list);
+                        });
                     });
                 })
                 .done(function () {
@@ -59,9 +71,13 @@
         var vm = {
             categories: ko.observableArray([]),
             news: ko.observableArray([]),
+            events: ko.observableArray([]),
+            loungeItems: ko.observableArray([]),
             activate: activate,
             sections: ko.observableArray([]),
-            newsSections: ko.observableArray([])
+            newsSections: ko.observableArray([]),
+            eventsSections: ko.observableArray([]),
+            loungeSections: ko.observableArray([])
         }
 
         return vm;
