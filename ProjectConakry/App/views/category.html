@@ -26,27 +26,6 @@
 <!--header-wrapEND-->
 <div class="clr"></div>
 
-<!--<script type="text/html" id="listingInnerTmpl">
-    <li class="toplisting">
-        <div class="toplisting-inner">
-            <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width:192px; height: 136px" />
-            <div class="artist-detials">
-                <h2 data-bind="text: Name"></h2>
-                <h4>Artist: 2face Idibia</h4>
-            </div>
-        </div>
-        <div class="social-buttons">
-            <ul>
-                <li>
-                    <div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div>
-                </li>
-                <li><a href="detail.html ">
-                    <img src="images/addtocart-btn.png" /></a></li>
-            </ul>
-        </div>
-    </li>
-</script>-->
-
 <!--content-->
 <section id="content">
 
@@ -74,15 +53,16 @@
                                     <div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div>
                                 </li>
                                 <li><a href="detail.html ">
-                                    <img src="images/addtocart-btn.png" /></a></li>
+                                        <img src="images/addtocart-btn.png" /></a></li>
                             </ul>
                         </div>
                     </li>                    
                 </ul>
-            </div>
+            </div>            
+            <section class="add2"><img src="images/add2.png" /> width="795px;"></section>
         </section>
         
-                <!--rightsidebar-->
+        <!--rightsidebar-->
         <aside data-bind="bxSlider: {}, target: '.sidebar-slider'">
 
             <!--ariyatv-->
@@ -98,80 +78,34 @@
             <div class="clr"></div>
 
             <!--news-->
-            <section id="news">
+            <section id="news" class="news-header">
                 <h1>NEWS</h1>
                 <div class="news-content">
-                    <ul class="sidebar-slider">
+                    <ul class="sidebar-slider" data-bind="foreach: newsSections">
                         <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Niyola Confirms Relationship With Banky W</a></li>
-                                <br />
-                                <li><a href="#">2Face, Madinga To Host All Africa Music Award</a></li>
-                                <br />
-                                <li><a href="#">When A Female Fan Grabbed My Trouser Inside A Restroom - Solid Star</a></li>
-                                <br />
-                                <li><a href="#">I Discovered Life Is Beautiful After Divorce - Ini Edo</a></li>
-                                <br />
-                                <li><a href="#">9ice and Toni Payne’s Marriage Crisis Taught Me A Big Lesson- Rugged Man</a></li>
+                            <ul data-bind="foreach: List">
+                                <li><a href="#" data-bind="text: Text"></a></li>
+                                <br />                              
                             </ul>
                         </li>
                     </ul>
                 </div>
-
             </section>
             <!--newsEND-->
+
             <!--event-->
-            <section id="Section1">
+            <section id="Section1" class="news-header">
                 <h1>EVENT</h1>
                 <div class="news-content">
-                    <ul class="sidebar-slider">
-                        <li>
+                    <ul class="sidebar-slider" data-bind="foreach: eventsSections">
+                        <li data-bind="foreach: List">
                             <div class="event-tab">
                                 <div class="calander">
                                     <h2>Jan.</h2>
                                     <h5>31</h5>
                                 </div>
                                 <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
+                                    <!-- ko text: EventName --><!-- /ko --> Venue: <!-- ko text: Venue --><!-- /ko -->, Lagos Time:    20.00 GMT Price:    $ 10.00
                                 </div>
                                 <div class="ticket-info-btn">
                                     <ul>
@@ -180,354 +114,28 @@
                                     </ul>
                                 </div>
                             </div>
-
-                            <!--eventEND-->
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Fab.</h2>
-                                    <h5>04</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Mar.</h2>
-                                    <h5>15</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Apr.</h2>
-                                    <h5>18</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-
                         </li>
-                        <li>
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Jan.</h2>
-                                    <h5>31</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Fab.</h2>
-                                    <h5>04</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Mar.</h2>
-                                    <h5>15</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Apr.</h2>
-                                    <h5>18</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-
-                        </li>
-                        <li>
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Jan.</h2>
-                                    <h5>31</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Fab.</h2>
-                                    <h5>04</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Mar.</h2>
-                                    <h5>15</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Apr.</h2>
-                                    <h5>18</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-
-                        </li>
-                        <li>
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Jan.</h2>
-                                    <h5>31</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Fab.</h2>
-                                    <h5>04</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Mar.</h2>
-                                    <h5>15</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-                            <div class="event-tab">
-                                <div class="calander">
-                                    <h2>Apr.</h2>
-                                    <h5>18</h5>
-                                </div>
-                                <div class="event-text">
-                                    PSquare Live Venue: Muson Centre, Lagos Time:    20.00 GMT Price:    $ 10.00
-                                </div>
-                                <div class="ticket-info-btn">
-                                    <ul>
-                                        <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!--eventEND-->
-
-
-                        </li>
-
-
                     </ul>
-
                     <!--eventEND-->
                 </div>
-
             </section>
             <!--eventEND-->
+
             <!--lounge-->
-            <section id="Section2">
+            <section id="Section2" class="news-header">
                 <h1>THE LOUNGE</h1>
                 <div class="news-content">
-                    <ul class="sidebar-slider">
+                    <ul class="sidebar-slider" data-bind="foreach: loungeSections">
                         <li>
-                            <ul>
-                                <li><a href="#">Press Release: Globacom telecoms to announce $1b parnership with Nollywood</a></li>
-                                <br />
-                                <li><a href="#">Nigerian movie producer, Kule Afolayan set to release new movie ‘African Pride’ on January 31st</a></li>
-                                <br />
-                                <li><a href="#">Chinua Achebe and friends celebrate 55 years of ‘Things fall apart’ book publication</a></li>
-                                <br />
-                                <li><a href="#">The Samaritans: Kenya’s first mockumen-tary takes on the NGO world</a></li>
-                                <br />
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Press Release: Globacom telecoms to announce $1b parnership with Nollywood</a></li>
-                                <br />
-                                <li><a href="#">Nigerian movie producer, Kule Afolayan set to release new movie ‘African Pride’ on January 31st</a></li>
-                                <br />
-                                <li><a href="#">Chinua Achebe and friends celebrate 55 years of ‘Things fall apart’ book publication</a></li>
-                                <br />
-                                <li><a href="#">The Samaritans: Kenya’s first mockumen-tary takes on the NGO world</a></li>
-                                <br />
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Press Release: Globacom telecoms to announce $1b parnership with Nollywood</a></li>
-                                <br />
-                                <li><a href="#">Nigerian movie producer, Kule Afolayan set to release new movie ‘African Pride’ on January 31st</a></li>
-                                <br />
-                                <li><a href="#">Chinua Achebe and friends celebrate 55 years of ‘Things fall apart’ book publication</a></li>
-                                <br />
-                                <li><a href="#">The Samaritans: Kenya’s first mockumen-tary takes on the NGO world</a></li>
-                                <br />
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li><a href="#">Press Release: Globacom telecoms to announce $1b parnership with Nollywood</a></li>
-                                <br />
-                                <li><a href="#">Nigerian movie producer, Kule Afolayan set to release new movie ‘African Pride’ on January 31st</a></li>
-                                <br />
-                                <li><a href="#">Chinua Achebe and friends celebrate 55 years of ‘Things fall apart’ book publication</a></li>
-                                <br />
-                                <li><a href="#">The Samaritans: Kenya’s first mockumen-tary takes on the NGO world</a></li>
-                                <br />
+                            <ul data-bind="foreach: List">
+                                <li><a href="#" data-bind="text: Text"></a></li>
+                                <br />                              
                             </ul>
                         </li>
                     </ul>
                 </div>
-
             </section>
             <!--loungeEND-->
-
 
         </aside>
         <!--rightsidebarEND-->

@@ -8,17 +8,24 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
 {
     public class RecommendationsServiceRESTAPIController : ApiController
     {
-       private readonly CategoryManagementService _categoryManagementService;
-       public RecommendationsServiceRESTAPIController(CategoryManagementService categoryManagementService)
+       private readonly IRecommendationsService _recommendationsService;
+       public RecommendationsServiceRESTAPIController(IRecommendationsService recommendationsService)
        {
-           _categoryManagementService = categoryManagementService;
+           _recommendationsService = recommendationsService;
            
        }
 
         [ConakryAuthorize]
         public IEnumerable<Media> Get(int section, int count = 20)
         {
-            return _categoryManagementService.GetData((Sections)section, count);
+            return null;
+        }
+
+
+        [ConakryAuthorize]
+        public IEnumerable<Media> GetByGenres(Genres genre, int count)
+        {
+            return null;
         }
     }
 }

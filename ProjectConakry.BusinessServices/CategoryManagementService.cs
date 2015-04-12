@@ -30,7 +30,7 @@ namespace ProjectConakry.BusinessServices
             var applicableSongs = _songService.GetAll(section) ?? Enumerable.Empty<Song>();
             var applicableMovies = _movieService.GetAll(section) ?? Enumerable.Empty<Movie>();
 
-            foreach(var book in applicableBooks )
+            foreach (var book in applicableBooks)
             {
                 yield return book;
             }

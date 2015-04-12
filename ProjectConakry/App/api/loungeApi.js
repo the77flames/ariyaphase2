@@ -1,6 +1,6 @@
 ﻿define(['durandal/system', 'services/logger', 'services/global', 'knockout', 'plugins/http', 'services/scripts'],
     function (system, logger, global, ko, http, scripts) {
-        var service = global.serviceUrl + 'CategoryManagementServiceRESTAPI/';
+        var service = global.serviceUrl + 'LoungeItemServiceRESTAPI/';
 
         var vm = {
             get: get,
@@ -11,19 +11,19 @@
 
         return vm;
 
-        function get(observableList) {
-            var url = service + 'get?section=0&count=20';
-            var promise = http.get(url);
+        function get(observableList, d) {
+            var model = { date: d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate() };
+            var promise = http.get(service, model);
 
-            return promise.then(function(data) {
+            return promise.then(function (data) {
                 observableList(data);
-            }).fail(function(error) {
+            }).fail(function (error) {
                 logger.logError("Error while loading categories: " + scripts.jsonMessage(error), null, "Get Category List", true);
             });
         }
 
-        function update(category) {
-            return http.post(service, category);
+        function update(news) {
+            return http.post(service, news);
         }
 
         function getById(id) {

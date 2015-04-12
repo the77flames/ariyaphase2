@@ -1,17 +1,6 @@
 ﻿define(['durandal/system', 'jquery', 'knockout', 'roundabout', 'bxslider'],
     function (system, $, ko) {
 
-        var addThis = function () {
-            var jsAddThis = document.createElement('script'),
-            head = document.getElementsByTagName('head')[0];
-
-            jsAddThis.async = true;
-            jsAddThis.type = 'text/javascript';
-            jsAddThis.src = 'http://s7.addthis.com/js/300/addthis_widget.js';
-
-            head.appendChild(jsAddThis);
-        };
-
         ko.bindingHandlers.roundabout = {
             init: function (element) {
                 $(element).roundabout({
