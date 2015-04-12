@@ -2,6 +2,7 @@
 using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace ProjectConakry.Web.Ariya.RESTFulAPIs
@@ -16,9 +17,18 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
        }
 
         [ConakryAuthorize]
-        public IEnumerable<Media> Get(int section, int count = 20)
-        {
-            return _categoryManagementService.GetData((Sections)section, count);
+        public IEnumerable<Media> Get(int? section, int count = 20)
+        {            
+            if(section != null)
+             return _categoryManagementService.GetData((Sections)section, count);
+
+            var results = Enumerable.Empty<Media>();
+            foreach(var sectionType in Enum.GetValues(typeof(Sections)))
+            {
+                results = results.Concat(_categoryManagementService.GetData((Sections)sectionType, count));
+            }
+
+            return results;
         }
     }
 }
