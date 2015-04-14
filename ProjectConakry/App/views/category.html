@@ -2,20 +2,42 @@
 <!--slider-->
 <div id="slider-wrap">
     <div class="thumbs-block">
-        <div class="addcallertunez"><!-- <img src="images/addcallertunez.png" /> --> </div> 
+        <div class="addcallertunez">
+            <!-- <img src="images/addcallertunez.png" /> -->
+        </div>
         <div class="clr"></div>
         <div id="carousel-wrap">
             <ul id="carousel" class="top_slider roundabout-holder" data-bind="roundabout: ''">
-                <li> <img src="images/slide1.png" alt="image01"> </li>
-                <li> <img src="images/slide2.png" alt="image02"> </li>
-                <li> <img src="images/slide3.png" alt="image03"> </li>
-                <li> <img src="images/slide4.png" alt="image04"> </li>
-                <li> <img src="images/slide5.png" alt="image01"> </li>
-                <li> <img src="images/slide6.png" alt="image01"> </li>
-                <li> <img src="images/slide1.png" alt="image01"> </li>
-                <li> <img src="images/slide2.png" alt="image01"> </li>
-                <li> <img src="images/slide3.png" alt="image01"> </li>
-                <li> <img src="images/slide4.png" alt="image01"> </li>
+                <li>
+                    <img src="images/slide1.png" alt="image01">
+                </li>
+                <li>
+                    <img src="images/slide2.png" alt="image02">
+                </li>
+                <li>
+                    <img src="images/slide3.png" alt="image03">
+                </li>
+                <li>
+                    <img src="images/slide4.png" alt="image04">
+                </li>
+                <li>
+                    <img src="images/slide5.png" alt="image01">
+                </li>
+                <li>
+                    <img src="images/slide6.png" alt="image01">
+                </li>
+                <li>
+                    <img src="images/slide1.png" alt="image01">
+                </li>
+                <li>
+                    <img src="images/slide2.png" alt="image01">
+                </li>
+                <li>
+                    <img src="images/slide3.png" alt="image01">
+                </li>
+                <li>
+                    <img src="images/slide4.png" alt="image01">
+                </li>
             </ul>
         </div>
         <!--thumbsEND-->
@@ -27,9 +49,9 @@
 <div class="clr"></div>
 
 <!--content-->
-<section id="content">
+<section id="category-content">
 
-    <!--content-inner-->        
+    <!--content-inner-->
     <div id="content-inner">
 
         <!--container-->
@@ -41,7 +63,7 @@
                 <ul class="home-listing" data-bind="foreach: List">
                     <li class="toplisting">
                         <div class="toplisting-inner">
-                            <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width:192px; height: 136px" />
+                            <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
                             <div class="artist-detials">
                                 <h2 data-bind="text: Name"></h2>
                                 <h4>Artist: 2face Idibia</h4>
@@ -51,21 +73,23 @@
                             <ul>
                                 <li>
                                     <div class="addthis_toolbox addthis_20x20_style addthis-smartlayers at-share-tbx-element" data-url="domain.com" data-title="title">
-                                        <a class="addthis_button_facebook" style="cursor:pointer"></a> 
-                                        <a class="addthis_button_twitter" style="cursor:pointer"></a> 
-                                        <a class="addthis_button_google_plusone_share" style="cursor:pointer"></a>
+                                        <a class="addthis_button_facebook" style="cursor: pointer"></a>
+                                        <a class="addthis_button_twitter" style="cursor: pointer"></a>
+                                        <a class="addthis_button_google_plusone_share" style="cursor: pointer"></a>
                                     </div>
                                 </li>
                                 <li><a href="#detail/1">
-                                        <img src="images/addtocart-btn.png" /></a></li>
+                                    <img src="images/addtocart-btn.png" /></a></li>
                             </ul>
                         </div>
-                    </li>                    
+                    </li>
                 </ul>
-            </div>            
-            <section class="add2"><img src="images/add2.png" /> width="795px;"></section>
+            </div>
+            <section class="add2">
+                <img src="images/add2.png" />
+                width="795px;"></section>
         </section>
-        
+
         <!--rightsidebar-->
         <aside>
 
@@ -89,7 +113,7 @@
                         <li>
                             <ul data-bind="foreach: List">
                                 <li><a href="#" data-bind="text: Text"></a></li>
-                                <br />                              
+                                <br />
                             </ul>
                         </li>
                     </ul>
@@ -109,7 +133,12 @@
                                     <h5>31</h5>
                                 </div>
                                 <div class="event-text">
-                                    <!-- ko text: EventName --><!-- /ko --> Venue: <!-- ko text: Venue --><!-- /ko -->, Lagos Time:    20.00 GMT Price:    $ 10.00
+                                    <!-- ko text: EventName -->
+                                    <!-- /ko -->
+                                    Venue:
+                                    <!-- ko text: Venue -->
+                                    <!-- /ko -->
+                                    , Lagos Time:    20.00 GMT Price:    $ 10.00
                                 </div>
                                 <div class="ticket-info-btn">
                                     <ul>
@@ -133,7 +162,7 @@
                         <li>
                             <ul data-bind="foreach: List">
                                 <li><a href="#" data-bind="text: Text"></a></li>
-                                <br />                              
+                                <br />
                             </ul>
                         </li>
                     </ul>

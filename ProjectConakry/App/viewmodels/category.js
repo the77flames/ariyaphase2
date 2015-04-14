@@ -43,7 +43,7 @@
 
         var loadSliders = function () {
             setTimeout(function () {
-                $('.home-listing').each(function (i, item) {
+                $('#category-content .home-listing').each(function (i, item) {
                     slider = $(item).bxSlider({
                         minSlides: 4,
                         maxSlides: 4,
@@ -55,10 +55,11 @@
                     sliders.push(slider);
                 });
 
-                $('.sidebar-slider').each(function (i, item) {
+                $('#category-content .sidebar-slider').each(function (i, item) {
                     slider = $(item).bxSlider();
                     sliders.push(slider);
                 });
+                addthis.toolbox('.addthis_toolbox');
             }, 100);
         };
 
@@ -68,7 +69,7 @@
         };
 
         var activate = function () {
-            if ($('.home-listing').length > 0)
+            if ($('#category-content .home-listing').length > 0)
                 return null;
             return categoryApi.get(vm.categories)
                 .then(function () {
@@ -92,7 +93,7 @@
                 })
                 .done(function () {
                     vm.sections(makeSections(vm.categories()));
-                    if ($('.home-listing').length > 0) {
+                    if ($('#category-content .home-listing').length > 0) {
                         loadSliders();
                     }
                     navigating.busy(false);

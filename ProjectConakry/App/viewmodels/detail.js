@@ -1,5 +1,6 @@
-﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/recommendationApi'],
+﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/recommendationApi', 'kobindings/roundabout'],
     function (app, navigating, ko, $, logger, recommendationApi) {
+        var sections = ["", "Related Videos"];
 
         var addThis = function () {
             var jsAddThis = document.createElement('script'),
@@ -13,6 +14,9 @@
         };
 
         var makeSections = function (recommendations) {
+            if (!recommendations) {
+                recommendations = [];
+            }
             var list = [];
             for (var j = 0; j < sections.length; j++) {
                 list.push({ Name: sections[j], List: [] });
@@ -29,7 +33,7 @@
 
         var loadSliders = function () {
             setTimeout(function () {
-                $('.home-listing').each(function (i, item) {
+                $('#detail-content .home-listing').each(function (i, item) {
                     slider = $(item).bxSlider({
                         minSlides: 4,
                         maxSlides: 4,
@@ -40,11 +44,7 @@
                     });
                     sliders.push(slider);
                 });
-
-                $('.sidebar-slider').each(function (i, item) {
-                    slider = $(item).bxSlider();
-                    sliders.push(slider);
-                });
+                addthis.toolbox('.addthis_toolbox');
             }, 100);
         };
 
@@ -54,12 +54,12 @@
         };
 
         var activate = function () {
-            if ($('.home-listing').length > 0)
+            if ($('#detail-content .home-listing').length > 0)
                 return null;
             return recommendationApi.get(vm.recommendations)                
                  .done(function () {
                      vm.sections(makeSections(vm.recommendations()));
-                     if ($('.home-listing').length > 0) {
+                     if ($('#detail-content .home-listing').length > 0) {
                          loadSliders();
                      }
                      navigating.busy(false);
