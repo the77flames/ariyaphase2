@@ -60,6 +60,35 @@ namespace ProjectConakry.Data.UnitTests
             }            
         }
 
+        //public void AddRecommendations()
+        //{
+        //    var list = Enum.GetValues(typeof(Sections));
+
+        //    foreach (Sections item in list)
+        //    {
+        //        for (int i = 0; i < 24; i++)
+        //        {
+        //            var recommendation = new Media()
+        //            {
+        //                Name = "Recommendation" + i,
+        //                // Artists = new List<Artist>(),
+        //                SectionId = item,
+        //                ThumbNailImagePath = ((i % 12) + 1) + ".jpg"
+        //            };
+        //            _recommendationRepository.Create(recommendation);
+        //        }
+        //    }
+        //}
+
+        //public void DeleteRecommendations()
+        //{
+        //    var recommendations = _recommendationRepository.GetAll();
+        //    foreach (var recommendation in recommendations)
+        //    {
+        //        _recommendationRepository.Delete(recommendation.Id.ToString());
+        //    }
+        //}
+
         private string[] ReadFile(string fileName)
         {
             const string filePath = @"..\..\Files";

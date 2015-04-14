@@ -59,18 +59,12 @@
                     slider = $(item).bxSlider();
                     sliders.push(slider);
                 });
-            }, 300);
+            }, 100);
         };
 
         var attached = function () {
             addThis();
             loadSliders();
-        };
-
-        var deactivate = function () {
-            //$(sliders).each(function (i, item) {
-            //    item.destroySlider();
-            //});
         };
 
         var activate = function () {
@@ -111,7 +105,6 @@
             events: ko.observableArray([]),
             loungeItems: ko.observableArray([]),
             activate: activate,
-            deactivate: deactivate,
             attached: attached,
             sections: ko.observableArray([]),
             newsSections: ko.observableArray([]),
