@@ -280,7 +280,9 @@
     <Content Include="App\services\scripts.js" />
     <Content Include="App\viewmodels\category.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\detail.js" />
     <Content Include="App\views\category.html" />
+    <Content Include="App\views\detail.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

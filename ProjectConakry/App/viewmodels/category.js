@@ -1,5 +1,5 @@
 ﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'api/newsApi', 'api/loungeApi', 'api/eventsApi', 'kobindings/roundabout'],
-    function (app, navigating, ko, $, logger, categoryApi, newsApi, loungeApi, eventsApi) {
+    function (app, navigating, ko, $, logger, categoryApi, newsApi, loungeApi, eventsApi, roundabout) {
 
         var sections = ["", "Top 10", "Featured", "New", "Trending"];
 
@@ -38,9 +38,46 @@
             return list;
         };
 
+        var sliders = [];
+        var slider;
+
+        var loadSliders = function () {
+            setTimeout(function () {
+                $('.home-listing').each(function (i, item) {
+                    slider = $(item).bxSlider({
+                        minSlides: 4,
+                        maxSlides: 4,
+                        controls: false,
+                        moveSlides: 4,
+                        slideWidth: 192,
+                        slideMargin: 10
+                    });
+                    sliders.push(slider);
+                });
+
+                $('.sidebar-slider').each(function (i, item) {
+                    slider = $(item).bxSlider();
+                    sliders.push(slider);
+                });
+            }, 300);
+        };
+
+        var attached = function () {
+            addThis();
+            loadSliders();
+        };
+
+        var deactivate = function () {
+            //$(sliders).each(function (i, item) {
+            //    item.destroySlider();
+            //});
+        };
+
         var activate = function () {
+            if ($('.home-listing').length > 0)
+                return null;
             return categoryApi.get(vm.categories)
-                .then(function() {
+                .then(function () {
                     return newsApi.get(vm.news, new Date()).then(
                     function () {
                         var list = groupItems(vm.news(), 5);
@@ -60,13 +97,13 @@
                     });
                 })
                 .done(function () {
-                vm.sections(makeSections(vm.categories()));
-                setTimeout(function () {
-                    addThis();
-                }, 300);
-                navigating.busy(false);
-            });
-        }
+                    vm.sections(makeSections(vm.categories()));
+                    if ($('.home-listing').length > 0) {
+                        loadSliders();
+                    }
+                    navigating.busy(false);
+                });
+        };
 
         var vm = {
             categories: ko.observableArray([]),
@@ -74,6 +111,8 @@
             events: ko.observableArray([]),
             loungeItems: ko.observableArray([]),
             activate: activate,
+            deactivate: deactivate,
+            attached: attached,
             sections: ko.observableArray([]),
             newsSections: ko.observableArray([]),
             eventsSections: ko.observableArray([]),

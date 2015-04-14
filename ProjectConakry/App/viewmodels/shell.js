@@ -14,7 +14,8 @@
             },
             activate: function (routeInfo) {
                 router.map([
-                    { route: ['', 'section/:id'], title: 'Category', moduleId: 'viewmodels/category', nav: true }
+                    { route: ['', 'category'], title: 'Category', moduleId: 'viewmodels/category', nav: true },
+                    { route: 'detail/:id', title: 'Detail', moduleId: 'viewmodels/detail', nav: true }
                 ]).buildNavigationModel();
 
                 return router.activate();

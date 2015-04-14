@@ -33,7 +33,7 @@
     <div id="content-inner">
 
         <!--container-->
-        <section id="container" data-bind="bxSlider: { minSlides: 4, maxSlides: 4, controls: false, moveSlides: 4, slideWidth: 192, slideMargin: 10 }, target: '.home-listing'" >
+        <section id="container">
             <!--listing-wrapp-->
             <div class="listing-wrap" data-bind="foreach: sections">
                 <h1 data-bind="text: Name">TOP TEN</h1>
@@ -50,9 +50,13 @@
                         <div class="social-buttons">
                             <ul>
                                 <li>
-                                    <div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div>
+                                    <div class="addthis_toolbox addthis_20x20_style addthis-smartlayers at-share-tbx-element" data-url="domain.com" data-title="title">
+                                        <a class="addthis_button_facebook" style="cursor:pointer"></a> 
+                                        <a class="addthis_button_twitter" style="cursor:pointer"></a> 
+                                        <a class="addthis_button_google_plusone_share" style="cursor:pointer"></a>
+                                    </div>
                                 </li>
-                                <li><a href="detail.html ">
+                                <li><a href="#detail/1">
                                         <img src="images/addtocart-btn.png" /></a></li>
                             </ul>
                         </div>
@@ -63,7 +67,7 @@
         </section>
         
         <!--rightsidebar-->
-        <aside data-bind="bxSlider: {}, target: '.sidebar-slider'">
+        <aside>
 
             <!--ariyatv-->
             <section id="ariyatv">
