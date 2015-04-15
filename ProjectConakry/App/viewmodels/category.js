@@ -1,18 +1,7 @@
-﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'api/newsApi', 'api/loungeApi', 'api/eventsApi', 'kobindings/roundabout'],
-    function (app, navigating, ko, $, logger, categoryApi, newsApi, loungeApi, eventsApi, roundabout) {
+﻿define(['services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'api/newsApi', 'api/loungeApi', 'api/eventsApi', 'kobindings/roundabout'],
+    function (navigating, ko, $, logger, categoryApi, newsApi, loungeApi, eventsApi, roundabout) {
 
         var sections = ["", "Top 10", "Featured", "New", "Trending"];
-
-        //var addThis = function () {
-        //    var jsAddThis = document.createElement('script'),
-        //    head = document.getElementsByTagName('head')[0];
-
-        //    jsAddThis.async = true;
-        //    jsAddThis.type = 'text/javascript';
-        //    jsAddThis.src = 'http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-522955913726e62c';
-
-        //    head.appendChild(jsAddThis);
-        //};
 
         var makeSections = function (categories) {
             var list = [];
@@ -38,17 +27,7 @@
             return list;
         };
 
-        var attached = function () {
-            setTimeout(function () {
-                //addthis.toolbox('.addthis_toolbox');
-            }, 300);
-        };
-
         var activate = function () {
-            if ($("category-page .home-listing").length > 0) {
-                addthis.toolbox('.addthis_toolbox');
-                return null;
-            }
             return categoryApi.get(vm.categories)
                 .then(function () {
                     return newsApi.get(vm.news, new Date()).then(
@@ -71,7 +50,9 @@
                 })
                 .done(function () {
                     vm.sections(makeSections(vm.categories()));
-                    navigating.busy(false);
+                    roundabout.addThis();
+                    // addthis.toolbox('.addthis_toolbox');
+                    // navigating.busy(false);
                 });
         };
 
@@ -82,7 +63,6 @@
             events: ko.observableArray([]),
             loungeItems: ko.observableArray([]),
             activate: activate,
-            attached: attached,
             sections: ko.observableArray([]),
             newsSections: ko.observableArray([]),
             eventsSections: ko.observableArray([]),

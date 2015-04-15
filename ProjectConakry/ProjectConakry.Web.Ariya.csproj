@@ -275,6 +275,7 @@
     <Content Include="App\api\eventsApi.js" />
     <Content Include="App\api\loungeApi.js" />
     <Content Include="App\api\newsApi.js" />
+    <Content Include="App\main-home.js" />
     <Content Include="App\kobindings\roundabout.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\global.js" />
@@ -552,6 +553,9 @@
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\text.js" />
+    <Content Include="Scripts\toastr.js" />
     <Content Include="Unity.Mvc3.README.txt" />
     <Content Include="Unity.Mvc4.README.txt" />
     <Content Include="Web.config" />

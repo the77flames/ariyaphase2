@@ -1,4 +1,4 @@
-﻿define(['plugins/router', 'knockout'], function (router, ko) {
+﻿define(['knockout'], function (ko) {
 
     var busy = ko.observable(false);
     

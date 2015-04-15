@@ -1,11 +1,11 @@
-﻿define(['durandal/system', 'jquery', 'knockout', 'roundabout', 'bxslider'],
-    function (system, $, ko) {
+﻿define(['jquery', 'knockout', 'roundabout', 'bxslider'],
+    function ($, ko) {
         var vm = {
             sliders: [],
             addThisInitialized: false
         };
 
-        var addThis = function () {
+        vm.addThis = function () {
             if (vm.addThisInitialized)
                 return;
             vm.addThisInitialized = true;
@@ -44,9 +44,7 @@
                 $(element).find(target).each(function (i, item) {
                     var slider = $(item).bxSlider(options);
                     vm.sliders.push(slider);
-                });
-                addThis();
-                addthis.toolbox('.addthis_toolbox');
+                });                
             }, 500);
         };
 
@@ -55,7 +53,7 @@
                 var options = ko.utils.unwrapObservable(valueAccessor)();
                 var target = allBindingsAccessor().target;
                 if (target) {
-                    vm.loadSliders(element, target, options);
+                    vm.loadSliders(element, target, options);                    
                 }
             }
         };

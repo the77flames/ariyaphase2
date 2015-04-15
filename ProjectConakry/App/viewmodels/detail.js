@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'services/navigating', 'knockout', 'jquery', 'services/logger', 'api/recommendationApi', 'kobindings/roundabout'],
+﻿define(['services/navigating', 'knockout', 'jquery', 'services/logger', 'api/recommendationApi', 'kobindings/roundabout'],
     function (app, navigating, ko, $, logger, recommendationApi, roundabout) {
         var sections = ["", "Related Videos"];
 

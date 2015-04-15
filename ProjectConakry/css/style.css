@@ -269,6 +269,7 @@ top: 5px
 	background-size:cover;
 	height:410px;
 	border-bottom:4px solid #000;
+	overflow: hidden;
 	}
 	
 .thumbs-block{

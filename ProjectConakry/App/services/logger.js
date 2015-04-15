@@ -1,5 +1,5 @@
-﻿define(['durandal/system', 'toastr'],
-    function (system, toastr) {
+﻿define(['toastr'],
+    function (toastr) {
         var logger = {
             log: log,
             logError: logError,
@@ -21,12 +21,12 @@
         }
 
         function logIt(message, data, source, showToast, toastType) {
-            source = source ? '[' + source + '] ' : '';
-            if (data) {
-                system.log(source, message, data);
-            } else {
-                system.log(source, message);
-            }
+            // source = source ? '[' + source + '] ' : '';
+            //if (data) {
+            //    system.log(source, message, data);
+            //} else {
+            //    system.log(source, message);
+            //}
             if (showToast) {
                 if (toastType === 'error') {
                     toastr.error(message);
