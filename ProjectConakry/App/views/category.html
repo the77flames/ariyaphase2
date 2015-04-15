@@ -1,4 +1,5 @@
-﻿<!--slider-->
+﻿<div id="category-page">
+<!--slider-->
 <!--slider-->
 <div id="slider-wrap">
     <div class="thumbs-block">
@@ -49,13 +50,13 @@
 <div class="clr"></div>
 
 <!--content-->
-<section id="category-content">
+<section id="content">
 
     <!--content-inner-->
     <div id="content-inner">
 
         <!--container-->
-        <section id="container">
+        <section id="container" data-bind="bxSlider: { minSlides: 4, maxSlides: 4, controls: false, moveSlides: 4, slideWidth: 192, slideMargin: 10 }, target: '.home-listing'">
             <!--listing-wrapp-->
             <div class="listing-wrap" data-bind="foreach: sections">
                 <h1 data-bind="text: Name">TOP TEN</h1>
@@ -91,7 +92,7 @@
         </section>
 
         <!--rightsidebar-->
-        <aside>
+        <aside data-bind="bxSlider: {}, target: '.sidebar-slider'">
 
             <!--ariyatv-->
             <section id="ariyatv">
@@ -174,4 +175,4 @@
         <!--rightsidebarEND-->
     </div>
 </section>
-
+</div>
