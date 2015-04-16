@@ -34,14 +34,14 @@ namespace ProjectConakry.Data.UnitTests
         public void AddMovies()
         {
             var list = Enum.GetValues(typeof(Sections));
-
+            int k = 1;
             foreach (Sections item in list)
             {
                 for (int i = 0; i < 24; i++)
                 {
                     var movie = new Movie()
                     {
-                        Name = "Batman" + i, 
+                        Name = "Batman " + (i + k * 24), 
                         Artists = new List<Artist>(), 
                         SectionId = item,
                         ThumbNailImagePath = ((i % 12) + 1) + ".jpg"

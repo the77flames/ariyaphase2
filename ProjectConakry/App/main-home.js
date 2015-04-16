@@ -27,14 +27,11 @@
 });
 
 define(['jquery', 'knockout', 'viewmodels/category', 'bootstrap'], function ($, ko, category) {
-    var Model = function () {
-        var model = this;
-
-        $.extend(model, category);
+    var model = function () {
+        $.extend(this, category);
     };
-
     $(document).ready(function () {
-        var vm = new Model();
+        var vm = new model();
         ko.applyBindings(vm);
         vm.activate();
     });
