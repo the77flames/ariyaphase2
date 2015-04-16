@@ -39,24 +39,32 @@
             }
         };
 
+        ko.bindingHandlers.details = {
+            init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                var data = bindingContext.$data;
+                element.href = 'details?entityType=' + data.Genre + '&id=' + data.Id;
+            }
+        };
+
         vm.loadSliders = function (element, target, options) {
             setTimeout(function () {
-                $(element).find(target).each(function (i, item) {
-                    var slider = $(item).bxSlider(options);
-                    vm.sliders.push(slider);
-                });                
-            }, 500);
+                $(element).find(target).bxSlider(options);
+            }, 50);
         };
 
         ko.bindingHandlers.bxSlider = {
             init: function (element, valueAccessor, allBindingsAccessor) {
                 var options = ko.utils.unwrapObservable(valueAccessor)();
                 var target = allBindingsAccessor().target;
-                if (target) {
-                    vm.loadSliders(element, target, options);                    
-                }
+                ko.computed(function () {
+                    var count = vm.sectionCount();
+                    if (count == 4) {
+                        vm.loadSliders(element, target, options);
+                    }
+                }, vm);                
             }
         };
+        vm.sectionCount = ko.observable(0);
 
         return vm;
     });

@@ -14,7 +14,7 @@
             }
             return list.splice(1, list.length - 1);
         };
-
+       
         var groupItems = function (items, count) {
             var list = [];
             for (var i = 0; i < items.length / count; i++) {
@@ -24,12 +24,13 @@
                     list[i].List.push(o);
                 }                
             }
+            roundabout.sectionCount(roundabout.sectionCount() + 1);
             return list;
         };
 
         var activate = function () {
             return categoryApi.get(vm.categories)
-                .then(function () {
+                .done(function () {
                     return newsApi.get(vm.news, new Date()).then(
                     function () {
                         var list = groupItems(vm.news(), 5);
@@ -51,8 +52,6 @@
                 .done(function () {
                     vm.sections(makeSections(vm.categories()));
                     roundabout.addThis();
-                    // addthis.toolbox('.addthis_toolbox');
-                    // navigating.busy(false);
                 });
         };
 
@@ -66,8 +65,25 @@
             sections: ko.observableArray([]),
             newsSections: ko.observableArray([]),
             eventsSections: ko.observableArray([]),
-            loungeSections: ko.observableArray([])
+            loungeSections: ko.observableArray([]),            
         }
+
+        vm.onLoad = ko.computed(function () {
+            var list = vm.sections();
+            if (list && list.length == 4) {
+                setTimeout(function () {
+                    $('.home-listing').bxSlider({
+                        minSlides: 4,
+                        maxSlides: 4,
+                        controls: false,
+                        moveSlides: 4,
+                        slideWidth: 192,
+                        slideMargin: 10
+                    });
+                    roundabout.sectionCount(roundabout.sectionCount() + 1);
+                }, 50);
+            }
+        }, vm);
 
         return vm;
     });

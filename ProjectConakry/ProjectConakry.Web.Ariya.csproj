@@ -275,7 +275,7 @@
     <Content Include="App\api\eventsApi.js" />
     <Content Include="App\api\loungeApi.js" />
     <Content Include="App\api\newsApi.js" />
-    <Content Include="App\main-home.js" />
+    <Content Include="App\home.js" />
     <Content Include="App\kobindings\roundabout.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\global.js" />
@@ -514,7 +514,7 @@
     <Content Include="images\vieo-detail-bg-videodetails.png" />
     <Content Include="images\vieo-detail-bg.png" />
     <Content Include="images\wrapper-inner-bg.png" />
-    <Content Include="index.html" />
+    <Content Include="test.html" />
     <Content Include="js\jquery.bxslider.js" />
     <Content Include="js\jquery.bxslider.min.js" />
     <Content Include="js\jquery.gallery.js" />
