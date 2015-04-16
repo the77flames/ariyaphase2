@@ -15,8 +15,10 @@ namespace ProjectConakry.Web.Ariya.Controllers
         }
 
         [ConakryAuthorize]
-        public ActionResult Index()
+        public ActionResult Index(int entityType, string id)
         {
+            ViewBag.EntityType = entityType;
+            ViewBag.Id = id;
             return View();
         }
     }
