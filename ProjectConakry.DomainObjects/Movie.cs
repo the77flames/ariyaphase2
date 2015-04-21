@@ -10,9 +10,7 @@ namespace ProjectConakry.DomainObjects
 {
     public class Movie : Media
     {       
-        public List<Artist> Artists { get; set; }
-       
-
+        public List<Artist> Artists { get; set; }   
        
     }
 }

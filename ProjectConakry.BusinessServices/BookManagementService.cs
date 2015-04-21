@@ -34,15 +34,27 @@ namespace ProjectConakry.BusinessServices
         }
 
 
-        public Book GetById(ObjectId id)
+        public Book GetById(string id)
         {
-            throw new NotImplementedException();
+            return _bookRepository.GetById(id);
         }
 
 
         public List<Book> GetAllByDate(DateTime date)
         {
             throw new NotImplementedException();
+        }
+
+
+        public Book MostPopularItem(string fieldName)
+        {
+            return _bookRepository.GetMostPopularItemByField(fieldName);
+        }
+
+
+        public void Update(Book entity)
+        {
+            _bookRepository.Update(entity);
         }
     }
 }

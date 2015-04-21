@@ -34,14 +34,26 @@ namespace ProjectConakry.BusinessServices
         }
 
 
-        public Song GetById(ObjectId id)
+        public Song GetById(string id)
         {
-            throw new NotImplementedException();
+            return _songRepository.GetById(id);
         }
 
         public List<Song> GetAllByDate(DateTime date)
         {
             throw new NotImplementedException();
+        }
+
+
+        public Song MostPopularItem(string fieldName)
+        {
+            return _songRepository.GetMostPopularItemByField(fieldName);
+        }
+
+
+        public void Update(Song entity)
+        {
+            _songRepository.Update(entity);
         }
     }
 }

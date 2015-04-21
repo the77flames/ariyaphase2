@@ -266,6 +266,7 @@
     <Compile Include="RESTFulAPIs\NewsServiceRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\EventsServiceRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\LoungeItemServiceRESTAPIController.cs" />
+    <Compile Include="RESTFulAPIs\MovieServiceRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\RecommendationsServiceRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\CategoryManagementServiceRESTAPIController.cs" />
   </ItemGroup>
@@ -371,6 +372,7 @@
     <Content Include="css\fonts\BebasNeue-webfont.svg" />
     <Content Include="css\fonts\Dharma Type Font License.txt" />
     <Content Include="css\jquery.bxslider.css" />
+    <Content Include="css\media-player.css" />
     <Content Include="css\roundabout.css" />
     <Content Include="css\slider-style.css" />
     <Content Include="css\style.css" />

@@ -54,12 +54,35 @@ namespace ProjectConakry.Data
             var entityQuery = Query<T>.EQ(e => e.Id, new ObjectId(id));
             return this.MongoConnectionManager.MongoCollection.FindOne(entityQuery);
         }
- 
-        public abstract void Update(T entity);
+
+        public virtual void Update(T entity)
+        {
+            this.MongoConnectionManager.MongoCollection.Save<T>(entity);
+        }
 
         public List<T> GetAll()
         {
             return this.MongoConnectionManager.MongoCollection.FindAllAs<T>().ToList();
+        }
+
+        public List<T> GetAllWithPaging(int numberToSkip, int numberToReturn)
+        {
+            return this.MongoConnectionManager.MongoCollection.FindAllAs<T>().
+                            SetSkip(numberToSkip).SetLimit(numberToReturn).ToList();
+        }
+
+        public List<T> GetByPropertyValue(string propertyName, object propertyValue, int numberToSkip, int numberToReturn)
+        {
+            var query = new QueryDocument(new Dictionary<string, object> { { propertyName, propertyValue } });
+            return this.MongoConnectionManager.MongoCollection.FindAs<T>(query).SetSkip(numberToSkip).SetLimit(numberToReturn).ToList();
+        }
+
+        public virtual T GetMostPopularItemByField(string fieldName) 
+        {
+            var mostPopular = this.MongoConnectionManager.MongoCollection.FindAll().SetSortOrder(SortBy.Descending(fieldName)).SetLimit(1);
+            if (mostPopular != null && mostPopular.Count() > 0)
+                return mostPopular.FirstOrDefault();
+            else return default(T);
         }
     }
 }
