@@ -11,9 +11,11 @@ namespace ProjectConakry.BusinessServices
     public interface IAriyaAdminService<T> where T : IMongoEntity
     {
         void Add(T entity);
+        void Update(T entity);
         List<T> GetAll(Sections sectionId);
-        T GetById(ObjectId id);
-
+        T GetById(string id);
         List<T> GetAllByDate(DateTime date);
+        T MostPopularItem(string fieldName);
+       
     }
 }

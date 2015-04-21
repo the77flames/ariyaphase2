@@ -1,5 +1,4 @@
 ﻿using Microsoft.Practices.Unity;
-using MongoDB.Bson;
 using ProjectConakry.BusinessServices;
 using ProjectConakry.DomainObjects;
 using System;
@@ -26,11 +25,11 @@ namespace ProjectConakry.Web.Ariya
         {
             IMedia result = null;
             if (entityType == EntityTypes.Movies)
-                result = _movieManagementService.GetById(new ObjectId(id));
+                result = _movieManagementService.GetById(id);
             if(entityType == EntityTypes.Songs)
-                result = _songManagementService.GetById(new ObjectId(id));
+                result = _songManagementService.GetById(id);
             if (entityType == EntityTypes.Books)
-                result = _bookManagementService.GetById(new ObjectId(id));
+                result = _bookManagementService.GetById(id);
 
             return new DetailsViewModel
             {

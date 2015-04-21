@@ -15,7 +15,28 @@
 
         <!--ariyatv-->
         <section id="main-video">
-            <img src="images/artist-video.png" />
+            <div id="mep_0" class="mejs-container svg mejs-video" style="width: 393px; height: 221px;">
+                <div class="mejs-inner">
+                    <div class="mejs-mediaelement">
+                        <video width="393" height="221" id="multiCodec" poster="img/media-player/media-player-poster.jpg" preload="none" src="media/echohereweare.mp4" style="width: 100%; height: 100%;">
+                            <!-- id could be any according to you -->
+                            <!-- MP4 source must come first for iOS -->
+                            <source type="video/mp4" src="media/echohereweare.mp4">
+                            <!-- WebM for Firefox 4 and Opera -->
+                            <source type="video/webm" src="media/echohereweare.webm">
+                            <!-- OGG for Firefox 3 -->
+                            <source type="video/ogg" src="media/echohereweare.ogv">
+                            <!-- Fallback flash player for no-HTML5 browsers with JavaScript turned off -->
+                            <object width="100%" height="100%" type="application/x-shockwave-flash" data="media/flashmediaelement.swf">
+                                <param name="movie" value="media/flashmediaelement.swf">
+                                <param name="flashvars" value="controls=true&amp;poster=img/media-player/media-player-poster.jpg&amp;file=media/echohereweare.mp4">
+                                <!-- Image fall back for non-HTML5 browser with JavaScript turned off and no Flash player installed -->
+                                <img src="img/media-player/media-player-poster.jpg" width="100%" height="100%" alt="Media" title="No video playback capabilities">
+                            </object>
+                        </video>
+                    </div><div class="mejs-layers"><div class="mejs-poster mejs-layer" style="width: 100%; height: 100%; background-image: url(http://192.185.228.226/projects/sa/1-0-3/img/media-player/media-player-poster.jpg);"><img width="100%" height="100%" src="img/media-player/media-player-poster.jpg"></div><div class="mejs-overlay mejs-layer" style="display: none; width: 100%; height: 100%;"><div class="mejs-overlay-loading"><span></span></div></div><div class="mejs-overlay mejs-layer" style="display: none; width: 100%; height: 100%;"><div class="mejs-overlay-error"></div></div><div class="mejs-overlay mejs-layer mejs-overlay-play" style="width: 100%; height: 191px;"><div class="mejs-overlay-button" style="margin-top: -35px;"></div></div></div><div class="mejs-controls" style="display: block; visibility: hidden;"><div class="mejs-button mejs-playpause-button mejs-play"><button type="button" aria-controls="mep_0" title="Play/Pause" aria-label="Play/Pause"></button></div><div class="mejs-time mejs-currenttime-container"><span class="mejs-currenttime">00:00</span></div><div class="mejs-time-rail" style="width: 244px;"><span class="mejs-time-total" style="width: 234px;"><span class="mejs-time-buffering" style="display: none;"></span><span class="mejs-time-loaded"></span><span class="mejs-time-current"></span><span class="mejs-time-handle"></span><span class="mejs-time-float" style="display: none;"><span class="mejs-time-float-current">00:00</span><span class="mejs-time-float-corner"></span></span></span></div><div class="mejs-time mejs-duration-container"><span class="mejs-duration">00:00</span></div><div class="mejs-button mejs-volume-button mejs-mute"><button type="button" aria-controls="mep_0" title="Mute Toggle" aria-label="Mute Toggle"></button><div class="mejs-volume-slider" style="display: none;"><div class="mejs-volume-total"></div><div class="mejs-volume-current" style="height: 80px; top: 28px;"></div><div class="mejs-volume-handle" style="top: 25px;"></div></div></div><div class="mejs-button mejs-fullscreen-button"><button type="button" aria-controls="mep_0" title="Fullscreen" aria-label="Fullscreen"></button></div></div><div class="mejs-clear"></div>
+                </div>
+            </div>
             <div class="video-detail">
                 <h2>Only Me <span>1,344,560</span></h2>
                 <div class="vtitle">2Face Idibia</div>

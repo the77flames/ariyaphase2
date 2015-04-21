@@ -37,12 +37,20 @@ namespace ProjectConakry.BusinessServices
             var result = _newsRepository.GetAllByDate(date) ?? Enumerable.Empty<News>();
             return result.OrderByDescending(n => n.CreatedDate).ToList();
         }
-
-
-
-        public News GetById(ObjectId id)
+        
+        public void Update(News entity)
         {
-            throw new NotImplementedException();
+            _newsRepository.Update(entity);
+        }
+
+        public News GetById(string id)
+        {
+           return _newsRepository.GetById(id);
+        }
+
+        public News MostPopularItem(string fieldName)
+        {
+            return _newsRepository.GetMostPopularItemByField(fieldName);
         }
     }
 }

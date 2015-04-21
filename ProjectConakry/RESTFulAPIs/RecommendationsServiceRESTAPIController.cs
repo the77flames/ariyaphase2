@@ -16,16 +16,16 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
        }
 
         [ConakryAuthorize]
-        public IEnumerable<Media> Get(int section, int count = 20)
+        public IEnumerable<Media> Get(int entityType, string userId)
         {
-            return null;
+            return _recommendationsService.GetMovieRecommendationsForUser(userId);
         }
 
 
         [ConakryAuthorize]
-        public IEnumerable<Media> GetByGenres(Genres genre, int count)
+        public IEnumerable<Media> GetByGenres(int entityType, int genre, int count)
         {
-            return null;
+           return  _recommendationsService.GetMovieRecommendationsByGenre((Genres)genre, count);
         }
     }
 }

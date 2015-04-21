@@ -32,14 +32,26 @@ namespace ProjectConakry.BusinessServices
         {
             throw new Exception("Operation Not Supported !");
         }
-
-        public LoungeItem GetById(ObjectId id)
-        {
-            throw new NotImplementedException();
-        }
+              
         public List<LoungeItem> GetAllByDate(DateTime date)
         {
             return _loungeItemRepository.GetAllByDate(date);
+        }
+
+
+        public void Update(LoungeItem entity)
+        {
+            _loungeItemRepository.Update(entity);
+        }
+
+        public LoungeItem GetById(string id)
+        {
+            return _loungeItemRepository.GetById(id);
+        }
+
+        public LoungeItem MostPopularItem(string fieldName)
+        {
+            return _loungeItemRepository.GetMostPopularItemByField(fieldName);
         }
     }
 }

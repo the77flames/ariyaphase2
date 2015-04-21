@@ -41,9 +41,20 @@ namespace ProjectConakry.BusinessServices
             return result.OrderByDescending(n => n.EventDate).ToList();
         }
 
-        public Events GetById(ObjectId id)
+
+        public void Update(Events entity)
         {
-            throw new NotImplementedException();
+            _eventRepository.Update(entity);
+        }
+
+        public Events GetById(string id)
+        {
+            return _eventRepository.GetById(id);
+        }
+
+        public Events MostPopularItem(string fieldName)
+        {
+           return _eventRepository.GetMostPopularItemByField(fieldName);
         }
     }
 }

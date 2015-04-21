@@ -17,7 +17,9 @@ namespace ProjectConakry.DomainObjects
         public Sections SectionId { get; set; }
         public string StreamingUrl { get; set; }
         public string CoverArtistDisplayName { get; set; }
-
+        public int NumberOfViews { get; set; }
+        public int AverageRating { get; set; }
+        public int TotalVoters { get; set; }
         public Genres Genre { get; set; }
     }
 }

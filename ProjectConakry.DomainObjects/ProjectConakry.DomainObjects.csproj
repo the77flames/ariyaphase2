@@ -67,6 +67,7 @@
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Song.cs" />
+    <Compile Include="Vectors\MovieVector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
