@@ -1,5 +1,5 @@
-﻿define(['services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'kobindings/roundabout'],
-    function (navigating, ko, $, logger, recommendationApi, roundabout) {
+﻿define(['services/navigating', 'knockout', 'jquery', 'api/categoryApi', 'kobindings/roundabout'],
+    function (navigating, ko, $, recommendationApi, roundabout) {
         var sections = ["", "Related Videos"];
 
         var makeSections = function (recommendations) {

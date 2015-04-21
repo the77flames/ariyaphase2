@@ -19,11 +19,11 @@
         
         var jsonMessage = function (error) {
             var message = "Unknown";
-
-            if (error.responseJSON.ExceptionMessage) {
-                message = error.responseJSON.ExceptionMessage;
-            } else if (error.responseJSON.MessageDetail) {
-                message = error.responseJSON.MessageDetail;
+            var response = JSON.parse(error.responseText);
+            if (response.Message) {
+                message = response.Message;
+            } else if (response.MessageDetail) {
+                message = response.MessageDetail;
             }
 
             return message;

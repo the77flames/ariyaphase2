@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
 }
 
 
@@ -10,7 +10,7 @@
         <div class="addcallertunez"><!-- <img src="images/addcallertunez.png" /> --> </div>
         <div class="clr"></div>
         <div id="carousel-wrap">
-            <ul id="carousel" class="top_slider roundabout-holder">
+            <ul id="carousel" class="top_slider roundabout-holder" data-bind="roundabout: ''">
                 <li> <img src="images/slide1.png" alt="image01"> </li>
                 <li> <img src="images/slide2.png" alt="image02"> </li>
                 <li> <img src="images/slide3.png" alt="image03"> </li>
@@ -33,389 +33,35 @@
 
 <!--content-->
 <section id="content">
-    <div class="listing-wrap listing-wrap-after-login">
-        <h1>TOP PICKS FOR YOU !</h1>
+    <!--listing-wrapp-->
+    <div class="listing-wrap listing-wrap-after-login" data-bind="foreach: sections">
+        <h1 data-bind="text: Name">Related Videos</h1>
         <!--topten-->
-        <ul class="home-listing2">
+        <ul class="home-listing" data-bind="foreach: List">
             <li class="toplisting">
                 <div class="toplisting-inner">
-                    <img src="images/grass-grace.gif" />
+                    <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
                     <div class="artist-detials">
-                        <h2>Grass to Grace</h2>
-                        <h4>Artist: 2face Idibia</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="detail.html "><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--toptenEND-->
-            <!--topten-tab2-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/mandela.gif" />
-                    <div class="artist-detials">
-                        <h2>Mandela</h2>
-                        <h4>Director: Idris Elba</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab2END-->
-            <!--topten-tab3-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/longwalk.gif" />
-                    <div class="artist-detials">
-                        <h2>
-                            Long Walk to Freedom<br />
-                        </h2>
-                        <h4>Author: Nelson Mandela</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab3END-->
-            <!--topten-tab4-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab5-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab6-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/grass-grace.gif" />
-                    <div class="artist-detials">
-                        <h2>Grass to Grace</h2>
+                        <h2 data-bind="text: Name"></h2>
                         <h4>Artist: 2face Idibia</h4>
                     </div>
                 </div>
                 <div class="social-buttons">
                     <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
+                        <li>
+                            <div class="addthis_toolbox addthis_20x20_style addthis-smartlayers at-share-tbx-element" data-url="domain.com" data-title="title">
+                                <a class="addthis_button_facebook" style="cursor: pointer"></a>
+                                <a class="addthis_button_twitter" style="cursor: pointer"></a>
+                                <a class="addthis_button_google_plusone_share" style="cursor: pointer"></a>
+                            </div>
+                        </li>
+                        <li><a href="#detail/1">
+                                <img src="images/addtocart-btn.png" /></a></li>
                     </ul>
                 </div>
-
-            </li>
-            <!--toptenEND-->
-            <!--topten-tab2-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/mandela.gif" />
-                    <div class="artist-detials">
-                        <h2>Mandela</h2>
-                        <h4>Director: Idris Elba</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab2END-->
-            <!--topten-tab3-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/longwalk.gif" />
-                    <div class="artist-detials">
-                        <h2>
-                            Long Walk to Freedom<br />
-                        </h2>
-                        <h4>Author: Nelson Mandela</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab3END-->
-            <!--topten-tab4-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/grass-grace.gif" />
-                    <div class="artist-detials">
-                        <h2>Grass to Grace</h2>
-                        <h4>Artist: 2face Idibia</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--toptenEND-->
-            <!--topten-tab2-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/mandela.gif" />
-                    <div class="artist-detials">
-                        <h2>Mandela</h2>
-                        <h4>Director: Idris Elba</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab2END-->
-            <!--topten-tab3-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/longwalk.gif" />
-                    <div class="artist-detials">
-                        <h2>
-                            Long Walk to Freedom<br />
-                        </h2>
-                        <h4>Author: Nelson Mandela</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab3END-->
-            <!--topten-tab4-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/grass-grace.gif" />
-                    <div class="artist-detials">
-                        <h2>Grass to Grace</h2>
-                        <h4>Artist: 2face Idibia</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--toptenEND-->
-            <!--topten-tab2-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/mandela.gif" />
-                    <div class="artist-detials">
-                        <h2>Mandela</h2>
-                        <h4>Director: Idris Elba</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab2END-->
-            <!--topten-tab3-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/longwalk.gif" />
-                    <div class="artist-detials">
-                        <h2>
-                            Long Walk to Freedom<br />
-                        </h2>
-                        <h4>Author: Nelson Mandela</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <!--topten-tab3END-->
-            <!--topten-tab4-->
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
-            </li>
-            <li class="toplisting">
-                <div class="toplisting-inner">
-                    <img src="images/asa.gif" />
-                    <div class="artist-detials">
-                        <h2>Beautiful Imperfection</h2>
-                        <h4>Artist: Asa</h4>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <ul>
-                        <li><div class="addthis_sharing_toolbox" data-url="THE URL" data-title="THE TITLE"></div></li>
-                        <li><a href="#"><img src="images/addtocart-btn.png" /></a></li>
-
-                    </ul>
-                </div>
-
             </li>
         </ul>
-        <!--topten-tab4END-->
     </div>
+    <!--listing-wrappEND-->
 </section>
+<script type="text/javascript" src="~/Scripts/require.js" data-main="/App/account"></script>
