@@ -145,6 +145,37 @@
         </div>
         <!--listing-wrappEND-->
 
+        <!--listing-wrapp-->
+        <div class="listing-wrap listing-wrap-after-login" data-bind="foreach: sections">
+            <h1 data-bind="text: Name">Related Videos</h1>
+            <!--topten-->
+            <ul class="home-listing" data-bind="foreach: List">
+                <li class="toplisting">
+                    <div class="toplisting-inner">
+                        <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
+                        <div class="artist-detials">
+                            <h2 data-bind="text: Name"></h2>
+                            <h4>Artist: 2face Idibia</h4>
+                        </div>
+                    </div>
+                    <div class="social-buttons">
+                        <ul>
+                            <li>
+                                <div class="addthis_toolbox addthis_20x20_style addthis-smartlayers at-share-tbx-element" data-url="domain.com" data-title="title">
+                                    <a class="addthis_button_facebook" style="cursor: pointer"></a>
+                                    <a class="addthis_button_twitter" style="cursor: pointer"></a>
+                                    <a class="addthis_button_google_plusone_share" style="cursor: pointer"></a>
+                                </div>
+                            </li>
+                            <li><a href="#detail/1">
+                                <img src="images/addtocart-btn.png" /></a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--listing-wrappEND-->
+
         <div class="clr"></div>
 
     </section>
@@ -158,4 +189,5 @@
 </section>
 <!--contentEND-->
 <div class="clr"></div>
+<script type="text/javascript" src="~/Scripts/require.js" data-main="/App/detail"></script>
 

@@ -1,5 +1,5 @@
-﻿define(['services/navigating', 'knockout', 'jquery', 'services/logger', 'api/recommendationApi', 'kobindings/roundabout'],
-    function (app, navigating, ko, $, logger, recommendationApi, roundabout) {
+﻿define(['services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'kobindings/roundabout'],
+    function (navigating, ko, $, logger, recommendationApi, roundabout) {
         var sections = ["", "Related Videos"];
 
         var makeSections = function (recommendations) {
@@ -10,29 +10,15 @@
             for (var j = 0; j < sections.length; j++) {
                 list.push({ Name: sections[j], List: [] });
             }
+            recommendations = $(recommendations).filter(function (index, item) {
+                return item.SectionId == 1;
+            });
             for (var i = 0; i < recommendations.length; i++) {
                 var o = recommendations[i];
                 list[o.SectionId].List.push(o);
             }
-            return list.splice(1, list.length - 1);
+            return list;
         };
-
-        //var loadSliders = function () {
-        //    setTimeout(function () {
-        //        $('#detail-content .home-listing').each(function (i, item) {
-        //            slider = $(item).bxSlider({
-        //                minSlides: 4,
-        //                maxSlides: 4,
-        //                controls: false,
-        //                moveSlides: 4,
-        //                slideWidth: 192,
-        //                slideMargin: 10
-        //            });
-        //            sliders.push(slider);
-        //        });
-        //        addthis.toolbox('.addthis_toolbox');
-        //    }, 100);
-        //};
 
         var attached = function () {
             setTimeout(function () {
