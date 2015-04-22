@@ -512,6 +512,37 @@
     <Content Include="images\vieo-detail-bg-videodetails.png" />
     <Content Include="images\vieo-detail-bg.png" />
     <Content Include="images\wrapper-inner-bg.png" />
+    <Content Include="img\media-player\background.png" />
+    <Content Include="img\media-player\bigplay.fw.png" />
+    <Content Include="img\media-player\bigplay.png" />
+    <Content Include="img\media-player\bigplay.svg" />
+    <Content Include="img\media-player\controls-ted.png" />
+    <Content Include="img\media-player\controls-wmp-bg.png" />
+    <Content Include="img\media-player\controls-wmp.png" />
+    <Content Include="img\media-player\controls.fw.png" />
+    <Content Include="img\media-player\controls.png" />
+    <Content Include="img\media-player\controls.svg" />
+    <Content Include="img\media-player\DO NOT CHANGE THESE FILES. USE -src- FOLDER.txt" />
+    <Content Include="img\media-player\echo-hereweare.jpg" />
+    <Content Include="img\media-player\flashmediaelement-cdn.swf" />
+    <Content Include="img\media-player\flashmediaelement.swf" />
+    <Content Include="img\media-player\jquery.js" />
+    <Content Include="img\media-player\loading.gif" />
+    <Content Include="img\media-player\media-player-poster.jpg" />
+    <Content Include="img\media-player\mediaelement-and-player.js" />
+    <Content Include="img\media-player\mediaelement-and-player.min.js" />
+    <Content Include="img\media-player\mediaelement.js" />
+    <Content Include="img\media-player\mediaelement.min.js" />
+    <Content Include="img\media-player\mediaelement.srt" />
+    <Content Include="img\media-player\mediaelementplayer.css" />
+    <Content Include="img\media-player\mediaelementplayer.js" />
+    <Content Include="img\media-player\mediaelementplayer.min.css" />
+    <Content Include="img\media-player\mediaelementplayer.min.js" />
+    <Content Include="img\media-player\mejs-skins.css" />
+    <Content Include="img\media-player\silverlightmediaelement.xap" />
+    <Content Include="img\media-player\skipback.png" />
+    <Content Include="js\media-player.min.js" />
+    <Content Include="player.html" />
     <Content Include="test.html" />
     <Content Include="js\jquery.bxslider.js" />
     <Content Include="js\jquery.bxslider.min.js" />
@@ -582,6 +613,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
+    <Folder Include="media\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
