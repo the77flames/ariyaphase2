@@ -85,5 +85,7 @@
             }
         }, vm);
 
+        roundabout.bind(vm);
+
         return vm;
     });

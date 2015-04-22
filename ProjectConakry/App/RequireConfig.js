@@ -26,13 +26,3 @@
     }
 });
 
-define(['jquery', 'knockout', 'viewmodels/category', 'bootstrap'], function ($, ko, category) {
-    var model = function () {
-        $.extend(this, category);
-    };
-    $(document).ready(function () {
-        var vm = new model();
-        ko.applyBindings(vm);
-        vm.activate();
-    });
-});

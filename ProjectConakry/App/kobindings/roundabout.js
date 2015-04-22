@@ -64,7 +64,20 @@
                 }, vm);                
             }
         };
+
         vm.sectionCount = ko.observable(0);
 
+        vm.bind = function (viewModel) {
+            var Model = function () {
+                return viewModel;
+            };
+            var model = new Model();
+            $(document).ready(function () {
+                ko.applyBindings(model);
+                viewModel.activate();
+            });
+            return model;
+        }
+        
         return vm;
     });

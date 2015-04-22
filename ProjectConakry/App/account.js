@@ -1,38 +1,44 @@
-﻿requirejs.config({
-    paths: {
-        'text': '../Scripts/text',
-        'durandal': '../Scripts/durandal',
-        'plugins': '../Scripts/durandal/plugins',
-        'transitions': '../Scripts/durandal/transitions',
-        'knockout': '../Scripts/knockout-3.1.0.debug',
-        'bootstrap': '../Scripts/bootstrap',
-        'jquery': '../Scripts/jquery-1.8.2',
-        'toastr': '../Scripts/toastr',
-        'moment': '../Scripts/moment',
-        'roundabout': '../js/jquery.roundabout.min',
-        'bxslider': '../js/jquery.bxslider.min'
-    },
-    shim: {
-        'bootstrap': {
-            deps: ['jquery'],
-            exports: 'jQuery'
-        },
-        'roundabout': {
-            deps: ['jquery']
-        },
-        'bxslider': {
-            deps: ['jquery']
-        }
-    }
-});
+﻿define(['services/navigating', 'knockout', 'jquery', 'api/categoryApi', 'kobindings/roundabout'],
+    function (navigating, ko, $, recommendationApi, roundabout) {
+        var sections = ["", "Related Videos"];
 
-define(['jquery', 'knockout', 'viewmodels/account', 'bootstrap'], function ($, ko, account) {
-    var model = function () {
-        $.extend(this, account);
-    };
-    $(document).ready(function () {
-        var vm = new model();
-        ko.applyBindings(vm);
-        vm.activate();
+        var makeSections = function (recommendations) {
+            if (!recommendations) {
+                recommendations = [];
+            }
+            var list = [];
+            for (var j = 0; j < sections.length; j++) {
+                list.push({ Name: sections[j], List: [] });
+            }
+            recommendations = $(recommendations).filter(function (index, item) {
+                return item.SectionId == 1;
+            });
+            for (var i = 0; i < recommendations.length; i++) {
+                var o = recommendations[i];
+                list[o.SectionId].List.push(o);
+            }
+            return list.splice(1, list.length - 1);
+        };
+
+        var activate = function () {
+            if ($(".home-listing").length > 0) {
+                addthis.toolbox('.addthis_toolbox');
+                return null;
+            }
+            return recommendationApi.get(vm.recommendations)                
+                 .done(function () {
+                     vm.sections(makeSections(vm.recommendations()));
+                     roundabout.addThis();
+                 });
+        }
+
+        var vm = {
+            recommendations: ko.observableArray([]),
+            activate: activate,
+            sections: ko.observableArray([])
+        }
+
+        roundabout.bind(vm);
+
+        return vm;
     });
-});
