@@ -577,6 +577,7 @@
     <Content Include="Views\Durandal\_splash.cshtml" />
     <Content Include="Views\Shared\_LayoutNoJs.cshtml" />
     <Content Include="Views\Details\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutNoJsLoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

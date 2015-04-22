@@ -31,6 +31,7 @@ namespace ProjectConakry.Data.UnitTests
             movielist = new List<Movie>();
         }
 
+        [TestMethod]
         public void AddMovies()
         {
             var list = Enum.GetValues(typeof(Sections));
