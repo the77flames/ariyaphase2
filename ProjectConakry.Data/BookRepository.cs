@@ -14,7 +14,7 @@ namespace ProjectConakry.Data
 
         public List<Book> GetAll(Sections sectionId)
         {
-            var query = Query<Book>.EQ(e => e.SectionId, sectionId);
+            var query = Query<Book>.EQ(e => (int)e.SectionId, (int)sectionId);
             var cursor = this.MongoConnectionManager.MongoCollection.FindAs<Book>(query);
 
             if (!cursor.Any())

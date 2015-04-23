@@ -1,7 +1,7 @@
 ﻿define(['services/navigating', 'knockout', 'jquery', 'services/logger', 'api/categoryApi', 'api/newsApi', 'api/loungeApi', 'api/eventsApi', 'kobindings/roundabout'],
     function (navigating, ko, $, logger, categoryApi, newsApi, loungeApi, eventsApi, roundabout) {
 
-        var sections = ["", "Top 10", "Featured", "New", "Trending"];
+        var sections = ["", "Top10", "Featured", "New", "Trending"];
 
         var makeSections = function (categories) {
             var list = [];
@@ -19,6 +19,9 @@
        
         var groupItems = function (items, count) {
             var list = [];
+            debugger;
+            if (items == null)
+                return list;
             for (var i = 0; i < items.length / count; i++) {
                 list.push({List:[]});
                 for (var j = 0; j < count; j++) {

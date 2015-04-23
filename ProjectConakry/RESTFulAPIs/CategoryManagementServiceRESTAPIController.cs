@@ -19,7 +19,7 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
         [ConakryAuthorize]
         public IEnumerable<Media> Get(int? section, int count = 20)
         {            
-            if(section != null)
+            if(section != null && section.GetValueOrDefault() > 0)
              return _categoryManagementService.GetData((Sections)section, count);
 
             var results = Enumerable.Empty<Media>();

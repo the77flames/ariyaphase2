@@ -14,10 +14,7 @@ namespace ProjectConakry.Data
 
         public List<Movie> GetAll(Sections sectionId)
         {
-            if (sectionId == Sections.UnClassified)
-            {
-                return this.MongoConnectionManager.MongoCollection.FindAll().ToList();
-            }
+           
             var query = Query<Movie>.EQ(e => e.SectionId, sectionId);
             var moviesCursor = this.MongoConnectionManager.MongoCollection.FindAs<Movie>(query);
 
