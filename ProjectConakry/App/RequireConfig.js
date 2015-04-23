@@ -10,7 +10,8 @@
         'toastr': '../Scripts/toastr',
         'moment': '../Scripts/moment',
         'roundabout': '../js/jquery.roundabout.min',
-        'bxslider': '../js/jquery.bxslider.min'
+        'bxslider': '../js/jquery.bxslider.min',
+        'mediaplayer': '../js/media-player.min'
     },
     shim: {
         'bootstrap': {
@@ -21,6 +22,9 @@
             deps: ['jquery']
         },
         'bxslider': {
+            deps: ['jquery']
+        },
+        'mediaplayer': {
             deps: ['jquery']
         }
     }

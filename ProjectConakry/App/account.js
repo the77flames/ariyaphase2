@@ -21,10 +21,6 @@
         };
 
         var activate = function () {
-            if ($(".home-listing").length > 0) {
-                addthis.toolbox('.addthis_toolbox');
-                return null;
-            }
             return recommendationApi.get(vm.recommendations)                
                  .done(function () {
                      vm.sections(makeSections(vm.recommendations()));

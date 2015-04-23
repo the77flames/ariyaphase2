@@ -1,4 +1,4 @@
-﻿define(['jquery', 'knockout', 'roundabout', 'bxslider'],
+﻿define(['jquery', 'knockout', 'roundabout', 'bxslider', 'mediaplayer'],
     function ($, ko) {
         var vm = {
             sliders: [],
@@ -65,6 +65,16 @@
             }
         };
 
+        var initPlayer = function () {
+            if ($('audio, video').length > 0) {
+                $('audio,video').mediaelementplayer({
+                    success: function (player, node) {
+                        $('#' + node.id + '-mode').html('mode: ' + player.pluginType);
+                    }
+                });
+            }
+        };
+
         vm.sectionCount = ko.observable(0);
 
         vm.bind = function (viewModel) {
@@ -75,6 +85,7 @@
             $(document).ready(function () {
                 ko.applyBindings(model);
                 viewModel.activate();
+                initPlayer();
             });
             return model;
         }
