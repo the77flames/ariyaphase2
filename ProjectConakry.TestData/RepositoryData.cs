@@ -1,17 +1,13 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProjectConakry.Data;
 using ProjectConakry.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjectConakry.Data.UnitTests
+namespace ProjectConakry.TestData
 {
-    [TestClass]
     public class RepositoryData
     {
         private MovieRepository _movieRepository;
@@ -23,22 +19,21 @@ namespace ProjectConakry.Data.UnitTests
 
         public RepositoryData()
         {
-            _movieRepository = new MovieRepository();
-            _newsRepository = new NewsRepository();
-            _eventRepository = new EventRepository();
-            _loungeRepository= new LoungeItemRepository();
+            this._movieRepository = new MovieRepository();
+            this._newsRepository = new NewsRepository();
+            this._eventRepository = new EventRepository();
+            this._loungeRepository= new LoungeItemRepository();
 
-            movielist = new List<Movie>();
+            this.movielist = new List<Movie>();
         }
 
-        [TestMethod]
         public void AddMovies()
         {
             var list = Enum.GetValues(typeof(Sections));
             int k = 1;
             foreach (Sections item in list)
             {
-                for (int i = 0; i < 24; i++)
+                for (int i = 0; i < 25; i++)
                 {
                     var movie = new Movie()
                     {
@@ -47,17 +42,17 @@ namespace ProjectConakry.Data.UnitTests
                         SectionId = item,
                         ThumbNailImagePath = ((i % 12) + 1) + ".jpg"
                     };
-                    _movieRepository.Create(movie);
+                    this._movieRepository.Create(movie);
                 }
             }
         }
 
         public void DeleteMovies()
         {
-            var movies = _movieRepository.GetAll();
+            var movies = this._movieRepository.GetAll();
             foreach (var movie in movies)
             {
-                _movieRepository.Delete(movie.Id.ToString());
+                this._movieRepository.Delete(movie.Id.ToString());
             }            
         }
 
@@ -99,7 +94,7 @@ namespace ProjectConakry.Data.UnitTests
 
         public void AddNews()
         {
-            var lines = ReadFile("news.html");
+            var lines = this.ReadFile("news.html");
             for (int i = 0; i < lines.Length; i++)
             {
                 var news = new News()
@@ -110,22 +105,22 @@ namespace ProjectConakry.Data.UnitTests
                     ImagePath = ((i % 12) + 1) + ".jpg",
                     Text = lines[i]
                 };
-                _newsRepository.Create(news);
+                this._newsRepository.Create(news);
             }
         }
 
         public void DeleteNews()
         {
-            var list = _newsRepository.GetAll();
+            var list = this._newsRepository.GetAll();
             foreach (var news in list)
             {
-                _newsRepository.Delete(news.Id.ToString());
+                this._newsRepository.Delete(news.Id.ToString());
             }
         }
 
         public void AddLounge()
         {
-            var lines = ReadFile("lounge.html");
+            var lines = this.ReadFile("lounge.html");
             for (int i = 0; i < lines.Length; i++)
             {
                 var lounge = new LoungeItem()
@@ -136,16 +131,16 @@ namespace ProjectConakry.Data.UnitTests
                     ImagePath = ((i % 12) + 1) + ".jpg",
                     Text = lines[i]
                 };
-                _loungeRepository.Create(lounge);
+                this._loungeRepository.Create(lounge);
             }
         }
 
         public void DeleteLounge()
         {
-            var list = _loungeRepository.GetAll();
+            var list = this._loungeRepository.GetAll();
             foreach (var news in list)
             {
-                _loungeRepository.Delete(news.Id.ToString());
+                this._loungeRepository.Delete(news.Id.ToString());
             }
         }
 
@@ -162,16 +157,16 @@ namespace ProjectConakry.Data.UnitTests
                     ImageThumbNailPath = ((i % 12) + 1) + ".jpg",
                     TicketPrice = 10.ToString("c")
                 };
-                _eventRepository.Create(@event);
+                this._eventRepository.Create(@event);
             }
         }
 
         public void DeleteEvent()
         {
-            var list = _eventRepository.GetAll();
+            var list = this._eventRepository.GetAll();
             foreach (var item in list)
             {
-                _eventRepository.Delete(item.Id.ToString());
+                this._eventRepository.Delete(item.Id.ToString());
             }
         }
     }

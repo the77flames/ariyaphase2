@@ -10,7 +10,9 @@
             }
             for (var i = 0; i < categories.length; i++) {
                 var o = categories[i];
-                list[o.SectionId].List.push(o);
+                if (list[o.SectionId]) {
+                    list[o.SectionId].List.push(o);
+                }
             }
             return list.splice(1, list.length - 1);
         };

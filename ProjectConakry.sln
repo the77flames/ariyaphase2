@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConakry.BusinessServices", "ProjectConakry.BusinessServices\ProjectConakry.BusinessServices.csproj", "{F31E960D-9F12-4683-A8F7-57C9A1B608A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConakry.Data", "ProjectConakry.Data\ProjectConakry.Data.csproj", "{18C40956-706D-497A-AFA9-2428097C9B62}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConakry.Web.Ariya", "ProjectConakry\ProjectConakry.Web.Ariya.csproj", "{C7D8413D-E659-4CD5-B13E-9AF75941C3C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConakry.Web.Ariya.Admin", "ProjectConakry.Web.Ariya.Admin\ProjectConakry.Web.Ariya.Admin.csproj", "{C64FD897-6570-4A73-A485-8B10487A2535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectConakry.TestData", "ProjectConakry.TestData\ProjectConakry.TestData.csproj", "{3A952646-BB10-4F6D-9E8D-94B808CF5CD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +45,10 @@ Global
 		{C64FD897-6570-4A73-A485-8B10487A2535}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C64FD897-6570-4A73-A485-8B10487A2535}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C64FD897-6570-4A73-A485-8B10487A2535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A952646-BB10-4F6D-9E8D-94B808CF5CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A952646-BB10-4F6D-9E8D-94B808CF5CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A952646-BB10-4F6D-9E8D-94B808CF5CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A952646-BB10-4F6D-9E8D-94B808CF5CD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -58,7 +58,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="RepositoryData.cs" />
     <Compile Include="CustomerRepositoryUnitTest.cs" />
     <Compile Include="MovieRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,10 +75,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Files\news.html" />
-    <Content Include="Files\lounge.html" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
