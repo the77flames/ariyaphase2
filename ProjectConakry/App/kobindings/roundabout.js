@@ -1,6 +1,7 @@
 ﻿define(['jquery', 'knockout', 'roundabout', 'bxslider', 'mediaplayer'],
     function ($, ko) {
         var vm = {
+            isReady: ko.observable(false),
             sliders: [],
             addThisInitialized: false
         };
@@ -58,7 +59,7 @@
                 var target = allBindingsAccessor().target;
                 ko.computed(function () {
                     var count = vm.sectionCount();
-                    if (count == 4) {
+                    if (vm.isReady() && count >= 4) {
                         vm.loadSliders(element, target, options);
                     }
                 }, vm);                
@@ -86,6 +87,7 @@
                 ko.applyBindings(model);
                 viewModel.activate();
                 initPlayer();
+                vm.isReady(true);
             });
             return model;
         }

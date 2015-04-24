@@ -1570,7 +1570,9 @@ body.profile .blog-content .btns span.read-more{
 
 }
 
-
+.social-buttons a {
+	display: inline-block;
+}
 
 
 

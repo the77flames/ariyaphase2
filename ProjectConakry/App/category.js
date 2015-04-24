@@ -75,7 +75,7 @@
 
         vm.onLoad = ko.computed(function () {
             var list = vm.sections();
-            if (list && list.length == 4) {
+            if (roundabout.isReady() && list && list.length == 4) {
                 setTimeout(function () {
                     $('.home-listing').bxSlider({
                         minSlides: 4,
