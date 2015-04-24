@@ -48,20 +48,19 @@
 
         vm.loadSliders = function (element, target, options) {
             setTimeout(function () {
-                $(element).find(target).bxSlider(options);
-            }, 50);
+                if (target)
+                    $(element).find(target).bxSlider(options);
+                else {
+                    $(element).bxSlider(options);
+                }
+            }, 500);
         };
 
         ko.bindingHandlers.bxSlider = {
-            init: function (element, valueAccessor, allBindingsAccessor) {
+            init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
                 var options = ko.utils.unwrapObservable(valueAccessor)();
                 var target = allBindingsAccessor().target;
-                ko.computed(function () {
-                    var count = vm.sectionCount();
-                    if (count == 4) {
-                        vm.loadSliders(element, target, options);
-                    }
-                }, vm);                
+                vm.loadSliders(element, target, options);               
             }
         };
 
