@@ -19,7 +19,7 @@
        
         var groupItems = function (items, count) {
             var list = [];
-            // debugger;
+            debugger;
             if (items == null)
                 return list;
             for (var i = 0; i < items.length / count; i++) {
@@ -29,6 +29,7 @@
                     list[i].List.push(o);
                 }                
             }
+            roundabout.sectionCount(roundabout.sectionCount() + 1);
             return list;
         };
 
@@ -39,20 +40,17 @@
                     function () {
                         var list = groupItems(vm.news(), 5);
                         vm.newsSections(list);
-                        //roundabout.sectionCount(roundabout.sectionCount() + 1);
                     }).then(function () {
                         return eventsApi.get(vm.events, new Date()).then(
                         function () {
                             var list = groupItems(vm.events(), 4);
                             vm.eventsSections(list);
-                            //roundabout.sectionCount(roundabout.sectionCount() + 1);
                         });
                     }).then(function () {
                         return loungeApi.get(vm.loungeItems, new Date()).then(
                         function () {
                             var list = groupItems(vm.loungeItems(), 4);
                             vm.loungeSections(list);
-                            //roundabout.sectionCount(roundabout.sectionCount() + 1);
                         });
                     });
                 })
@@ -88,7 +86,7 @@
                         slideMargin: 10
                     });
                     roundabout.sectionCount(roundabout.sectionCount() + 1);
-                }, 50);
+                }, 100);
             }
         }, vm);
 
