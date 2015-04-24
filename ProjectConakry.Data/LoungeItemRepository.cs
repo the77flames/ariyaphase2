@@ -22,11 +22,7 @@ namespace ProjectConakry.Data
 
             return cursor.ToList();
         }
-
-        public override void Update(LoungeItem entity)
-        {
-            throw new NotImplementedException();
-        }
+               
 
         public List<LoungeItem> GetAll(Sections sectionId)
         {

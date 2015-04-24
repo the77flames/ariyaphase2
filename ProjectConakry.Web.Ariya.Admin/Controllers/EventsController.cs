@@ -30,5 +30,19 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(string id)
+        {
+            var eventItem = _eventsService.GetById(id);
+            eventItem.IdString = id.ToString();
+            return View("EditEvent", eventItem);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Events eventItem)
+        {
+            _eventsService.Update(eventItem);
+            return RedirectToAction("Index");
+        }
+
     }
 }

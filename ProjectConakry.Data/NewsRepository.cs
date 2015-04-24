@@ -23,11 +23,7 @@ namespace ProjectConakry.Data
             return cursor.ToList();
         }
 
-        public override void Update(News entity)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public List<News> GetAll(Sections sectionId)
         {
             throw new NotImplementedException();

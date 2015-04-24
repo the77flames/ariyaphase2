@@ -40,6 +40,7 @@ namespace ProjectConakry.BusinessServices
         
         public void Update(News entity)
         {
+            entity.Id = String.IsNullOrEmpty(entity.IdString) ? entity.Id : new ObjectId(entity.IdString);
             _newsRepository.Update(entity);
         }
 

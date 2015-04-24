@@ -39,11 +39,11 @@ else
     {
                     <div class="media p-l-5">
                         <div class="pull-left">
-                            <img width="40" alt="" src='@newsItem.Caption'>
+                            <a href="/News/Edit/@newsItem.Id.ToString()"><img width="40" alt="" src='@newsItem.Caption'></a>
                         </div>
                         <div class="media-body">
-                            <small class="text-muted">@newsItem.ExpireDate</small><br>
-                            <span class="t-overflow">@newsItem.CreatedDate</span>
+                            <small class="text-muted">@newsItem.Caption</small><br>
+                            <span class="t-overflow">@newsItem.ExpireDate</span>
 
                         </div>
                     </div>

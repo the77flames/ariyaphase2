@@ -39,11 +39,11 @@
                 {
                     <div class="media p-l-5">
                         <div class="pull-left">
-                            <img width="40" alt="" src='@loungeItem.Caption'>
+                            <a href="/Lounge/Edit/@loungeItem.Id.ToString()"><img width="40" alt="" src='@loungeItem.Caption'></a>
                         </div>
                         <div class="media-body">
-                            <small class="text-muted">@loungeItem.ExpireDate</small><br>
-                            <span class="t-overflow">@loungeItem.CreatedDate</span>
+                            <small class="text-muted">@loungeItem.Caption</small><br>
+                            <span class="t-overflow">@loungeItem.ExpireDate</span>
 
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <h4 class="modal-title">Add New Lounge Item</h4>
                     </div>
                     <div class="modal-body">
-                        @{ Html.RenderPartial("AddLoungItem", new LoungeItem()); }
+                        @{ Html.RenderPartial("AddLounge", new LoungeItem()); }
                     </div>
                     <div class="modal-footer">
                         <button id="AddLoungeItemButton" class="btn btn-sm" type="button">Save changes</button>

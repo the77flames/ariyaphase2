@@ -44,6 +44,7 @@ namespace ProjectConakry.BusinessServices
 
         public void Update(Events entity)
         {
+            entity.Id = String.IsNullOrEmpty(entity.IdString) ? entity.Id : new ObjectId(entity.IdString);
             _eventRepository.Update(entity);
         }
 

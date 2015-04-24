@@ -39,11 +39,11 @@ else
     {
                     <div class="media p-l-5">
                         <div class="pull-left">
-                            <img width="40" alt="" src='@eventItem.ImageThumbNailPath'>
+                            <a href="/Events/Edit/@eventItem.Id.ToString()"><img width="40" alt="" src='@eventItem.ImageThumbNailPath'></a>
                         </div>
                         <div class="media-body">
                             <small class="text-muted">@eventItem.EventDate</small><br>
-                            <a class="t-overflow" href="">@eventItem.EventName</a>
+                            <a class="t-overflow" href="/Events/Edit/@eventItem.Id.ToString()">@eventItem.EventName</a>
 
                         </div>
                     </div>

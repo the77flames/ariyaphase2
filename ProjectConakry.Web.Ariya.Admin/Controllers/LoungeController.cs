@@ -31,6 +31,20 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(string id)
+        {
+            var loungeItem = _loungeItemService.GetById(id);
+            loungeItem.IdString = id.ToString();
+            return View("EditLounge", loungeItem);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(LoungeItem loungeItem)
+        {
+            _loungeItemService.Update(loungeItem);
+            return RedirectToAction("Index");
+        }
+
       
     }
 }

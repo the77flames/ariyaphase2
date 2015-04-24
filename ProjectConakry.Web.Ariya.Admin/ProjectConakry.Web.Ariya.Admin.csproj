@@ -737,6 +737,15 @@
   <ItemGroup>
     <Content Include="Views\Movie\EditMovie.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Events\EditEvent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lounge\EditLounge.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\EditNews.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

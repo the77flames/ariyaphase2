@@ -1,0 +1,40 @@
+﻿@using ProjectConakry.DomainObjects
+@model News
+
+<style type="text/css">
+    .labelX {
+        padding-left: 5px;
+    }
+</style>
+
+
+<section id="content" class="container">
+@using(Html.BeginForm("Edit", "News", FormMethod.Post))
+{
+        @Html.HiddenFor(Model => Model.IdString)
+        <table style="margin-left: 20px;">
+            <tr>
+                <td><i class="fa fa-film fa-2x"></i><span class="labelX">News Title</span></td>
+                <td>@Html.TextAreaFor(Model => Model.Caption, new { @class = "form-control input-sm" })</td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-file fa-2x"></i><span class="labelX">Image Path</span></td>
+                <td>@Html.TextAreaFor(Model => Model.ImagePath, new { @class = "form-control input-sm" })</td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-file fa-2x"></i><span class="labelX">Text</span></td>
+                <td>@Html.TextAreaFor(Model => Model.Text, new { @class = "form-control input-sm" , @cols = "10"})</td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-calendar fa-2x"></i><span class="labelX">Expire Date</span></td>
+                <td>@Html.TextAreaFor(Model => Model.ExpireDate, new { @class = "form-control input-sm" })</td>
+            </tr>
+        </table>
+     <div style="margin-left: 20px;">
+         <br />
+        <button class="btn btn-lg" type="submit">Save changes</button>
+        <a class="btn btn-lg" href="/Movie">Cancel</a>
+    </div>
+}
+       
+</section>
