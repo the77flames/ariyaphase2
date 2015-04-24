@@ -25,7 +25,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
             var movies = _movieService.GetAll();
             return View(movies);
         }
-
+        
         [HttpPost]
         public ActionResult Add(Movie movie)
         {
@@ -33,6 +33,20 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(string id)
+        {            
+            var movie = _movieService.GetById(id);
+            movie.IdString = id.ToString();
+            ViewBag.Genre = movie.Genre;
+            ViewBag.Section = movie.SectionId;
+            return View("EditMovie", movie);
+        }
 
+        [HttpPost]
+        public ActionResult Edit(Movie movie)
+        {          
+            _movieService.Update(movie);
+            return RedirectToAction("Index");
+        }
     }
 }

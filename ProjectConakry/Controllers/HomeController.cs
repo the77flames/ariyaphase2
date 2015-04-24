@@ -15,7 +15,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
     {
        
         [HttpGet]
-        [OutputCache(Duration = 120)]
+       // [OutputCache(Duration = 120)]
         public ActionResult Index()
         {            
             return View();

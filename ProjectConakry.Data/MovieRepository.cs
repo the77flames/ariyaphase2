@@ -24,9 +24,6 @@ namespace ProjectConakry.Data
             return moviesCursor.ToList();
         }
 
-        public override void Update(Movie entity)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

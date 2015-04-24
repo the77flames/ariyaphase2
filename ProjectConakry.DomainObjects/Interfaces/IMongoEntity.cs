@@ -6,5 +6,6 @@ namespace ProjectConakry.DomainObjects
     public interface IMongoEntity
     {
         ObjectId Id { get; set; }
+        string IdString { get; set; }
     }
 }

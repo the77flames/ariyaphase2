@@ -27,7 +27,7 @@ namespace ProjectConakry.Web.Ariya
                         new RouteValueDictionary(
                             new
                             {
-                                controller = "Home",
+                                controller = "LogIn",
                                 action = "Index"
                             })
                         );

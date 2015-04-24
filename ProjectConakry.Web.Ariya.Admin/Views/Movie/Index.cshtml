@@ -43,7 +43,7 @@ else
                         </div>
                         <div class="media-body">
                             <small class="text-muted">@movie.ReleaseDate</small><br>
-                            <a class="t-overflow" href="">@movie.Name</a>
+                            <a class="t-overflow" href="@Url.Action("Edit", "Movie", new {id = @movie.Id})">@movie.Name</a>
 
                         </div>
                     </div>
@@ -80,3 +80,4 @@ else
         </div>
     </div> 
 </div>
+

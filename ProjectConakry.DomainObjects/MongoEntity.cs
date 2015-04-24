@@ -13,5 +13,8 @@ namespace ProjectConakry.DomainObjects
     {
         [BsonId]
         public ObjectId Id { get; set; }
+
+        public string IdString { get; set; }
+       
     }
 }

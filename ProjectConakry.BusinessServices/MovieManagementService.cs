@@ -68,6 +68,7 @@ namespace ProjectConakry.BusinessServices
         
         public void Update(Movie entity)
         {
+            entity.Id = new ObjectId(entity.IdString);
             _movieRepository.Update(entity);
         }
     }

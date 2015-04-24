@@ -25,7 +25,9 @@ namespace ProjectConakry.Controllers
         {
             this._authenticationService = authenticationService;
         }
+
         [HttpGet]
+        [OutputCache(Duration = 86400)]
         public ActionResult Index()
         {
             return View();
