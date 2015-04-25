@@ -36,7 +36,7 @@
         ko.bindingHandlers.image = {
             init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
                 var img = ko.utils.unwrapObservable(valueAccessor());
-                element.src = 'images/' + img;
+                element.src = window.ImagePath + img;
             }
         };
 

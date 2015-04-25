@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ProjectConakry.Web.Ariya.Controllers
 {
-    public class DetailsController : Controller
+    public class DetailsController : AuthenticatedBaseController
     {
         public DetailsController()
         {

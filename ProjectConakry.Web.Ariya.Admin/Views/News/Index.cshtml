@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Movie";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var imagePath = ViewBag.ImagePath;
 }
 
 <script type="text/javascript">
@@ -39,7 +40,7 @@ else
     {
                     <div class="media p-l-5">
                         <div class="pull-left">
-                            <a href="/News/Edit/@newsItem.Id.ToString()"><img width="40" alt="" src='@newsItem.Caption'></a>
+                            <a href="/News/Edit/@newsItem.Id.ToString()"><img width="40" alt="" src='@(imagePath + newsItem.ImagePath)'></a>
                         </div>
                         <div class="media-body">
                             <small class="text-muted">@newsItem.Caption</small><br>

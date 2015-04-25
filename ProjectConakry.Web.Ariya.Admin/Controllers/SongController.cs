@@ -19,6 +19,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         [ConakryAdminAuthorize]
         public ActionResult Index()
         {
+            ViewBag.ImagePath = ControllerConstants.ImagePath;
             var songs = _songService.GetAll();
             return View(songs);
         }

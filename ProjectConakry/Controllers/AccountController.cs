@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace ProjectConakry.Web.Ariya.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : AuthenticatedBaseController
     {
         //
         // GET: /Account/
@@ -24,7 +24,6 @@ namespace ProjectConakry.Web.Ariya.Controllers
         [ConakryAuthorize]
         public ActionResult Index()
         {
-            ViewBag.UserId = loggedInUser.Id.ToString();
             return View(loggedInUser);
         }
 

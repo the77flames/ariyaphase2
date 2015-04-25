@@ -11,6 +11,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
     public class NewsController : Controller
     {
        private readonly NewsManagementService _newsService;
+        
        public NewsController(NewsManagementService newsService)
         {
             _newsService = newsService;
@@ -19,6 +20,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         [ConakryAdminAuthorize]
         public ActionResult Index()
         {
+            ViewBag.ImagePath = ControllerConstants.ImagePath;
             var allNews = _newsService.GetAll();
             return View(allNews);
         }

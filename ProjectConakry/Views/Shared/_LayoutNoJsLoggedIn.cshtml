@@ -15,13 +15,16 @@
     <link href="/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="/css/roundabout.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/media-player.css" />
-
+    <script type="text/javascript">
+        window.CurrentUserId = '@ViewBag.UserId';
+        window.ImagePath = '@ViewBag.ImagePath';
+    </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
  </head>
 @{
     var customer = Session["currentUser"] as CustomPrincipal;
 }
-<body>
+<body>    
     <!--header-wrap-->
     <section id="header-wrapp">
         <!--head-->

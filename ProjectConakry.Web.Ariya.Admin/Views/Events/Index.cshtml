@@ -1,8 +1,9 @@
 ﻿@using ProjectConakry.DomainObjects
 @model IEnumerable<Events>
 @{
-    ViewBag.Title = "Movie";
+    ViewBag.Title = "Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var imagePath = ViewBag.ImagePath;
 }
 
 <script type="text/javascript">
@@ -28,7 +29,7 @@
         </div>
 
         <div class="listview narrow sortable ui-sortable">
-            @if (Model == null || !Model.Any())
+@if (Model == null || !Model.Any())
 {
     <span style="padding-left: 40px;"> There are no events in the database ! </span>
 }
@@ -39,7 +40,7 @@ else
     {
                     <div class="media p-l-5">
                         <div class="pull-left">
-                            <a href="/Events/Edit/@eventItem.Id.ToString()"><img width="40" alt="" src='@eventItem.ImageThumbNailPath'></a>
+                            <a href="/Events/Edit/@eventItem.Id.ToString()"><img width="40" alt="" src='@(imagePath + eventItem.ImageThumbNailPath)'></a>
                         </div>
                         <div class="media-body">
                             <small class="text-muted">@eventItem.EventDate</small><br>

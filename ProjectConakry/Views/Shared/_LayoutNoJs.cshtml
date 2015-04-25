@@ -15,9 +15,12 @@
     <!-- bxSlider CSS file -->
     <link href="/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="/css/roundabout.css" rel="stylesheet" />
-
+    <script type="text/javascript">
+         window.ImagePath = '@ViewBag.ImagePath';
+    </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
  </head>
+
 @{
     var customer = Session["currentUser"] as CustomPrincipal;
 }

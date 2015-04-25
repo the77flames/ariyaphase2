@@ -37,6 +37,12 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
             return true;
         }
 
+        [ConakryAuthorize]
+        public IEnumerable<Movie> Get(int pageNumber, int pageSize)
+        {
+            return _movieService.GetAllWithPaging(pageNumber, pageSize);
+        }
+
         private void UpdateTotalNumberOfVoters(Movie movie)
         {
             movie.TotalVoters += 1;
