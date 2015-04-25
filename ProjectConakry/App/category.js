@@ -37,18 +37,21 @@
                 .done(function () {
                     return newsApi.get(vm.news, new Date()).then(
                     function () {
-                        var list = groupItems(vm.news(), 5);
+                        var groupSize = vm.news().length > 5 ? 5 : vm.news().length;
+                        var list = groupItems(vm.news(), groupSize);
                         vm.newsSections(list);
                     }).then(function () {
                         return eventsApi.get(vm.events, new Date()).then(
                         function () {
-                            var list = groupItems(vm.events(), 4);
+                            var groupSize = vm.events().length > 4 ? 4 : vm.events().length;
+                            var list = groupItems(vm.events(), groupSize);
                             vm.eventsSections(list);
                         });
                     }).then(function () {
                         return loungeApi.get(vm.loungeItems, new Date()).then(
                         function () {
-                            var list = groupItems(vm.loungeItems(), 4);
+                            var groupSize = vm.loungeItems().length > 4 ? 4 : vm.loungeItems().length;
+                            var list = groupItems(vm.loungeItems(), groupSize);
                             vm.loungeSections(list);
                         });
                     });
