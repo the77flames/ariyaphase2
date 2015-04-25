@@ -11,8 +11,8 @@
 
         return vm;
 
-        function get(observableList) {
-            var url = service + 'get?section=0&count=20';
+        function get(observableList,userId) {
+            var url = service + 'get?userId=' + userId + "&count=25";
             var promise = http.get(url);
 
             return promise.then(function (data) {

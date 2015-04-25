@@ -2,6 +2,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutNoJsLoggedIn.cshtml";
 }
+<script type="text/javascript">
+    window.CurrentUserId = '@ViewBag.UserId';
+    var holder = '@ViewBag.UserId';
+</script>
 
 <div id="slider-wrap">
     <div class="thumbs-block">

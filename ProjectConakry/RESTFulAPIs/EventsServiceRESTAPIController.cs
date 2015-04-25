@@ -18,7 +18,8 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
         [ConakryAuthorize]
         public IEnumerable<Events> Get(DateTime date)
         {
-            return _eventManagementService.GetAllByDate(date);
+            var events = _eventManagementService.GetAllByDate(date);
+            return events;
         }
     }
 }

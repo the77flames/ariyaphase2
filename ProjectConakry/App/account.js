@@ -1,4 +1,4 @@
-﻿define(['services/navigating', 'knockout', 'jquery', 'api/categoryApi', 'kobindings/roundabout'],
+﻿define(['services/navigating', 'knockout', 'jquery', 'api/recommendationApi', 'kobindings/roundabout'],
     function (navigating, ko, $, recommendationApi, roundabout) {
         var sections = ["", "Related Videos"];
 
@@ -17,11 +17,11 @@
                 var o = recommendations[i];
                 list[o.SectionId].List.push(o);
             }
-            return list.splice(1, list.length - 1);
+            return list;
         };
 
         var activate = function () {
-            return recommendationApi.get(vm.recommendations)                
+            return recommendationApi.get(vm.recommendations, window.CurrentUserId)
                  .done(function () {
                      vm.sections(makeSections(vm.recommendations()));
                      roundabout.addThis();

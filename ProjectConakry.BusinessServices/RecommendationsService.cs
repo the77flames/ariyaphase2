@@ -13,9 +13,10 @@ namespace ProjectConakry.BusinessServices
     {
         private readonly MovieManagementService _movieManagementService;
 
-        public RecommendationsService(MovieManagementService movieManagementService)
+        public RecommendationsService(MovieRepository movieRepository)
         {
-            movieManagementService = _movieManagementService;
+
+            _movieManagementService = new MovieManagementService(movieRepository);
         }
 
         public IEnumerable<Movie> GetMovieRecommendationsForUser(string userId)
@@ -25,7 +26,7 @@ namespace ProjectConakry.BusinessServices
             {
                 result.AddRange(_movieManagementService.GetAllByGenre((Genres)item, 1, 20).GetRandomSequence<Movie>(5));
             }
-            return result;
+            return result.Where(n => n != null);
         }
 
         public IEnumerable<Movie> GetMovieRecommendations()
@@ -45,13 +46,18 @@ namespace ProjectConakry.BusinessServices
     {
         public static IEnumerable<T> GetRandomSequence<T>(this IEnumerable<T> holder, int sampleSize)
         {
-            var randomIndexList = new List<int>();
-            var size = holder.Count();
-            for (int i = 0; i <= size; i++)
+            if (holder.Count() != 0)
             {
-                var randomIndex = new Random();
-                yield return holder.ElementAt(randomIndex.Next(1, size) - 1);
+                var randomIndexList = new List<int>();
+                var size = holder.Count();
+                for (int i = 0; i <= size; i++)
+                {
+                    var randomIndex = new Random();
+                    yield return holder.ElementAt(randomIndex.Next(1, size) - 1);
+                }
             }
+            else
+                yield return default(T);
         }
     }
 }

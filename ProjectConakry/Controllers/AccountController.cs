@@ -24,7 +24,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         [ConakryAuthorize]
         public ActionResult Index()
         {
-            
+            ViewBag.UserId = loggedInUser.Id.ToString();
             return View(loggedInUser);
         }
 

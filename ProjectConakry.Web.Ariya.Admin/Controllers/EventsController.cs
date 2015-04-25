@@ -26,6 +26,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         [HttpPost]
         public ActionResult Add(Events eventItem)
         {
+            eventItem.EventDate = DateTime.Parse(eventItem.EventDateString);
             _eventsService.Add(eventItem);
             return RedirectToAction("Index");
         }
@@ -40,6 +41,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(Events eventItem)
         {
+             eventItem.EventDate = DateTime.Parse(eventItem.EventDateString);
             _eventsService.Update(eventItem);
             return RedirectToAction("Index");
         }

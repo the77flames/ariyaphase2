@@ -19,7 +19,6 @@
        
         var groupItems = function (items, count) {
             var list = [];
-            debugger;
             if (items == null)
                 return list;
             for (var i = 0; i < items.length / count; i++) {

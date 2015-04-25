@@ -12,6 +12,7 @@ namespace ProjectConakry.DomainObjects
     {
         public string EventName { get; set; }
         public DateTime EventDate { get; set; }
+        public string EventDateString { get; set; }
         public string Venue { get; set; }
         public string Time { get; set; }
         public string ImageThumbNailPath { get; set; }

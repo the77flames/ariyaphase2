@@ -2,6 +2,7 @@
 using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace ProjectConakry.Web.Ariya.RESTFulAPIs
@@ -16,9 +17,10 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
        }
 
         [ConakryAuthorize]
-        public IEnumerable<Media> Get(int entityType, string userId)
+        public IEnumerable<Media> Get(string userId, int count)
         {
-            return _recommendationsService.GetMovieRecommendationsForUser(userId);
+            var recommendedEvents = _recommendationsService.GetMovieRecommendationsForUser(userId) ?? Enumerable.Empty<Media>();
+            return recommendedEvents.Take(count);
         }
 
 
