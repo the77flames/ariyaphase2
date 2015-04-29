@@ -53,7 +53,9 @@
     <Compile Include="AddressManagementService.cs" />
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="AdminUserManagermentService.cs" />
+    <Compile Include="Interfaces\IMailService.cs" />
     <Compile Include="LoungeItemManagementService.cs" />
+    <Compile Include="MailService.cs" />
     <Compile Include="NewsManagementService.cs" />
     <Compile Include="EventsManagementService.cs" />
     <Compile Include="CategoryManagementService.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 
 namespace ProjectConakry.Web.Ariya
@@ -19,5 +20,10 @@ namespace ProjectConakry.Web.Ariya
             }
             set { imagePath = value; }
         }
+
+        public const string sender = "tracyporter@ariyaunlimited.com";
+        public const string senderName = "Tracy Porter";
+        public static string content = "Welcome";
+        public static string emailSubject= "Welcome";
     }
 }

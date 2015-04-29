@@ -3,6 +3,7 @@ using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,10 +13,14 @@ namespace ProjectConakry.Web.Ariya.Controllers
     {
         private static ICustomerManagementService _customerManagementService;
         private static IAddressManagementService _addressManagementService;
-        public RegistrationController(ICustomerManagementService customerManagementService, IAddressManagementService addressManagementService)
+        private static IMailService _mailService;
+
+        public RegistrationController(ICustomerManagementService customerManagementService, IAddressManagementService addressManagementService,
+            MailService mailService)
         {
             _customerManagementService = customerManagementService;
             _addressManagementService = addressManagementService;
+            _mailService = mailService;
         }
 
         [AllowAnonymous]
@@ -54,6 +59,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
                 _customerManagementService.Enroll(customer);
                 customer = _customerManagementService.GetCustomerByEmail(email);
                 _addressManagementService.AddNewAddress(new CustomerAddress { CustomerID = customer.Id  });
+                _mailService.Send(ControllerConstants.sender, email, ControllerConstants.emailSubject, ControllerConstants.content);
                 return RedirectToAction("Index", "LogIn");
             }
             catch (Exception)
