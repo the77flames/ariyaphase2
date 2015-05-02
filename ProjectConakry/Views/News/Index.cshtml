@@ -1,0 +1,47 @@
+﻿@using ProjectConakry.DomainObjects
+@model News
+
+@{
+    ViewBag.Title = "Ariya | News";
+    Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/customcss/style.css">
+<link rel="stylesheet" type="text/css" href="~/css/customcss/demo.css">
+<link rel="stylesheet" type="text/css" href="~/css/customcss/reset.css">
+<link rel="stylesheet" type="text/css" href="~/css/customcss/news.css">
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:600,700,900,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Orbitron:400,700' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <div class="wrapper">
+        <section>
+            <article class="main">
+                <h1 class="title"> @Model.Caption</h1>
+                <h3 class="author"> Story by: Ariya News Crew </h3>
+                <div class="article-img">
+                    <img src="@Model.ImagePath" alt="Niyola with Banky W" width="100%" height="auto">
+                    <h4 class="caption">@Model.Caption </h4>
+                </div>
+                <p>
+                    @Model.Text
+                </p>
+            </article>
+            <article class="rel">
+                <h2> Related News </h2>
+                @*<ul>
+                    <li><a href="#"> I met Niyola in a bathroom- Banky W </a></li>
+                    <li><a href="#"> I met Niyola in a bathroom- Banky W </a></li>
+                    <li><a href="#"> I met Niyola in a bathroom- Banky W </a></li>
+                    <li><a href="#"> I met Niyola in a bathroom- Banky W </a></li>
+                    <li><a href="#"> I met Niyola in a bathroom- Banky W </a></li>
+                </ul>*@
+            </article>
+        </section>
+        <aside>
+            <div class="ad1"></div>
+            <div class="ad2"></div>
+        </aside>
+    </div>
+

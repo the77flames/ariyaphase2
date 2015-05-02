@@ -1,0 +1,66 @@
+﻿@using ProjectConakry.DomainObjects
+@model Events
+
+@{
+    ViewBag.Title = "Event Details";
+    Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/customcss/demo.css">
+<link rel="stylesheet" type="text/css" href="~/css/customcss/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/customcss/event.css">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Orbitron:400,700">
+
+    <div class="container">
+        <div class="banner">
+            <p class="city">@Model.EventName</p>
+            <p class="date">@Model.EventDateString/p>
+            <div class="ltr"></div>
+            <div class="rtr"></div>
+        </div>
+        <div class="ev-wrap">
+            <aside class="photo">
+                <img src='@Model.ImageBigPath' alt="Artist Name" width="100%" height="auto">
+            </aside>
+            <section class="main-details">
+                <article class="header">
+                    <div class="venue">
+                        <p class="city">@Model.Venue</p>
+                        <p class="date">@Model.EventDate &nbsp; @Model.Time</p>
+                    </div>
+                    <div class="share">
+                        <h1>Share this Event</h1>
+                        <ul class="social">
+                            <li class="fb"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li class="tw"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li class="gp"><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                        </ul>
+                    </div>
+                </article>
+                <div class="feat">
+                    <h1> Featuring: </h1>
+                    <p>@Model.CoverArtistName</p>
+                </div>
+                <div class="various">
+                    @*<h1>Artists at this Event:</h1>*@
+                    @*<p id="Artists" class="oblique">Awilo Longomba, Tiwa Savage </p>*@
+                </div>
+            </section>
+            <div class="clear"></div>
+            <div class="sponsors"></div>
+            <div class="secondary-details">
+                <section class="info">
+                    <article id="ev-info">
+                        <h1> Event Info: </h1>
+                        <p> Ticket Price: @Model.TicketPrice</p>
+                    </article>
+                </section>
+                <aside class="disclaimer">
+                    <h1> Disclaimer </h1>
+                    <p> All tickets subject to all applicable facility fees and service charges. </p>
+                    <p> No refunds, exchanges, cancellations. </p>
+                </aside>
+            </div>
+        </div>
+    </div>

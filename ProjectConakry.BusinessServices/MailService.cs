@@ -15,7 +15,7 @@ namespace ProjectConakry.BusinessServices
         {
         }
 
-        public MailService(SmtpClient smtpClient)
+        private MailService(SmtpClient smtpClient)
         {
             _smtpClient = smtpClient;
         }

@@ -16,7 +16,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         private static IMailService _mailService;
 
         public RegistrationController(ICustomerManagementService customerManagementService, IAddressManagementService addressManagementService,
-            MailService mailService)
+            IMailService mailService)
         {
             _customerManagementService = customerManagementService;
             _addressManagementService = addressManagementService;
@@ -24,6 +24,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 86400)]
         public ActionResult Index()
         {
             return View();

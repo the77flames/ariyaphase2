@@ -1,0 +1,98 @@
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 21px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 18px;
+}
+
+h1,h2,h3,h4,p {
+  padding: 5px 0;
+}
+
+section {
+  float: left;
+  width: 70%;
+  padding: 15px 0 15px 15px;
+}
+aside {
+  float: right;
+  width: 28%;
+  margin: 0;
+  padding: 15px 15px 15px 0;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 1200px;
+  background: #f3f3f3;
+  display: table;
+  margin: 15px auto;
+}
+.main {
+  padding: 24px;
+}
+.author {
+  float: right;
+  color: #107A0D;
+  margin-bottom: 10px;
+  padding: 2px 0 9px;
+  border-bottom: 1px dashed black;
+} 
+.article-img {
+  display: inline-block;
+  margin: 15px 0;
+}
+.caption {
+  float: right;
+  color: #fafafa;
+  background: #107A0D;
+  margin: -2px 0;
+  padding: 10px 15px;
+}
+.main p {
+  font-size: 1em;
+  line-height: 18px;
+}
+.rel {
+  padding: 0 24px 24px;
+}
+.rel li {
+  padding: 8px 18px;
+  border-bottom: 1px dashed black;
+}
+.rel a {
+  color: #084C14;
+  font-size: 15px;
+}
+.rel a:visited {
+  color: ##2F638E;
+}
+.rel a:hover, .rel a:active {
+  color: #2F8E40;
+}
+
+.ad1 {
+  width: 300px;
+  height: 250px;
+  background: #ffcc00;
+  margin: 15px 0;
+}
+.ad2 {
+  width: 300px;
+  height: 600px;
+  background: #ffcc00;
+  margin: 15px 0;
+}
+
+
+
+
+
+

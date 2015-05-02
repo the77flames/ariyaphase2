@@ -1,0 +1,174 @@
+body {
+  color: black;
+  text-align: left;
+  background: url("../images/events/ev-bg.jpg") no-repeat;
+  background-color: black;
+  background-position-x: 80%;
+}
+
+ul li {
+  padding: 2px 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clear {
+  clear: both;
+}
+
+.ev-wrap {
+  display: table;
+  width: 80%;
+  margin: 30px auto;
+  padding: 30px;
+  padding-top: 120px;
+  font-family: Roboto;
+  text-align: left;
+  background: rgba(253, 249, 240, 0.96);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 6px 9px rgba(115, 98, 68, 0.9);
+}
+.header, .feat, .sponsors, .secondary-details {
+  width: 100%;
+}
+.photo {
+  float: left;
+  width: 30%;
+  padding: 0 15px 15px 0;
+}
+.main-details {
+  float: right;
+  width: 70%;
+  padding: 30px 0 30px 15px;
+}
+.main-details h1 {
+  font-family: Orbitron;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+.header {
+  display: table;
+  height: 54px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dedede;
+}
+.social {
+  float: right;
+  padding: 6px 0;
+}
+.social li {
+  float: left;
+  margin: 0 3px;
+  padding: 4px 0;
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+.social li a {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.fb {background: #4564a1;}
+.tw {background: #00b4ef;}
+.gp {background: #e25744;}
+.ig {background: #5d89ac;}
+.ik {background: #ff0000;}
+
+.fb a {
+  padding-left: 12px;
+}
+.tw a {
+  padding-left: 5px;
+}
+.gp a {
+  padding-left: 6px;
+}
+.feat {
+  padding: 30px 0 15px;
+}
+.feat p {
+  font-family: Dekar;
+  font-size: 24px;
+} 
+.banner {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  width: 82%;
+  padding: 5px;
+  color: #fafafa;
+  background: url("http://ariyademo.naijadelight.com/images/menu-bg.png") 99% no-repeat #006004;
+}
+.venue {
+  float: left;
+}
+.city {
+  font-family: Orbitron;
+  font-weight: 700;
+  font-size: 27px;
+  padding: 5px;
+}
+.date {
+  font-family: Roboto;
+  font-weight: 600;
+  padding: 2px 5px 10px;
+}
+.ltr {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  border: 8px solid #005702;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  z-index: -1;
+}
+.rtr {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  border: 8px solid #005702;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  z-index: -1;
+}
+.share {
+  float: right;
+}
+.oblique {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: italic;
+}
+.sponsors {
+  background: #ffffff;
+  height: 78px;
+  margin: 15px 0;
+  border: 1px dashed black;
+}
+.info {
+  float: left;
+  width: 70%;
+  padding-right: 15px;
+}
+.info h1, .disclaimer h1 {
+  font-weight: 600;
+  padding: 5px 0;
+}
+.info p {
+  line-height: 16px;
+}
+.disclaimer {
+  float: right;
+  width: 30%;
+  padding-left: 15px;
+  border-left: 1px solid black;
+}
+.disclaimer p {
+  font-style: italic;
+  padding: 3px 0;
+}
+

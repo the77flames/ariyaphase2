@@ -22,6 +22,11 @@ namespace ProjectConakry.Web.Ariya.Controllers
             return View();
         }
 
+        public ActionResult Intro()
+        {
+
+            return View();
+        }
         
       
     }

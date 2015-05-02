@@ -17,10 +17,9 @@ namespace ProjectConakry.DomainObjects
         public string Time { get; set; }
         public string ImageThumbNailPath { get; set; }
         public string ImageBigPath { get; set; }
-
         public string TicketPrice { get; set; }
-
         public bool IsFreeEvent { get; set; }
+        public string CoverArtistName { get; set; }
        
     }
 }

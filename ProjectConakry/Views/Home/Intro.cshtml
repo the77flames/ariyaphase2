@@ -1,0 +1,277 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ariya | relax | enjoy</title>
+    <link rel="stylesheet" href="~/css/customcss/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/customcss/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/css/customcss/component.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:400,700' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="~/js/introjs/fadeSlideShow.js"></script>
+    <script src="~/js/introjs/pace.js"></script>
+    <script src="~/js/introjs/jquery.color.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: #000000;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sp-wrap {
+            position: relative;
+            top: 20px;
+            left: -5px;
+            width: 999px;
+            height: 565px;
+            margin: 0 auto;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .sp-slide {
+            display: none;
+        }
+
+            .sp-slide img {
+                width: 100%;
+                opacity: 1;
+                box-sizing: border-box;
+            }
+
+            .sp-slide li {
+                float: left;
+                width: 100%;
+            }
+
+
+        h1 {
+            display: none;
+            position: absolute;
+            top: 42%;
+            font-family: Orbitron;
+            color: #fff;
+            padding: 18px 16px;
+            text-shadow: 0 0 7px rgba(133, 250, 232, 0.51);
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .line1 {
+            width: 360px;
+            font-size: 32px;
+            right: 320px;
+        }
+
+        .line2 {
+            width: 480px;
+            font-size: 30px;
+            left: 250px;
+        }
+
+            .line2 span {
+                color: #85b652;
+            }
+
+        .line3, .line4, .line5 {
+            width: 256px;
+            margin: 0 27px;
+            top: 51%;
+            right: 0;
+            font-size: 33px;
+        }
+
+        .line3 {
+            left: 16%;
+        }
+
+        .line4 {
+            width: 315px;
+            left: 34%;
+        }
+
+        .line5 {
+            left: 56%;
+        }
+
+        .sp-logo {
+            display: none;
+            position: relative;
+            top: 220px;
+        }
+
+            .sp-logo img {
+                position: absolute;
+                top: -85px;
+                right: 290px;
+            }
+
+            .sp-logo span {
+                display: none;
+                position: absolute;
+                top: 54.5px;
+                right: 519px;
+                font-family: Arial Black;
+                font-size: 13px;
+                color: #ffffff;
+            }
+
+        #join {
+            display: none;
+            position: relative;
+            top: 405px;
+            padding: 8px 25px;
+            font-family: Roboto;
+            font-size: 24px;
+            text-shadow: 0 3px #333333;
+            background: #4f6228;
+            border-radius: 5px;
+            box-shadow: 0 2px #272727;
+        }
+
+        #skip, #survey, #event, #newz {
+            position: absolute;
+            bottom: 15px;
+            font-family: Roboto;
+            color: #4F6228;
+            text-shadow: 0 -1px 0 #00947a, 0 1px #000000;
+        }
+
+        #skip {
+            left: 47%;
+            bottom: 45px;
+        }
+
+        #survey {
+            left: 46.5%;
+        }
+
+        #event {
+            right: 39%;
+            bottom: 45px;
+        }
+
+        #newz {
+            right: 40%;
+            bottom: 12px;
+        }
+
+            #skip:hover, #survey:hover, #event:hover, #newz:hover {
+                color: #72BE44;
+            }
+
+
+      
+
+        .pix {
+            position: absolute;
+            left: 7.5%;
+            top: 12%;
+        }
+
+            .pix img {
+                display: none;
+                margin: 0 -45px;
+                opacity: 0.85;
+            }
+
+                .pix img:hover {
+                    opacity: 1;
+                    transform: translate3d(-9px,-9px,0);
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sp-wrap">
+            <h1 class="line1"> Introducing...</h1>
+            <h1 class="line2"> The First <span> Comprehensive </span> & <span> Interactive </span> African Entertainment Experience </h1>
+            <div class="pix">
+                <img id="p1" src="~/images/intro/1.png" alt="image01" width="257" height="480">
+                <img id="p2" src="~/images/intro/2.png" alt="image02" width="257" height="480">
+                <img id="p3" src="~/images/intro/3.png" alt="image03" width="257" height="480">
+                <img id="p4" src="~/images/intro/4.png" alt="image04" width="257" height="480">
+                <img id="p5" src="~/images/intro/5.png" alt="image05" width="257" height="480">
+            </div>
+            <h1 class="line3"> Explore.</h1>
+            <h1 class="line4"> Experience.</h1>
+            <h1 class="line5"> Enjoy.</h1>
+            <div class="sp-logo"><a href="/Home/Index"><img src="~/images/logo-md.png"><span> UNLTD </span></a></div>
+            <div><a href="/Registration/Index" id="join"> JOIN </a></div>
+        </div>
+        <span><a href="/Home/Index" id="skip">SKIP INTRO</a></span>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+
+            var ln1 = $(".line1");
+            var ln2 = $(".line2");
+            ln1.delay(2000).fadeIn(3000, function () {
+                ln1.fadeOut(4000, function () {
+                    ln2.delay(1000).fadeIn(2000, function () {
+                        ln2.fadeOut(4000);
+                    });
+                });
+            });
+
+            $("#p1").delay(18000).fadeIn(2000, function () {
+                $("#p2").delay(1000).fadeIn(2000, function () {
+                    $("#p3").delay(1000).fadeIn(2000, function () {
+                        $("#p4").delay(1000).fadeIn(2000, function () {
+                            $("#p5").delay(1000).fadeIn(2000);
+                        });
+                    });
+                });
+            });
+
+
+            var ln3 = $(".line3");
+            var ln4 = $(".line4");
+            var ln5 = $(".line5");
+            $(".pix").delay(33000).fadeOut(2000, function () {
+                ln3.delay(2000).fadeIn(1500, function () {
+                    ln3.animate({ color: "#85b652" },
+                    {
+                        duration: "2500", queue: true, complete: function () {
+                            ln3.css({ textShadow: "none" }), ln4.fadeIn(1500, function () {
+                                ln4.animate({ color: "#85b652" },
+                                {
+                                    duration: "2500", queue: true, complete: function () {
+                                        ln4.css({ textShadow: "none" }), ln5.fadeIn(1500, function () {
+                                            ln5.animate({ color: "#85b652" },
+                                            {
+                                                duration: "2500", queue: true, complete: function () {
+                                                    ln5.css({ textShadow: "none" }), $(".sp-logo").fadeIn(1000, function () {
+                                                        $("#join").fadeIn(2000);
+                                                        $("#skip").hide();
+                                                    });
+                                                }
+                                            });
+                                        });
+                                    }
+                                });
+                            });
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
