@@ -118,8 +118,9 @@
                     <ul class="sidebar-slider" data-bind="foreach: newsSections">
                         <li>
                             <ul data-bind="foreach: List">
-                                <li><a href="#" data-bind="text: Text"></a></li>
-                                <br />
+                                <li><a data-bind='text: Caption, attr: { href: "/News/Index?id=" + Id}'></a>
+                                </li>
+                                
                             </ul>
                         </li>
                     </ul>
@@ -133,23 +134,22 @@
                 <div class="news-content">
                     <ul class="sidebar-slider" data-bind="foreach: eventsSections">
                         <li data-bind="foreach: List">
-                            <div class="event-tab">
+                          &nbsp;&nbsp;  <div class="event-tab">
                                 <div class="calander">
-                                    <h2>Jan.</h2>
-                                    <h5>31</h5>
+                                    <h2>June.</h2>
+                                    <h5>1</h5>
                                 </div>
-                                <div class="event-text">
-                                    <!-- ko text: EventName -->
-                                    <!-- /ko -->
+                                <div class="event-text">                                   
+                                    <a href="#" data-bind='text: EventName, attr: { href: "/EventDetails/Index?id=" + Id }'></a>
                                     Venue:
                                     <!-- ko text: Venue -->
                                     <!-- /ko -->
-                                    , Lagos Time:    20.00 GMT Price:    $ 10.00
+                                    , Lagos Time:   <span data-bind="text: Time"></span> GMT Price:    <span data-bind="text: TicketPrice"></span>
                                 </div>
                                 <div class="ticket-info-btn">
                                     <ul>
                                         <li><a href="#">Ticket</a></li>
-                                        <li><a href="#" class="active">Info</a></li>
+                                        <li><a href="#" data-bind='attr: { href: "/EventDetails/Index?id=" + Id }' class="active">Info</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                     <ul class="sidebar-slider" data-bind="foreach: loungeSections">
                         <li>
                             <ul data-bind="foreach: List">
-                                <li><a href="#" data-bind="text: Text"></a></li>
+                                <li><a href="#" data-bind='text: Caption'></a></li>
                                 <br />
                             </ul>
                         </li>

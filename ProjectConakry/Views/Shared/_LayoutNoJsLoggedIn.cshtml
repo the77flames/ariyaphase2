@@ -5,16 +5,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ariya | relax | enjoy</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/slider-style.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slider-style.css" />
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-    <script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+    <script type="text/javascript" src="~/js/modernizr.custom.53451.js"></script>
 
     <!-- bxSlider CSS file -->
-    <link href="/css/jquery.bxslider.css" rel="stylesheet" />
-    <link href="/css/roundabout.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/media-player.css" />
+    <link href="~/css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="~/css/roundabout.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/media-player.css" />
     <script type="text/javascript">
         window.CurrentUserId = '@ViewBag.UserId';
         window.ImagePath = '@ViewBag.ImagePath';
@@ -39,14 +39,14 @@
                         @if (customer == null)
                         {
                             <li> <a href="#"></a> </li>
-                            <li> <a href="LogIn">LOG IN</a> </li>
-                            <li> <a href="Registration">SIGN UP</a> </li>
+                            <li> <a href="/LogIn">LOG IN</a> </li>
+                            <li> <a href="/Registration">SIGN UP</a> </li>
                         }
                         else
                         {
                             <li> <a href="#"></a> </li>
                             <li> Welcome, @customer.Customer.FirstName ! </li>
-                            <li> <a href="LogIn\SignOut">LOG OUT</a> </li>
+                            <li> <a href="/LogIn/SignOut">LOG OUT</a> </li>
                         }
                     </ul>
                 </div>
@@ -70,7 +70,7 @@
                 </ul>
 
                 <div class="n-logo">
-                    <a href="/Account"><img src="images/nlogo.png" alt=nlogo width="90px" height="90px" /></a>
+                    <a href="/Account/Index"><img src="~/images/nlogo.png" alt=nlogo width="90px" height="90px" /></a>
                 </div>
 
                 <ul class="right">  
@@ -97,15 +97,15 @@
         <footer>
             <section id="footer-inn">
                 <div class="fsocialmedia-icons">
-                    <div class="flogo"><a href="index.html"><img src="images/flogo.png" /></a></div>
+                    <div class="flogo"><a href="/Home/Index"><img src="~/images/flogo.png" /></a></div>
                     <div class="socialmedia-icons">
                         <ul>
-                            <li><a href="#"><img src="images/sm-1.png" /></a></li>
-                            <li><a href="#"><img src="images/sm-2.png" /></a></li>
-                            <li><a href="#"><img src="images/sm-3.png" /></a></li>
-                            <li><a href="#"><img src="images/sm-4.png" /></a></li>
-                            <li><a href="#"><img src="images/sm-5.png" /></a></li>
-                            <li><a href="#"><img src="images/sm-6.png" /></a></li>
+                            <li><a href="#"><img src="~/images/sm-1.png" /></a></li>
+                            <li><a href="#"><img src="~/images/sm-2.png" /></a></li>
+                            <li><a href="#"><img src="~/images/sm-3.png" /></a></li>
+                            <li><a href="#"><img src="~/images/sm-4.png" /></a></li>
+                            <li><a href="#"><img src="~/images/sm-5.png" /></a></li>
+                            <li><a href="#"><img src="~/images/sm-6.png" /></a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
         <div class="clr"></div>
         <section id="copywright">
             <div class="inner-sec">
-                © 2015 <a href="index.html">ariya</a> relax - enjoy. All Rights Reserved
+                © 2015 <a href="/Home/Index">ariya</a> relax - enjoy. All Rights Reserved
             </div>
         </section>
 

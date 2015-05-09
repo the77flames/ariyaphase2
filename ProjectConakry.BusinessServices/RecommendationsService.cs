@@ -24,7 +24,11 @@ namespace ProjectConakry.BusinessServices
             var result = new List<Movie>();
             foreach(var item in Enum.GetValues(typeof(Genres)))
             {
-                result.AddRange(_movieManagementService.GetAllByGenre((Genres)item, 1, 20).GetRandomSequence<Movie>(5));
+                foreach (var suggestedMoovieItem in _movieManagementService.GetAllByGenre((Genres)item, 1, 20).GetRandomSequence<Movie>(5))
+                {
+                    if (!result.Contains(suggestedMoovieItem))
+                        result.Add(suggestedMoovieItem);
+                }
             }
             return result.Where(n => n != null);
         }

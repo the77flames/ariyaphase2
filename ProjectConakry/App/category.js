@@ -35,25 +35,28 @@
 
         var activate = function () {
             return categoryApi.get(vm.categories)
-                .done(function () {
-                    return newsApi.get(vm.news, new Date()).then(
-                    function () {                        
-                        var list = groupItems(vm.news(), 5);
-                        vm.newsSections(list);
-                    }).then(function () {
-                        return eventsApi.get(vm.events, new Date()).then(
-                        function () {
-                            var list = groupItems(vm.events(), 4);
-                            vm.eventsSections(list);
-                        });
-                    }).then(function () {
-                        return loungeApi.get(vm.loungeItems, new Date()).then(
-                        function () {
-                            var list = groupItems(vm.loungeItems(), 4);
-                            vm.loungeSections(list);
-                        });
-                    });
-                })
+               .done(function () {
+                   return newsApi.get(vm.news, new Date()).then(
+                   function () {
+                       var groupSize = vm.news().length > 5 ? 5 : vm.news().length;
+                       var list = groupItems(vm.news(), groupSize);
+                       vm.newsSections(list);
+                   }).then(function () {
+                       return eventsApi.get(vm.events, new Date()).then(
+                       function () {
+                           var groupSize = vm.events().length > 4 ? 4 : vm.events().length;
+                           var list = groupItems(vm.events(), groupSize);
+                           vm.eventsSections(list);
+                       });
+                   }).then(function () {
+                       return loungeApi.get(vm.loungeItems, new Date()).then(
+                       function () {
+                           var groupSize = vm.loungeItems().length > 4 ? 4 : vm.loungeItems().length;
+                           var list = groupItems(vm.loungeItems(), groupSize);
+                           vm.loungeSections(list);
+                       });
+                   });
+               })
                 .done(function () {
                     vm.sections(makeSections(vm.categories()));
                     roundabout.addThis();
@@ -82,7 +85,7 @@
                         maxSlides: 4,
                         controls: false,
                         moveSlides: 4,
-                        slideWidth: 192,
+                        slideWidth: 195,
                         slideMargin: 10
                     });
                     roundabout.sectionCount(roundabout.sectionCount() + 1);

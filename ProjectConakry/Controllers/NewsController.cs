@@ -15,10 +15,12 @@ namespace ProjectConakry.Web.Ariya.Controllers
             _newsManagementService = newsManagementService;
         }
 
-        [ConakryAuthorize]
+        
+        [OutputCache(VaryByParam = "id", Duration= 600) ]
         public ActionResult Index(string id)
         {
             var newsItem = _newsManagementService.GetById(id);
+            newsItem.ImagePath = ControllerConstants.ImagePath + newsItem.ImagePath;
             return View(newsItem);
         }
     }

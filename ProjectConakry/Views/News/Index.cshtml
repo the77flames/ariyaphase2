@@ -5,15 +5,7 @@
     ViewBag.Title = "Ariya | News";
     Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
 }
-
-<link rel="stylesheet" type="text/css" href="~/css/customcss/style.css">
-<link rel="stylesheet" type="text/css" href="~/css/customcss/demo.css">
-<link rel="stylesheet" type="text/css" href="~/css/customcss/reset.css">
 <link rel="stylesheet" type="text/css" href="~/css/customcss/news.css">
-
-<link href='http://fonts.googleapis.com/css?family=Raleway:600,700,900,400' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Orbitron:400,700' rel='stylesheet' type='text/css'>
-<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 
     <div class="wrapper">
         <section>
@@ -21,7 +13,7 @@
                 <h1 class="title"> @Model.Caption</h1>
                 <h3 class="author"> Story by: Ariya News Crew </h3>
                 <div class="article-img">
-                    <img src="@Model.ImagePath" alt="Niyola with Banky W" width="100%" height="auto">
+                    <img src="@Model.ImagePath" alt="" width="100%" height="auto">
                     <h4 class="caption">@Model.Caption </h4>
                 </div>
                 <p>
@@ -39,9 +31,9 @@
                 </ul>*@
             </article>
         </section>
-        <aside>
+        @*<aside>
             <div class="ad1"></div>
             <div class="ad2"></div>
-        </aside>
+        </aside>*@
     </div>
 

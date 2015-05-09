@@ -15,10 +15,12 @@ namespace ProjectConakry.Web.Ariya.Controllers
             _eventsManagementService = eventsManagementService;
         }
 
-       
+
+        [OutputCache(VaryByParam = "id", Duration = 600)]
         public ActionResult Index(string id)
         {
            var eventItem = _eventsManagementService.GetById(id);
+           eventItem.ImageBigPath = ControllerConstants.ImagePath + eventItem.ImageBigPath;
            return View(eventItem);
         }
     }

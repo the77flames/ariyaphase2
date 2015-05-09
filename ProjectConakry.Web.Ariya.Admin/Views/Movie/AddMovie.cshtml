@@ -11,7 +11,7 @@
     var sectionddl = new List<SelectListItem>{ new SelectListItem{ Text = Sections.UnClassified.ToString() , Value = ((int)Sections.UnClassified).ToString(), Selected = ViewBag.Section == Sections.UnClassified },
                                                new SelectListItem{ Text = Sections.Top10.ToString() , Value = ((int)Sections.Top10).ToString(), Selected = ViewBag.Section == Sections.Top10  },
                                                new SelectListItem{ Text = Sections.Featured.ToString()  , Value = ((int)Sections.Featured).ToString(), Selected = ViewBag.Section == Sections.Featured },
-                                               new SelectListItem { Text = Sections.New.ToString() , Value = ((int)Sections.Featured).ToString(), Selected = ViewBag.Section == Sections.Featured  },
+                                               new SelectListItem { Text = Sections.New.ToString() , Value = ((int)Sections.New).ToString(), Selected = ViewBag.Section == Sections.New  },
                                                new SelectListItem { Text = Sections.Trending.ToString() , Value = ((int)Sections.Trending).ToString(), Selected = ViewBag.Section == Sections.Trending  }  };
 
     var genresddl = new List<SelectListItem>{ new SelectListItem{ Text = Genres.Romance.ToString() , Value = ((int)Genres.Romance).ToString(), Selected = ViewBag.Genre == Genres.Romance},

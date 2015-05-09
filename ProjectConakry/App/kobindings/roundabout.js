@@ -27,7 +27,7 @@
                     minScale: 0.1,
                     childSelector: "li",
                     autoplay: true,
-                    autoplayDuration: 2400,
+                    autoplayDuration: 3000,
                     autoplayPauseOnHover: true
                 });
             }
@@ -43,7 +43,7 @@
         ko.bindingHandlers.details = {
             init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
                 var data = bindingContext.$data;
-                element.href = 'details?entityType=' + data.Genre + '&id=' + data.Id;
+                element.href = '/Details/Index?entityType=' + data.Genre + '&id=' + data.Id;
             }
         };
 
@@ -59,7 +59,7 @@
                 var target = allBindingsAccessor().target;
                 ko.computed(function () {
                     var count = vm.sectionCount();
-                    if (vm.isReady() && count >= 4) {
+                    if (vm.isReady() && count > 0) {
                         vm.loadSliders(element, target, options);
                     }
                 }, vm);                

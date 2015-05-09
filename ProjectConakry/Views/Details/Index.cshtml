@@ -1,4 +1,7 @@
-﻿@{
+﻿@using ProjectConakry.DomainObjects
+@model Movie
+
+@{
     Layout = "~/Views/Shared/_LayoutNoJsLoggedIn.cshtml";
 }
 
@@ -13,7 +16,7 @@
     <aside class="left-sidebar">
         <!--ariyatv-->
         <section id="main-video">
-            <video width="393" height="221" id="multiCodec" poster="img/media-player/media-player-poster.jpg" controls="controls" preload="none" src="media/echo-hereweare.mp4" style="width: 100%; height: 100%;">
+            <video width="393" height="221" id="multiCodec" poster='@Model.FullSizeImagePath' controls="controls" preload="none" src='@("media/" + Model.StreamingUrl)' style="width: 100%; height: 100%;">
                 <!-- id could be any according to you -->
                 <!-- MP4 source must come first for iOS -->
                 <source type="video/mp4" src="/media/echo-hereweare.mp4">
@@ -24,14 +27,14 @@
                 <!-- Fallback flash player for no-HTML5 browsers with JavaScript turned off -->
                 <object width="100%" height="100%" type="application/x-shockwave-flash" data="/media/flashmediaelement.swf">
                     <param name="movie" value="/media/flashmediaelement.swf">
-                    <param name="flashvars" value="controls=true&amp;poster=img/media-player/media-player-poster.jpg&amp;file=media/echo-hereweare.mp4">
+                    <param name="flashvars" value="controls=true&amp;poster=@(Model.FullSizeImagePath)&amp;file=@("media/" + Model.StreamingUrl)">
                     <!-- Image fall back for non-HTML5 browser with JavaScript turned off and no Flash player installed -->
-                    <img src="/img/media-player/media-player-poster.jpg" width="100%" height="100%" alt="Media" title="No video playback capabilities">
+                    <img src='@Model.FullSizeImagePath' width=" 100%" height="100%" alt="Media" title="No video playback capabilities">
                 </object>
             </video>
             <div class="video-detail">
-                <h2>Only Me <span>1,344,560</span></h2>
-                <div class="vtitle">2Face Idibia</div>
+                <h2>@Model.Name <span>1,344,560</span></h2>
+                <div class="vtitle">@Model.CoverArtistDisplayName</div>
             </div>
 
             <!--video-social-icon-->
@@ -59,10 +62,10 @@
             <ul class="home-listing" data-bind="foreach: List">
                 <li class="toplisting">
                     <div class="toplisting-inner">
-                        <img src="images/grass-grace.gif" data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
+                        <img data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
                         <div class="artist-detials">
                             <h2 data-bind="text: Name"></h2>
-                            <h4>Artist: 2face Idibia</h4>
+                            <h4 data-bind="text: ('Artist: ' + CoverArtistDisplayName)"></h4>
                         </div>
                     </div>
                     <div class="social-buttons">
@@ -75,7 +78,7 @@
                                 </div>
                             </li>
                             <li><a href="#" data-bind="details: '#'">
-                                <img src="images/addtocart-btn.png" /></a></li>
+                                <img src="~/images/addtocart-btn.png" /></a></li>
                         </ul>
                     </div>
                 </li>

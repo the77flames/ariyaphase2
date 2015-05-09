@@ -1,23 +1,24 @@
 ﻿define(['services/navigating', 'knockout', 'jquery', 'api/recommendationApi', 'kobindings/roundabout'],
     function (navigating, ko, $, recommendationApi, roundabout) {
-        var sections = ["", "Related Videos"];
+        var sections = ["", "Recommended Videos"];
 
         var makeSections = function (recommendations) {
             if (!recommendations) {
                 recommendations = [];
             }
-            var list = [];
+            var list = [{ List: []}];
+            
             for (var j = 0; j < sections.length; j++) {
                 list.push({ Name: sections[j], List: [] });
             }
             recommendations = $(recommendations).filter(function (index, item) {
-                return item.SectionId == 1;
+                return item;
             });
             for (var i = 0; i < recommendations.length; i++) {
                 var o = recommendations[i];
-                list[o.SectionId].List.push(o);
+                list[0].List.push(o);
             }
-            return list;
+            return list[0];
         };
 
         var activate = function () {

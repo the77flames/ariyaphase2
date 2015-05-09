@@ -342,7 +342,7 @@ body.signup #content-inner, body.login #content-inner{
 .toplisting {
     float: left;
     margin-right: 9px;
-    width: 192px;
+    width: 195px;
 }
 
 
@@ -350,7 +350,7 @@ body.signup #content-inner, body.login #content-inner{
 .toplisting:last-child {
     float: left;
     margin-right: 0;
-    width: 192px;
+    width: 195px;
 }
 	
 .listing-wrap h1{
@@ -392,7 +392,7 @@ body.signup #content-inner, body.login #content-inner{
     float: left;
     height: 20px;
     margin: 5px 0 40px;
-    width: 192px;
+    width: 195px;
 }
 
 
@@ -495,11 +495,13 @@ aside {
     padding: 10px 10px 40px;
     width: 318px;
 }
+
 .news-content ul{}
 
 .news-content ul li ul li {
     border-bottom: 1px dotted #d1d1d1;
     padding-bottom: 5px;
+    margin-left: 20px !important;
 }
 
 .news-content ul li a{
@@ -527,6 +529,7 @@ aside {
     display: inline-block;
     margin-bottom: 10px;
     width: 305px;
+    margin-left: 20px !important;
 }
 
 

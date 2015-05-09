@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 
@@ -331,7 +331,7 @@ body.signup #content-inner, body.login #content-inner{
 .toplisting {
     float: left;
     margin-right: 10px;
-    width: 192px;
+    width: 195px;
 }
 
 
@@ -339,7 +339,7 @@ body.signup #content-inner, body.login #content-inner{
 .toplisting:last-child {
     float: left;
     margin-right: 0;
-    width: 192px;
+    width: 195px;
 }
 	
 .listing-wrap h1 {
@@ -382,7 +382,7 @@ body.signup #content-inner, body.login #content-inner{
     float: left;
     height: 20px;
     margin: 5px 0 40px;
-    width: 192px;
+    width: 195px;
 }
 
 
