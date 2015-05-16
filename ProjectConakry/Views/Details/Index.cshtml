@@ -13,10 +13,16 @@
 <!--content-inner-->
 <div id="content-inner">
     <!--container-->
-    <aside class="left-sidebar">
+        <div style="padding-left: 10px; font-size: large;">
+            <br />
+            <h2>@Model.Name </h2>
+            <h2>By: @Model.CoverArtistDisplayName</h2>
+            <br />
+        </div>
+    
         <!--ariyatv-->
         <section id="main-video">
-            <video width="393" height="221" id="multiCodec" poster='@Model.FullSizeImagePath' controls="controls" preload="none" src='@("media/" + Model.StreamingUrl)' style="width: 100%; height: 100%;">
+            <video id="multiCodec" poster='@Model.FullSizeImagePath' controls="controls" preload="none" src='@Model.StreamingUrl' style="width: 100%; height: 100%;">
                 <!-- id could be any according to you -->
                 <!-- MP4 source must come first for iOS -->
                 <source type="video/mp4" src="/media/echo-hereweare.mp4">
@@ -27,7 +33,7 @@
                 <!-- Fallback flash player for no-HTML5 browsers with JavaScript turned off -->
                 <object width="100%" height="100%" type="application/x-shockwave-flash" data="/media/flashmediaelement.swf">
                     <param name="movie" value="/media/flashmediaelement.swf">
-                    <param name="flashvars" value="controls=true&amp;poster=@(Model.FullSizeImagePath)&amp;file=@("media/" + Model.StreamingUrl)">
+                    <param name="flashvars" value="controls=true&amp;poster=@(Model.FullSizeImagePath)&amp;file=@Model.StreamingUrl">
                     <!-- Image fall back for non-HTML5 browser with JavaScript turned off and no Flash player installed -->
                     <img src='@Model.FullSizeImagePath' width=" 100%" height="100%" alt="Media" title="No video playback capabilities">
                 </object>
@@ -46,54 +52,57 @@
                             <a class="addthis_button_twitter" style="cursor: pointer; display: inline-block"></a>
                             <a class="addthis_button_google_plusone_share" style="cursor: pointer; display: inline-block"></a>
                         </div>
-                    </li>                    
+                    </li>
                 </ul>
             </div>
             <!--video-social-icon-->
         </section>
         <!--ariyatvEND-->
         <div class="clr"></div>
-    </aside>
-    <section id="container">
-        <!--listing-wrapp-->
-        <div class="listing-wrap listing-wrap-after-login" data-bind="foreach: sections">
-            <h1 data-bind="text: Name">Related Videos</h1>
-            <!--topten-->
-            <ul class="home-listing" data-bind="foreach: List">
-                <li class="toplisting">
-                    <div class="toplisting-inner">
-                        <img data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
-                        <div class="artist-detials">
-                            <h2 data-bind="text: Name"></h2>
-                            <h4 data-bind="text: ('Artist: ' + CoverArtistDisplayName)"></h4>
+
+        <section id="container">
+            <!--listing-wrapp-->
+            <div class="listing-wrap listing-wrap-after-login" data-bind="foreach: sections">
+                <h1 data-bind="text: Name">Related Videos</h1>
+                <!--topten-->
+                <ul class="home-listing" data-bind="foreach: List">
+                    <li class="toplisting">
+                        <div class="toplisting-inner">
+                            <img data-bind="image: ThumbNailImagePath" style="width: 192px; height: 136px" />
+                            <div class="artist-detials">
+                                <h2 data-bind="text: Name"></h2>
+                                <h4 data-bind="text: ('Director: ' + CoverArtistDisplayName)"></h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="social-buttons">
-                        <ul>
-                            <li>
-                                <div class="addthis_toolbox addthis_20x20_style addthis-smartlayers at-share-tbx-element" data-url="domain.com" data-title="title">
-                                    <a class="addthis_button_facebook" style="cursor: pointer"></a>
-                                    <a class="addthis_button_twitter" style="cursor: pointer"></a>
-                                    <a class="addthis_button_google_plusone_share" style="cursor: pointer"></a>
-                                </div>
-                            </li>
-                            <li><a href="#" data-bind="details: '#'">
-                                <img src="~/images/addtocart-btn.png" /></a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!--listing-wrappEND-->
+                        <div class="social-buttons">
+                            <ul>
+                                <li>
+                                    <div class="addthis_toolbox addthis_20x20_style addthis-smartlayers at-share-tbx-element" data-url="domain.com" data-title="title">
+                                        <a class="addthis_button_facebook" style="cursor: pointer"></a>
+                                        <a class="addthis_button_twitter" style="cursor: pointer"></a>
+                                        <a class="addthis_button_google_plusone_share" style="cursor: pointer"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" data-bind="details: '#'">
+                                        <img src="~/images/addtocart-btn.png" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--listing-wrappEND-->
 
+            <div class="clr"></div>
+
+        </section>
+        <!--containerEND-->
+        <!--rightsidebar-->
+        <!--rightsidebarEND-->
         <div class="clr"></div>
-
-    </section>
-    <!--containerEND-->
-    <!--rightsidebar-->
-    <!--rightsidebarEND-->
-    <div class="clr"></div>
-</div>
+    </div>
 <!--content-innerEND-->
 
 </section>

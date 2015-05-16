@@ -23,8 +23,8 @@ namespace ProjectConakry.Web.Ariya.Controllers
             ViewBag.EntityType = entityType;
             ViewBag.Id = id;
             var movieItem = _movieManagementService.GetById(id);
-            movieItem.FullSizeImagePath = ControllerConstants.ImagePath + movieItem.FullSizeImagePath;
-            return View();
+            movieItem.FullSizeImagePath = ControllerConstants.ImagePath + movieItem.FullSizeImagePath ?? String.Empty ;
+            return View(movieItem);
         }
     }
 }

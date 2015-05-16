@@ -5,6 +5,36 @@
     ViewBag.Title = "Ariya | News";
     Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
 }
+
+<style>
+    .main .title {
+        padding-top: 24px;
+        font-size: 2rem;
+        color: #004505;
+    }
+
+    .main p {
+        padding-bottom: 9px;
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+
+        .main p:first-of-type {
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 1.35rem;
+            padding-top: 6px;
+        }
+
+            .main p:first-of-type:first-letter {
+                float: left;
+                color: #107A0D;
+                font-size: 4.25rem;
+                line-height: 1rem;
+                padding: 21px 5px 8px 0;
+            }
+</style>
+
 <link rel="stylesheet" type="text/css" href="~/css/customcss/news.css">
 
     <div class="wrapper">
@@ -17,7 +47,7 @@
                     <h4 class="caption">@Model.Caption </h4>
                 </div>
                 <p>
-                    @Model.Text
+                    @Html.Raw(Model.Text)
                 </p>
             </article>
             <article class="rel">

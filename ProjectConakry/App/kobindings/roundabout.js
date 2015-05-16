@@ -59,10 +59,11 @@
                 var target = allBindingsAccessor().target;
                 ko.computed(function () {
                     var count = vm.sectionCount();
-                    if (vm.isReady() && count > 0) {
+                    if (vm.isReady() && count > 3) {
+                        debugger;
                         vm.loadSliders(element, target, options);
                     }
-                }, vm);                
+                }, vm);
             }
         };
 
@@ -85,12 +86,13 @@
             var model = new Model();
             $(document).ready(function () {
                 ko.applyBindings(model);
-                viewModel.activate();
-                initPlayer();
                 vm.isReady(true);
+                viewModel.activate();
+                //initPlayer();
+                
             });
             return model;
         }
-        
+
         return vm;
     });

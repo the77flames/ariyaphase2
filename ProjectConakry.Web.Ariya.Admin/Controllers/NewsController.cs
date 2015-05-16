@@ -26,6 +26,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(News news)
         {
             news.CreatedDate = DateTime.Now;
@@ -33,6 +34,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [ValidateInput(false)]
         public ActionResult Edit(string id)
         {
             var news = _newsService.GetById(id);
@@ -41,6 +43,7 @@ namespace ProjectConakry.Web.Ariya.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(News news)
         {
             _newsService.Update(news);

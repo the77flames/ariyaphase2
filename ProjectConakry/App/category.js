@@ -16,18 +16,18 @@
             }
             return list.splice(1, list.length - 1);
         };
-       
+
         var groupItems = function (items, groupSize) {
             var list = [];
             if (items == null)
                 return list;
             var count = items.length > groupSize ? groupSize : items.length;
             for (var i = 0; i < items.length / count; i++) {
-                list.push({List:[]});
+                list.push({ List: [] });
                 for (var j = 0; j < count; j++) {
                     var o = items[(i * count) + j];
                     list[i].List.push(o);
-                }                
+                }
             }
             roundabout.sectionCount(roundabout.sectionCount() + 1);
             return list;
@@ -73,7 +73,7 @@
             sections: ko.observableArray([]),
             newsSections: ko.observableArray([]),
             eventsSections: ko.observableArray([]),
-            loungeSections: ko.observableArray([]),            
+            loungeSections: ko.observableArray([]),
         }
 
         vm.onLoad = ko.computed(function () {
@@ -92,7 +92,6 @@
                 }, 100);
             }
         }, vm);
-
         roundabout.bind(vm);
 
         return vm;

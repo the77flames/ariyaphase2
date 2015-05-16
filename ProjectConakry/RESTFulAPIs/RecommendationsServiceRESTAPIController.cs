@@ -20,7 +20,7 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
         public IEnumerable<Media> Get(string userId, int count)
         {
             var recommendedEvents = _recommendationsService.GetMovieRecommendationsForUser(userId) ?? Enumerable.Empty<Media>();
-            return recommendedEvents.Take(count - 1);
+            return recommendedEvents;
         }
 
 

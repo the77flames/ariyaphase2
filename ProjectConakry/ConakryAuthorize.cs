@@ -13,7 +13,8 @@ namespace ProjectConakry.Web.Ariya
     {
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            var isAuthorized = System.Web.HttpContext.Current.Session["currentUser"] != null;
+            var isAuthorized = System.Web.HttpContext.Current.Session != null &&
+                                System.Web.HttpContext.Current.Session["currentUser"] != null;
             if (!isAuthorized)
             {
                 return false;
@@ -23,12 +24,14 @@ namespace ProjectConakry.Web.Ariya
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
+            System.Web.HttpContext.Current.Session["redirectPath"] = System.Web.HttpContext.Current.Request.Url.PathAndQuery;
             filterContext.Result = new RedirectToRouteResult(
                         new RouteValueDictionary(
                             new
                             {
                                 controller = "LogIn",
                                 action = "Index"
+                                
                             })
                         );
          

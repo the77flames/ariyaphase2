@@ -15,7 +15,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
-namespace ProjectConakry.Controllers
+namespace ProjectConakry.Web.Ariya.Controllers
 {
     public class LogInController : Controller
     {
@@ -26,24 +26,40 @@ namespace ProjectConakry.Controllers
             this._authenticationService = authenticationService;
         }
 
-        [HttpGet]
-        [OutputCache(Duration = 86400)]
+        [HttpGet]        
+        [ValidateInput(false)]
         public ActionResult Index()
         {
+            ViewBag.Error = TempData["LogInError"];
+            ViewBag.ImagePath = ControllerConstants.ImagePath;
+            if (System.Web.HttpContext.Current.Session != null)
+            {
+                ViewBag.RedirectUrl = System.Web.HttpContext.Current.Session["redirectPath"];
+                System.Web.HttpContext.Current.Session["redirectPath"] = null;
+            }           
             return View();
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> TryLogIn(string email, string passWord)
-        {           
+        public async Task<ActionResult> TryLogIn(string email, string passWord, string redirectUrl)
+        {
+            var errorMsg = "Bad username or password";
             if (_authenticationService.Authenticate(email, passWord))
             {
                 await LogInUser(email);
-                return RedirectToAction("Index", "Account");
+                if(!String.IsNullOrEmpty(redirectUrl))
+                {
+                    var request = Request;
+                    var address = string.Format("{0}://{1}", request.Url.Scheme, request.Url.Authority);
+                    Response.Redirect(address + redirectUrl);
+                }
+                errorMsg = String.Empty;
+               
             }
+            TempData["LogInError"] = errorMsg;
 
-            throw new UnauthorizedAccessException("Bad username or password");
+            return RedirectToAction("Index", "Account");
         }
 
 

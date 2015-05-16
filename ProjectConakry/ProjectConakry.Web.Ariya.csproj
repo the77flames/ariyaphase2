@@ -266,6 +266,7 @@
     <Compile Include="HelperClasses\DetailsViewHandler.cs" />
     <Compile Include="Models\DetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RESTFulAPIs\SearchRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\DetailsRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\NewsServiceRESTAPIController.cs" />
     <Compile Include="RESTFulAPIs\EventsServiceRESTAPIController.cs" />

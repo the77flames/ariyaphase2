@@ -24,9 +24,11 @@ namespace ProjectConakry.BusinessServices
             var result = new List<Movie>();
             foreach(var item in Enum.GetValues(typeof(Genres)))
             {
-                foreach (var suggestedMoovieItem in _movieManagementService.GetAllByGenre((Genres)item, 1, 20).GetRandomSequence<Movie>(5))
+                var moviesByGenre = _movieManagementService.GetAllByGenre((Genres)item, 1, 20).ToList();
+                moviesByGenre.Shuffle();
+                foreach (var suggestedMoovieItem in moviesByGenre)
                 {
-                    if (!result.Contains(suggestedMoovieItem))
+                    if (!result.Any(k => k.Id == suggestedMoovieItem.Id))
                         result.Add(suggestedMoovieItem);
                 }
             }
@@ -40,7 +42,9 @@ namespace ProjectConakry.BusinessServices
 
         public IEnumerable<Movie> GetMovieRecommendationsByGenre(Genres genre, int sampleSize)
         {
-           return _movieManagementService.GetAllByGenre(genre, 1, sampleSize * 2).GetRandomSequence<Movie>(5);
+            var holder = _movieManagementService.GetAllByGenre(genre, 1, sampleSize).ToList();
+            holder.Shuffle();
+            return holder;
         }
 
         
@@ -48,20 +52,18 @@ namespace ProjectConakry.BusinessServices
 
     public static class EnumerableExtensions
     {
-        public static IEnumerable<T> GetRandomSequence<T>(this IEnumerable<T> holder, int sampleSize)
+        public static void Shuffle<T>(this List<T> list)
         {
-            if (holder.Count() != 0)
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
             {
-                var randomIndexList = new List<int>();
-                var size = holder.Count();
-                for (int i = 0; i <= size; i++)
-                {
-                    var randomIndex = new Random();
-                    yield return holder.ElementAt(randomIndex.Next(1, size) - 1);
-                }
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
             }
-            else
-                yield return default(T);
         }
     }
 }

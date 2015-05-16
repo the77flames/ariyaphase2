@@ -53,6 +53,7 @@
     <Compile Include="AddressManagementService.cs" />
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="AdminUserManagermentService.cs" />
+    <Compile Include="Interfaces\ISearchService.cs" />
     <Compile Include="Interfaces\IMailService.cs" />
     <Compile Include="LoungeItemManagementService.cs" />
     <Compile Include="MailService.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Interfaces\ICustomerManagementService.cs" />
     <Compile Include="Interfaces\IAuthenticationService.cs" />
     <Compile Include="Interfaces\IAriyaAdminService.cs" />
+    <Compile Include="SearchService.cs" />
     <Compile Include="SongManagementService.cs" />
     <Compile Include="BookManagementService.cs" />
     <Compile Include="MovieManagementService.cs" />
