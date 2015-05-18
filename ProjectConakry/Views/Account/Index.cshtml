@@ -1,7 +1,57 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutNoJsLoggedIn.cshtml";
+    Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
 }
+
+<style type="text/css">
+
+    .pagina {
+        display: table;
+        margin: 15px auto;
+        padding: 0;
+    }
+
+        .pagina li {
+            list-style: none;
+            float: left;
+            margin: 5px;
+            padding: 4px 10px;
+            background: #004505;
+            border: 1px solid;
+        }
+
+            .pagina li:hover, .pagina li.active {
+                background: #fafafa;
+            }
+
+        .pagina a {
+            display: block;
+            padding: 4px;
+            text-decoration: none;
+            color: #fafafa;
+        }
+
+        .pagina a:hover, .pagina li:hover a, .pagina li.active a {
+            color: #5c5c5c;
+        }
+</style>
+
+<script type="text/javascript">    
+        $(document).ready(function () {
+            $('.paginghack').bind('click', function () {
+
+                $('.active').removeClass('active');
+                var pageNumber = parseInt($(this).attr('id'));
+                window.PageNumber = pageNumber;
+                setCookie("pageNumber", pageNumber, 0.05);
+                location.reload();
+
+            });
+            $('#' + window.PageNumber + 'li').addClass('active');
+        })
+</script>
+
+
 <div id="slider-wrap">
     <div class="thumbs-block">
         <div class="addcallertunez"><!-- <img src="images/addcallertunez.png" /> --> </div>
@@ -77,3 +127,18 @@
 <div class="clr"></div>
 <script type="text/javascript" src="~/Scripts/require.js" data-main="/App/account"></script>
 <script type="text/javascript" src="~/App/RequireConfig.js"></script>
+
+<ul class="pagina">
+    @*<li><a href="#">Prev</a></li>*@
+    <li id="1li"><a id="1" class="paginghack" href="#">1</a></li>
+    <li id="2li"><a id="2" class="paginghack" href="#">2</a></li>
+    <li id="3li"><a id="3" class="paginghack" href="#">3</a></li>
+    <li id="4li"><a id="4" class="paginghack" href="#">4</a></li>
+    <li id="5li"><a id="5" class="paginghack" href="#">5</a></li>
+    @*<li><a href="#">6</a></li></li>
+    <li><a href="#">7</a></li></li>
+    <li><a href="#">8</a></li></li>
+    <li><a href="#">9</a></li></li>
+    <li><a href="#">10</a></li>*@
+    @*<li><a href="#">Next</a></li>*@
+</ul>

@@ -88,11 +88,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	width:480px;
 	}
 	
-.product-search{
-	width:500px;
-	margin:16px 0;
-	float:right;
-	}
+
 
 .act-nav {
     float: left;
@@ -139,9 +135,9 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 }
 
 .login-cart {
-    float: left;
+    float: right;
     margin-top: 9px;
-    width: 195px;
+    width: 300px;
 }
 
 .login-cart ul{}
@@ -149,7 +145,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 
 .login-cart ul li {
     float: left;
-    margin-right: 22px;
+    margin-right: 18px;
 }
 
 
@@ -213,7 +209,7 @@ margin: 15px;
   float: left;
   position: absolute;
   left: 4.7em;
-  top: 80px;
+  top: 40px;
   padding: 15px;
   margin: 0 auto;
   width: 516px;
@@ -223,7 +219,7 @@ margin: 15px;
   float: right;
   position: absolute;
   right: 1em;
-  top: 80px;
+  top: 40px;
   margin: 0 auto;
   padding: 15px;
   width: 561px;
@@ -289,7 +285,7 @@ top: 5px
 
 #content{
 	width:1223px;
-    height:1310px;
+    height:1350px;
 	margin:auto;
 	background:url(../images/wrapper-inner-bg.png) repeat-y;
 	}
@@ -1577,8 +1573,84 @@ body.profile .blog-content .btns span.read-more{
 	display: inline-block;
 }
 
+.pagina {
+  display: table;
+  margin: 15px auto;
+  padding: 0;
+}
+.pagina li {
+  list-style: none;
+  float: left;
+  margin: 5px;
+  padding: 4px 10px;
+  background: #004505;
+  border: 1px solid;
+}
+.pagina li:hover, .pagina li.active {
+  background: #fafafa;
+}
+.pagina a {
+  display: block;
+  padding: 4px;
+  text-decoration: none;
+  color: #fafafa; 
+}
+.pagina a:hover, .pagina li:hover a, .pagina li.active a {
+  color: #5c5c5c;
+}
 
+.puller {
+display: table;
+position: fixed;
+top: 50%;
+left: -360px; z-index: 999;
+}
+.puller > ul > li {
+  float: left;
+}
+.pull-tab {
+position: absolute;
+top: 294px;
+left: 353px;
+font-size: 21px;
+text-align: center;
+padding: 15px 65px;
+width: 294px;
+cursor: pointer;
+-ms-transform: rotate(-90deg);
+-webkit-transform: rotate(-90deg);
+transform: rotate(-90deg);
+-ms-transform-origin: left top 0;
+-webkit-transform-origin: left top 0;
+transform-origin: left top 0;
+z-index: 100;
+}
+.pulled-strip {
+  position: relative;
+  left: -14px;
+  padding: 21px;
+  padding-right: 0;
+  width: 367px;
+  height: 294px;
+  z-index: 99;
+}
+.pulled-strip, .pull-tab {
+  display: table;
+  color: #fafafa;
+  background: #151515;
+  box-sizing: border-box;
+}
+.pull-tab span {
+   margin: 0 5px;
+}
 
-
-
-
+.members-field:focus {
+  background: #fff;
+  color: #212121;
+}
+.search-results {
+  margin-top: 50px;
+}
+.search-results li {
+  padding: 4px;
+}

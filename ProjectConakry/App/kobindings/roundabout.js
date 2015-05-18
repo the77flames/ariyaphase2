@@ -59,8 +59,7 @@
                 var target = allBindingsAccessor().target;
                 ko.computed(function () {
                     var count = vm.sectionCount();
-                    if (vm.isReady() && count > 3) {
-                        debugger;
+                    if (vm.isReady() && count > 0) {
                         vm.loadSliders(element, target, options);
                     }
                 }, vm);

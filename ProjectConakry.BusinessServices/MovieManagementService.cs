@@ -40,7 +40,7 @@ namespace ProjectConakry.BusinessServices
 
         public IEnumerable<Movie> GetAllWithPaging(int pageNumber, int pageSize)
         {
-            var numberToSkip = pageNumber * pageSize;
+            var numberToSkip = (pageNumber - 1) * pageSize;
             return _movieRepository.GetAllWithPaging(numberToSkip, pageSize);
         }
 

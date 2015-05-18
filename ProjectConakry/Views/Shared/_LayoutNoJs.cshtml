@@ -4,22 +4,83 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ariya | relax | enjoy</title>
-    <link rel="stylesheet" href="~/css/style.css" />
+    <meta name="description" content="Free Nigerian movies" />
+    <meta name="movies1" content="Good Nigerian movies" />
+    <meta name="movies2" content="Nigerian movies online free" />
+    <meta name="movies3" content="Nigerian video on demand" />
+    <meta name="movies4" content="Nollywood movies for free" />
+    <meta name="movies5" content="Kunle Afolayan" />
+    <meta name="movies6" content="October 1st" />
+    <meta name="movies7" content="African Movies" />
+    <meta name="movies7" content="watch nigerian Movies" />
+    <title>ariya | relax | enjoy</title>   
     <link rel="stylesheet" type="text/css" href="~/css/demo.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" type="text/css" href="~/css/slider-style.css" />
     <link rel="stylesheet" type="text/css" href="~/css/media-player.css" />
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+ 
+    <script src="//code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="~/js/modernizr.custom.53451.js"></script>
-
-    <!-- bxSlider CSS file -->
+    <script type="text/javascript" src="~/js/introjs/SearchBar.js"></script>
+    <script type="text/javascript" src="~/js/introjs/CookieManager.js"></script>
+<!-- bxSlider CSS file -->
     <link href="~/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="~/css/roundabout.css" rel="stylesheet" />
     <script type="text/javascript">
-         window.ImagePath = '@ViewBag.ImagePath';
+        window.CurrentUserId = '@ViewBag.UserId';
+        window.ImagePath = '@ViewBag.ImagePath';
+        window.PageNumber = getCookie("pageNumber") == "" ? 1 : getCookie("pageNumber");
+        $(document).ready(function () {
+            var keyStrokeCounter = 0;
+            var isBusy = false;
+            var results = [];
+            $('.members-field').bind('keyup', function () {
+
+                keyStrokeCounter += 1;
+                if (keyStrokeCounter < 3 || isBusy)
+                    return;
+                $('#searchResultsUl').html('');
+                isBusy = true;
+                var searchTearm = $('.members-field').val();
+                $('#searchResultsUl').append("<li> searching ... </li>");
+                $.ajax({
+                    url: "/api/SearchRESTAPI/Get",
+                    datatype: "json",
+                    data: { searchTerm: searchTearm },
+                    success: function (data) {
+                        $('#searchResultsUl').html("");
+                        keyStrokeCounter = 0;
+                        isBusy = false;
+                        $.each(data, function (i) {
+                            results.push('<li><a href="/Details/Index?entityType=' + data[i].Genre + '&id=' + data[i].Id + '">' + data[i].Name + '</a></li>');
+
+                        });
+                        $('#searchResultsUl').append(results);
+                        results = [];
+                    },
+                    error: function (err) {
+                        keyStrokeCounter = 0;
+                        isBusy = false;
+                    }
+
+                });
+
+            });
+
+        })
     </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
- </head>
+    
+</head>
+@{
+    CustomPrincipal customer = null; 
+    if(Session != null)
+    { 
+        customer = Session["currentUser"] as CustomPrincipal;
+    }
+}
 <body>
     <!--header-wrap-->
     <section id="header-wrapp">
@@ -27,14 +88,20 @@
         <section id="head">
             <div class="logo"></div>
             <div class="product-search">
-                <div class="members-prod">
-                    <input name="Members, Products" type="text" value="Members, Products" class="members-field" />
-                </div>
                 <div class="login-cart">
-                    <ul>                       
-                        <li> <a href="#"></a> </li>
-                        <li> <a href="/LogIn/Index">LOG IN</a> </li>
-                        <li> <a href="/Registration/Index">SIGN UP</a> </li>                        
+                    <ul>
+                        @if (customer == null)
+                        {
+                            <li> <a href="#"></a> </li>
+                            <li> <a href="/LogIn/Index">LOG IN</a> </li>
+                            <li> <a href="/Registration/Index">SIGN UP</a> </li>
+                        }
+                        else
+                        {
+                            <li> <a href="#"></a> </li>
+                            <li> Welcome, @customer.Customer.FirstName ! </li>
+                            <li> <a href="/LogIn/SignOut">LOG OUT</a> </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -46,7 +113,7 @@
             <div class="navbar">
                 <ul class="left">
                     <li>
-                        <a href="#">ariya PLAY</a>
+                        <a href="/Account/Index">ariya PLAY</a>
                     </li>
                     <li>
                         <a href="#">ariya ZONE</a>
@@ -73,6 +140,27 @@
         </div>
         <!--navEND-->
         <div class="clr"></div>
+        <!--searchArea-->
+        <div class="puller">
+            <ul>
+                <li>
+                    <div class="pull-tab">
+                        <span> Search </span>
+                        <span class="fa fa-search"></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="pulled-strip">
+                        <div class="product-search">
+                            <div class="members-prod">
+                                <input id="searchTextBox" name="Movies, Directors" type="text" class="members-field" placeholder="Movies, Directors" />
+                            </div>
+                        </div>
+                        <ul id="searchResultsUl" class="search-results"></ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
         <!--content-->
         @RenderBody()

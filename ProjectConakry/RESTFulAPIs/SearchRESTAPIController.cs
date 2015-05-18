@@ -20,10 +20,12 @@ namespace ProjectConakry.Web.Ariya.RESTFulAPIs
        public Func<IEnumerable<Media>> DataFetcher = () => { return _movieManagementService.GetAll(); };
 
         [ConakryAuthorize]
-        public IEnumerable<Media> Get(string searchTerm, int count = 20)
+        public IEnumerable<Media> Get(string searchTerm, int count = 6)
         {
+            if (String.IsNullOrEmpty(searchTerm))
+                return Enumerable.Empty<Media>();
             var searchService = new SearchService<Media>(DataFetcher);
-            var results = searchService.Search<string>(searchTerm, 0, 25, null);
+            var results = searchService.Search<string>(searchTerm, 0, count, null);
             return results;
         }
     }

@@ -22,7 +22,7 @@
         };
 
         var activate = function () {
-            return recommendationApi.get(vm.recommendations, window.CurrentUserId)
+            return recommendationApi.get(vm.recommendations, window.PageNumber)
                  .done(function () {
                      vm.sections(makeSections(vm.recommendations()));
                      roundabout.addThis();

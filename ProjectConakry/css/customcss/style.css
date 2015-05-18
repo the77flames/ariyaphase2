@@ -88,11 +88,6 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	width:480px;
 	}
 	
-.product-search{
-	width:665px;
-	margin:16px 0;
-	float:right;
-	}
 
 .act-nav {
     float: left;
@@ -139,7 +134,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 }
 
 .login-cart {
-    float: left;
+    float: right;
     margin-top: 9px;
     width: 195px;
 }

@@ -1,6 +1,6 @@
 ﻿define(['durandal/system', 'services/logger', 'services/global', 'knockout', 'plugins/http', 'services/scripts'],
     function (system, logger, global, ko, http, scripts) {
-        var service = global.serviceUrl + 'RecommendationsServiceRESTAPI/';
+        var service = global.serviceUrl + 'MovieServiceRESTAPI/';
 
         var vm = {
             get: get,
@@ -11,8 +11,8 @@
 
         return vm;
 
-        function get(observableList,userId) {
-            var url = service + 'get?userId=' + userId + "&count=25";
+        function get(observableList, PageNumber) {
+            var url = service + 'get?pageNumber=' + PageNumber;
             var promise = http.get(url);
 
             return promise.then(function (data) {

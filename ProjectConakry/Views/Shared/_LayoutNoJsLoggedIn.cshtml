@@ -5,25 +5,70 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ariya | relax | enjoy</title>
-    <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" type="text/css" href="~/css/demo.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" type="text/css" href="~/css/slider-style.css" />
-    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-    <script type="text/javascript" src="~/js/modernizr.custom.53451.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" /> 
     <!-- bxSlider CSS file -->
     <link href="~/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="~/css/roundabout.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="~/css/media-player.css" />
+
+    <script src="//code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/js/modernizr.custom.53451.js"></script>
+    <script type="text/javascript" src="~/js/introjs/SearchBar.js"></script>
+    <script type="text/javascript" src="~/js/introjs/CookieManager.js"></script>
     <script type="text/javascript">
         window.CurrentUserId = '@ViewBag.UserId';
-        window.ImagePath = '@ViewBag.ImagePath';
+        window.ImagePath = '@ViewBag.ImagePath';        
+        window.PageNumber = getCookie("pageNumber") == "" ? 1 : getCookie("pageNumber");
+        $(document).ready(function () {
+            var keyStrokeCounter = 0;
+            var isBusy = false;
+            var results = [];
+            debugger;
+            $('.members-field').bind('keydown', function () {
+                debugger;
+                keyStrokeCounter += 1;
+                if (keyStrokeCounter < 3 || isBusy)
+                    return;
+                $('#searchResultsUl').html('');
+                isBusy = true;
+                var value = $('.members-field').val();
+                debugger;
+                if ($.trim(value) == "" || value.length < 3) {
+                    return;
+                }
+                $('#searchResultsUl').append("<li> searching ... </li>");
+                $.ajax({
+                    url: "/api/SearchRESTAPI/Get",
+                    datatype: "json",
+                    data: { searchTerm: value },
+                    success: function (data) {
+                        $('#searchResultsUl').html("");
+                        keyStrokeCounter = 0;
+                        isBusy = false;
+                        $.each(data, function (i) {
+                            results.push('<li><a href="/Details/Index?entityType=' + data[i].Genre + '&id=' + data[i].Id + '">' + data[i].Name + '</a></li>');
+
+                        });
+                        $('#searchResultsUl').append(results);
+                        results = [];
+                    },
+                    error: function (err) {
+                        keyStrokeCounter = 0;
+                        isBusy = false;
+                    }
+
+                });
+
+            });
+
+        });
     </script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
  </head>
-@{
-    var customer = Session["currentUser"] as CustomPrincipal;
-}
+
 <body>    
     <!--header-wrap-->
     <section id="header-wrapp">
@@ -32,24 +77,9 @@
             <div class="logo"></div>
             <div class="product-search">
                 <div class="members-prod">
-                    <input name="Members, Products" type="text" value="Members, Products" class="members-field" />
+                  
                 </div>
-                <div class="login-cart">
-                    <ul>
-                        @if (customer == null)
-                        {
-                            <li> <a href="#"></a> </li>
-                            <li> <a href="/LogIn">LOG IN</a> </li>
-                            <li> <a href="/Registration">SIGN UP</a> </li>
-                        }
-                        else
-                        {
-                            <li> <a href="#"></a> </li>
-                            <li> Welcome, @customer.Customer.FirstName ! </li>
-                            <li> <a href="/LogIn/SignOut">LOG OUT</a> </li>
-                        }
-                    </ul>
-                </div>
+             
             </div>
         </section>
         <!---headEND-->
@@ -89,6 +119,29 @@
         </div>
         <!--navEND-->
         <div class="clr"></div>
+        <!--searchArea-->
+        <div class="puller">
+            <ul>
+                <li>
+                    <div class="pull-tab">
+                        <span> Search </span>
+                        <span class="fa fa-search"></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="pulled-strip">
+                        <div class="product-search">
+                            <div class="members-prod">
+                                <input name="Movies, Directors" type="text" class="members-field" placeholder="Movies, Directors" />
+                            </div>
+                        </div>
+                        <ul class="search-results">
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
         <!--content-->
         @RenderBody()

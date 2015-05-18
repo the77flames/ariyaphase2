@@ -20,6 +20,8 @@ namespace ProjectConakry.DomainObjects
         public string TicketPrice { get; set; }
         public bool IsFreeEvent { get; set; }
         public string CoverArtistName { get; set; }
+
+        public string EventDescription { get; set; }
        
     }
 }

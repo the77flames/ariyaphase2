@@ -566,9 +566,12 @@
     <Content Include="img\media-player\skipback.png" />
     <Content Include="js\introjs\jquery.color.min.js" />
     <Content Include="js\introjs\pace.js" />
+    <Content Include="js\introjs\CookieManager.js" />
+    <Content Include="js\introjs\SearchBar.js" />
     <Content Include="js\introjs\PxLoader.js" />
     <Content Include="js\media-player.min.js" />
     <Content Include="player.html" />
+    <Content Include="sitemap.xml" />
     <Content Include="test.html" />
     <Content Include="js\jquery.bxslider.js" />
     <Content Include="js\jquery.bxslider.min.js" />
@@ -634,7 +637,6 @@
     <Content Include="Views\Durandal\_splash.cshtml" />
     <Content Include="Views\Shared\_LayoutNoJs.cshtml" />
     <Content Include="Views\Details\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutNoJsLoggedIn.cshtml" />
     <Content Include="Views\Home\Intro.cshtml" />
     <Content Include="Views\EventDetails\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
