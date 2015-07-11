@@ -16,7 +16,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
             _movieManagementService = movieManagementService;
         }
 
-        [ConakryAuthorize]
+        
         [OutputCache(VaryByParam = "id", Duration = 600)]
         public ActionResult Index(int entityType, string id)
         {

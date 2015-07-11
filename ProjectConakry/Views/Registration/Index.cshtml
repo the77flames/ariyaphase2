@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
+    Layout = "~/Views/Shared/_LayoutPrelogIn.cshtml";
 }
 
 <script type="text/javascript">
@@ -9,7 +9,33 @@
     $(document).ready(function () {
 
         $('#dob').datepicker();
+        $(document).tooltip();
+        $('#email').blur(function () {
+            $('#emailAsycCheck').removeClass("alert alert-danger registration-error email-available");
+            $.ajax({
+                url: "/Registration/CheckEmailExist",
+                data: {email : $(this).val()},
+                datatype: "json",
+                method: "POST",
+                success: function (data) {
+                    if(data)
+                    {
+                        $('#emailAsycCheck').html('Your Email is already in use.');
+                        $('#emailAsycCheck').addClass("alert alert-danger registration-error");
+                    }
+                    else
+                    {
+                        $('#emailAsycCheck').html('This Email is available.');
+                        $('#emailAsycCheck').addClass("email-available");
 
+                    }
+                },
+                error: function (err) {
+                    $('#emailAsycCheck').html('There was an error validating your email. Please Try again.');
+                    $('#emailAsycCheck').addClass("alert alert-danger registration-error");
+                }
+            });
+        });
     });
 
 </script>
@@ -27,7 +53,8 @@
                             <div class="signup-form-content">
                             <div class="form-field"><input type="text" placeholder="First Name" name="firstname" /></div>
                             <div class="form-field"><input type="text" placeholder="Last Name" name="lastname" /></div>
-                            <div class="form-field"><input type="email" placeholder="Email" name="email" /></div>
+                            <div class="form-field"><input type="email" placeholder="Email" name="email" id="email"/></div>
+                            <div><span id="emailAsycCheck" class="alert alert-danger"></span></div>
                             <div class="form-field"><input type="password" placeholder="Password" name="password" /></div>
                             <div class="form-field">
                                 <label>Gender</label>
@@ -49,19 +76,21 @@
                                         <option>USER</option>
                                         <option>ACT</option>
                                     </select>
-                                </span><span class="what-is"><a href="#">What's this?</a></span>
+                                </span><span class="what-is"><a href="#" title="An ACT is an artist who wants to publish content.">What's this?</a></span>
                             </div>
                             <div class="form-field">
                                 <label>&nbsp;</label>
-                                <input type="checkbox" name="agree" value="1" /><span>I agree with ariya’s Terms and Conditions</span>
+                                <input type="checkbox" name="agreeToTos" value="1" checked="checked" /><span>I agree with ariya’s Terms and Conditions</span>
                             </div>
                             <div class="form-field"><label>&nbsp;</label> <input type="submit" value="Sign Up" name="submit" /></div>
 
                             <div class="form-field">
                                 <label>&nbsp;</label>
                                 <span>Already have an account? <a href="/LogIn/Index">Log In</a></span>
+                                <div><span id="errorSpan" class="alert alert-danger" style="color: red !important">@ViewBag.Error</span></div>
                             </div>
                             <div class="clr"></div>
+
                         </div>          
                 </section>
             </form>

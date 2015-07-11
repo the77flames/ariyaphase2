@@ -19,6 +19,8 @@ namespace ProjectConakry.Web.Ariya.Controllers
         public ActionResult Index()
         {
             ViewBag.ImagePath = ControllerConstants.ImagePath;
+            if (Request.Browser.IsMobileDevice)
+                return View("~/Views/Home/Mobile/Index.cshtml");
             return View();
         }
 

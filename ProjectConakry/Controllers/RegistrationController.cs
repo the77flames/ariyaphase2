@@ -1,9 +1,11 @@
 ﻿using ProjectConakry.BusinessServices;
 using ProjectConakry.DomainObjects;
+using ProjectConakry.Web.Ariya.RESTFulAPIs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -27,18 +29,25 @@ namespace ProjectConakry.Web.Ariya.Controllers
         [OutputCache(Duration = 86400)]
         public ActionResult Index()
         {
+            ViewBag.Error = TempData["SignUpError"];
             return View();
         }
 
         [AllowAnonymous]
-        public ActionResult CheckEmailExist(string email)
+        public async Task<ActionResult> CheckEmailExist(string email)
         {
-            return Json(_customerManagementService.CheckCustomerExist(email), JsonRequestBehavior.AllowGet);
+            bool exists = await CheckIfEmailExists(email);
+            return Json(exists, JsonRequestBehavior.AllowGet);
+        }
+
+        private async Task<bool> CheckIfEmailExists(string email)
+        {
+            return await Task.Run(() => _customerManagementService.CheckCustomerExist(email));
         }
 
         [AllowAnonymous]
-        public ActionResult Register(string firstname, string lastname, string email, string phone,
-                        string gender, string dob, string accounttype, string password)
+        public async Task<ActionResult> Register(string firstname, string lastname, string email, string phone,
+                        string gender, string dob, string accounttype, string password, string agreeToTos)
         {
             var dateofbirth = new DateTime();
             DateTime.TryParse(dob, out dateofbirth);
@@ -56,17 +65,30 @@ namespace ProjectConakry.Web.Ariya.Controllers
                 };
             try
             {
-                
+               
+               if(String.IsNullOrEmpty(password) || String.IsNullOrEmpty(email) || String.IsNullOrEmpty(dob)
+                   || String.IsNullOrEmpty(firstname) || String.IsNullOrEmpty(agreeToTos))
+               {
+                   throw new Exception(ControllerConstants.missingRequiredFields);
+               }
+               bool emailIsInUse = await CheckIfEmailExists(email);
+               if (emailIsInUse)
+               {
+                   throw new Exception(ControllerConstants.emailInUse);
+               }
                 _customerManagementService.Enroll(customer);
                 customer = _customerManagementService.GetCustomerByEmail(email);
                 _addressManagementService.AddNewAddress(new CustomerAddress { CustomerID = customer.Id  });
-                _mailService.Send(ControllerConstants.sender, email, ControllerConstants.emailSubject, ControllerConstants.content);
+                MailAPI.SendWelcomeMessage(email, firstname);
                 return RedirectToAction("Index", "LogIn");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 if (customer != null)
+                {
                     _customerManagementService.RemoveCustomer(customer.Id.ToString());
+                }
+                TempData["SignUpError"] = ex.Message;
                 return RedirectToAction("Index");
             }
 

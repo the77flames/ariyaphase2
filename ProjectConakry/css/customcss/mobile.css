@@ -1,0 +1,763 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  background: #ededed;
+  overflow-x: hidden;
+}
+	
+h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img {
+    font-weight: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+	
+@font-face {
+    font-family: Raleway-Regular;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Bold;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-ExtraBold;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-ExtraLight;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-ExtraLight.ttf);
+}
+@font-face {
+    font-family: Raleway-Heavy;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Heavy.ttf);
+}
+@font-face {
+    font-family: Raleway-Light;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Light.ttf);
+}
+@font-face {
+    font-family: Raleway-Medium;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: Raleway-SemiBold;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Thin;
+    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Thin.ttf);
+}
+
+
+#header-wrap {
+  display: table;
+  width: 100%;
+  float: left;
+}
+
+#head {
+  padding-top: 8px;
+}
+.logo {
+  float: none;
+  padding: 9px;
+  max-width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 69, 5, 0.15);
+  background: linear-gradient(#ffffff,#fafafa,#f6f6f6);
+}
+.logo img {
+  width: 50%;
+}	
+.search-login {
+  display: table;
+  margin: 3px auto;
+  text-align: center;
+}
+
+.act-nav {
+  float: left;
+  margin-top: 9px;
+  width: 160px;
+}
+
+.act-nav ul li{
+	float:left;
+	padding-right:14px;
+	}
+
+.act-nav ul li a{
+	font-family: Roboto, sans-serif;
+	font-size:14px;
+	text-decoration:none;
+	color:#252527;
+	}
+	
+.act-nav ul li a:hover{
+	text-decoration:underline;
+	color:#00a111;
+	}
+	
+
+
+.members-prod {
+    float: left;
+    margin-right: 15px;
+    width: 282px;
+}
+.members-field {
+    background: url("http://ariyademo.naijadelight.com/images/search-icon.png") no-repeat scroll 5px 6px #fff;
+    border: 1px solid #898781;
+    color: #7b7a7b;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    height: 32px;
+    padding-left: 30px;
+    width: 250px;
+}
+
+.login-cart {
+    float: left;
+    margin: 9px auto;
+}
+
+.login-cart ul{}
+
+
+.login-cart ul li {
+    float: left;
+    margin-right: 12px;
+}
+
+
+.login-cart ul li:first-child {
+    background: url("http://ariyademo.naijadelight.com/images/basket-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    margin-top: -2px;
+    width: 26px;
+}
+.login-cart ul li:first-child:hover{
+	background:url("http://ariyademo.naijadelight.com/images/basket-icon-hover.png") 0 0 no-repeat;
+	}
+
+.login-cart ul li a{
+	font-family:Roboto;
+	font-size:14px;
+	text-decoration:none;
+	color:#252527;
+
+	}
+
+.login-cart ul li a:hover{
+
+	text-decoration:underline;
+	color:#00a111;	}
+
+
+.navbar {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #004505;
+  z-index: 99;
+}
+
+.navbar span {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.left {
+  position: relative;
+  top: -9px;
+}
+
+.right {
+  position: relative;
+  left: 56px;
+  top: 7px
+}
+
+.navs {
+  display: table;
+  margin: 0 auto;
+}
+
+.navbar ul li {
+  float: left;
+  margin: 0 1rem;
+  text-align: center;
+  padding-top: 18px;
+}
+
+.navbar ul li a{
+	font-family: Roboto, sans-serif;
+	font-size: 1rem;
+	text-decoration: none;
+	color: #bef2c3;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #004004;
+	}
+
+.navbar ul li a:hover, .navbar ul li a:active {
+	color:#fff;
+	}
+
+
+.n-logo {
+  display: none;
+  float: left;
+  position: relative;
+  margin: 0 auto;
+  top: -20px;
+  left: 3.6em;
+  background: #004505;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+
+.n-logo img {
+margin: 0;
+}
+
+
+#slider-wrap{
+  display: none;
+  width: 100%;
+  max-width: 800px;
+  background: url("http://ariyademo.naijadelight.com/images/main-bg.gif") no-repeat;
+  background-size:cover;
+  height: 400px;
+  border-bottom: 4px solid #000;
+  overflow: hidden;
+}
+.thumbs-block {
+  max-width: 51%;
+  margin: auto;
+  padding: 65px;
+}	
+.addcallertunez{
+        position: relative;
+        top: -30px;
+	float: left;
+	
+	}
+.slider-img {
+    float: left;
+    padding-top: 20px;
+}
+
+#content {
+  display: table;
+  max-width: 800px;
+  height:400px;
+  margin: auto;
+  background: #f6f6f6;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#content-inner {
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.puller {
+  display: table;
+  position: fixed; 
+  top: 50%;
+  left: -375px; 
+  z-index: 9999;
+}
+.puller > ul > li {
+  float: left;
+}
+.pull-tab {
+  position: absolute;
+  top: 294px;
+  left: 367px;
+  font-size: 21px;
+  text-align: center;
+  padding: 15px 65px;
+  width: 294px;
+  cursor: pointer;
+  transform: rotate(-90deg);
+  transform-origin: left top 0;
+  z-index: 100;
+}
+.pulled-strip {
+  position: relative;
+  padding: 21px;
+  padding-right: 0;
+  width: 367px;
+  height: 210px;
+  z-index: 99;
+}
+.pulled-strip, .pull-tab {
+  display: table;
+  color: #fafafa;
+  background: #151515;
+  box-sizing: border-box;
+}
+.pull-tab span {
+   margin: 0 5px;
+}
+	
+#listings-wrap {
+  margin: 15px auto;
+  box-sizing: border-box;
+}
+.listings {
+  display: table;
+  width: 100%;
+  max-width: 800px;
+  margin: 15px auto;
+  padding: 9px 15px;
+  color: #151515;
+  text-align: center;
+  background: url("../../images/reelbg.jpg") rgba(221, 255, 221, 0.6);
+  background-blend-mode: multiply;
+  box-shadow: 0 1px 5px #585E58;
+  box-sizing: border-box;
+}
+.top-list {
+  clear: both;
+}
+.top-list h1 {
+  background: #151515;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 15px;
+}
+.list-img {
+  float: left;
+  width: 34%;
+  max-width: 210px;
+  margin: 12px 15px;
+}
+.list-img img {
+  width: 100%;
+  box-shadow: 2px 2px 4px rgba(43, 69, 48, 0.48);
+}
+.details {
+  width: 100%;
+  padding: 12px 5px 12px 10px;
+  color: #fafafa;
+  text-align: center;
+  background: rgba(1, 92, 1, 0.42);
+}
+.details h2 {
+  font-size: 1.45rem;
+}
+.details h4 {
+  font-size: 0.875rem;
+}
+.interact {
+  display: table;
+  float: right;
+  width: 144px;
+}
+.interact a {
+  color: #fafafa;
+}
+.social-buttons {
+  display: table;
+  margin: 15px;
+  margin-bottom: 3px;
+}
+.social-buttons li {
+  float: left;
+  margin: 3px;
+}
+.social-buttons a {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 3px;
+  padding-right: 3px;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+}
+.fb {background: #4564a1;}
+.tw {background: #00b4ef;}
+.gp {background: #e25744;}
+.ig {background: #5d89ac;}
+.ik {background: #ff0000;}
+
+.fb a {
+  padding-left: 12px;
+}
+.tw a {
+  padding-left: 5px;
+}
+.gp a {
+  padding-left: 6px;
+}
+.view-btn {
+  max-width: 200px;
+  margin: 15px auto;
+  margin-top: 0;
+  padding: 9px;
+  font-size: 0.9rem;
+  background: #015C01;
+  box-sizing: border-box;
+}
+.view-btn a {
+  display: block;
+  color: #fafafa;
+  text-align: center;
+}  
+.toplisting {
+    float: left;
+    margin-right: 10px;
+    width: 192px;
+}
+
+
+
+.toplisting:last-child {
+    float: left;
+    margin-right: 0;
+    width: 192px;
+}
+	
+.listing-wrap h1 {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: red;
+  margin-left: 46px;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+
+.artist-detials {
+  background: linear-gradient(#d4d4d4, #fafafa);
+  border: 1px solid #dddddd;
+  height: 105px;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.artist-detials h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.artist-detials h4 {
+  font-family: Roboto;
+  font-size: 0.72rem;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+
+
+.social-buttons ul li {
+  margin-right:1px;
+}
+
+.addthis_sharing_toolbox {
+  text-align: center;
+}
+a.at-svc-social {
+  background: #030303;
+}
+.add2 {
+  display: table;
+  margin: 0 auto 15px;
+}
+aside {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#ariyatv{
+  display: none;
+  margin-top: 8px;
+  width:337px;
+  height:255px;
+  float:left;
+  background:#004505;
+}
+
+.ariya-btn {
+    float: left;
+    height: 31px;
+    padding: 6px 10px;
+    width: 317px;
+}
+
+.ariya-btn img.ariya-imgages{
+	float:left;
+	}
+	
+
+.ariya-btn img.ariya-imgages2 {
+    float: right;
+    margin-top: 5px;
+}
+
+.ariya-btn h2 {
+    color: #fff;
+    float: left;
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+    margin-left: 10px;
+    margin-top: 2px;
+    text-shadow: 1px 1px 1px #00880e;
+    width: 230px;
+}
+#news {
+  width: 30.5%;
+  height: 400px;
+  float: left;
+  margin: 10px;
+  box-sizing: border-box;
+}
+#news h1 {
+    background: none repeat scroll 0 0 #004505;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #00880e;
+}
+.news-content {
+  background: url("http://ariyademo.naijadelight.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.news-content ul li ul li {
+    border-bottom: 1px dotted #d1d1d1;
+    padding-bottom: 5px;
+}
+
+.news-content ul li a{
+	font-family:Roboto;
+	font-size:14px;
+	color:#1b1b1b;
+	text-decoration:none;
+	}
+.news-content ul li a:hover{
+	color:#00a111;
+	text-decoration:underline;
+	}
+
+.slider-bullets {
+    float: right;
+    margin-top: 18px;
+    text-align: right;
+    width: 318px;
+}
+.event-tab {
+  display: table;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px dotted #d1d1d1;
+}
+.calander {
+  float: left;
+  width: 26%;
+  text-align: center;
+}
+
+.calander h5 {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  border: 4px solid red;
+  color: red;
+  font-family: Verdana,Geneva,sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 4px;
+  margin: 0 0 4px;
+}
+
+.calander h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  margin-left: 9px;
+  font-size: 14px;
+  color: red;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+.event-text {
+  color: #1b1b1b;
+  display: inline-block;
+  float: left;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 3px 17px;
+  width: 160px;
+}
+
+.ticket-info-btn {
+    display: inline-block;
+    float: left;
+    margin-top: 6px;
+    width: 60px;
+}
+
+.ticket-info-btn ul{}
+
+
+.ticket-info-btn ul li {
+    border: medium none;
+	margin-bottom:8px;
+}
+
+.ticket-info-btn ul li a {
+    background: none repeat scroll 0 0 #004505;
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    font-family: arial;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ticket-info-btn ul li a:hover{
+    background: url("http://ariyademo.naijadelight.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #303030;
+    border-radius: 2px;
+    color: #24a730;
+    padding: 2px 8px 1px;
+    text-decoration: none;
+	}
+	
+
+footer {
+  background: #252527;
+  width: 100%;
+  min-height: 180px;
+}
+	
+#footer-inn {
+  display: table;
+  margin: auto;
+  padding-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}	
+
+.fsocialmedia-icons {
+  float: left;
+  padding-left: 60px;
+}
+
+.socialmedia-icons{
+  float:left;
+  margin-top:25px;
+}
+
+.socialmedia-icons ul{}
+
+.socialmedia-icons ul li{
+	float:left;
+	margin-right:5px;
+	}
+
+.fright-colmn {
+  position: relative;
+  float: right;
+  right: 0;
+  margin: 15px;
+  padding-right: 0;
+}
+.colmn-1 {
+    float: left;
+    width: 90px;
+}
+
+.colmn-1 h3{
+	font-family: Roboto, sans-serif;
+	font-size:14px;
+	color:#fff;
+	text-transform:uppercase;
+	}
+
+.colmn-1 ul {
+    margin-top: 15px;
+}
+
+.colmn-1 ul li {
+    line-height: 25px;
+}
+.colmn-1 ul li a{
+	text-decoration:none;
+	color:#969697;
+    font-family:  Roboto;
+    font-size: 12px;
+
+	}
+
+.colmn-1 ul li a:hover{
+	text-decoration:underline;
+	}
+	
+
+#copyright {
+    background:url(http://ariyademo.naijadelight.com/images/bg-top-panel.jpg) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    height: 25px;
+    padding: 15px 0 0 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+.inner-sec {
+  margin: auto;
+  font-family: Tahoma;
+  font-size: 12px;
+  color: #514e45;
+}
+	
+.inner-sec a{
+  color: #898579;
+  font-weight: 900;
+  text-decoration: none;
+}
+	
+	
+.inner-sec a:hover{
+	color:#00a111;
+	text-decoration:underline;
+	}
+.at-share-tbx-element .at-share-btn {
+  margin: 0 1px !important;
+}

@@ -1,0 +1,224 @@
+﻿@{
+   
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ariya | relax | enjoy</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="~/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/css/customcss/mobile.css">
+    <link rel="stylesheet" type="text/css" href="~/css/slider-style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/modernizr.custom.53451.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="~/js/jquery.roundabout.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-555eb8993f48ae5b" async="async"></script>
+    <!-- google analytics-->
+    <script type="text/javascript">
+        // google analytics code
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63070511-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+
+    window.ImagePath = '@ViewBag.ImagePath';
+
+    var MobileViewManager = {
+
+        MovieArray: ko.observableArray([]),
+        pageNumber: ko.observable(1)
+    }
+
+
+    MobileViewManager.LoadMovies = ko.dependentObservable(function () {
+        $.ajax({
+            url: "/api/MovieServiceRESTAPI/Get",
+            datatype: "json",
+            data: { pageNumber: MobileViewManager.pageNumber(), pageSize: 5 },
+            success: function (data) {
+                
+                $.each(data, function (i) {
+                    data[i].FullSizeImagePath = window.ImagePath + data[i].FullSizeImagePath;
+                    data[i].BiggerThumbNailImagePath = window.ImagePath + data[i].BiggerThumbNailImagePath
+                    data[i].ThumbNailImagePath = window.ImagePath + data[i].ThumbNailImagePath
+                    MobileViewManager.MovieArray.push(data[i]);
+
+                });
+
+            },
+            error: function (err) { }
+
+
+        });
+
+    });
+
+    MobileViewManager.LoadMore = function()
+    {
+        MobileViewManager.pageNumber(MobileViewManager.pageNumber() + 1);
+    }
+
+    MobileViewManager.Init = function () {
+        ko.applyBindings(MobileViewManager, $("#content")[0]);
+    }
+
+
+    $(document).ready(function () {
+
+        MobileViewManager.Init();
+
+    })
+
+
+    </script>
+    <style>
+        .product-search {
+            display: table;
+        }
+
+        .members-field {
+            background: url("http://ariyaunlimited.com/images/search-icon.png") no-repeat scroll 9px 15px #373A37;
+            border: 1px solid #142214;
+            color: #7b7a7b;
+            font-family: Roboto, sans-serif;
+            font-size: 18px;
+            padding-left: 35px;
+            width: 300px;
+            height: 45px;
+        }
+
+            .members-field:focus {
+                background: #fff;
+                color: #212121;
+            }
+    </style>
+</head>
+<body>
+    <div id="header-wrap">
+        <div id="head">
+            <div class="logo"><a href="/Home/Index"><img src="~/images/logo-md-clr.png" /></a></div>
+            <div class="search-login">
+                <div class="login-cart">
+                    <ul>
+                        <li> <a href="#"></a> </li>
+                        <li> <a href="/LogIn/Index">LOG IN</a> </li>
+                        <li> <a href="/Registration/Index">SIGN UP</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div id="slider-wrap">
+        <div class="thumbs-block">
+            <div id="carousel-wrap">
+
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div id="content">
+        <div id="content-inner">
+            <div id="listings-wrap">
+                <div class="top-list">
+                    <h1> @*Popular on Ariya*@ </h1>
+                    <ul data-bind="foreach: MovieArray">
+                        <li>
+                            
+                            <div class="listings">
+                                <div class="list-img"><img data-bind="attr:{src: ThumbNailImagePath}" width="100%"></div>
+                                <div class="details">
+                                    <h2 data-bind="text: Name"></h2>
+                                    <h4 data-bind="text: ('Director: ' + CoverArtistDisplayName)"> </h4>
+                                </div>
+                                <div class="interact ">
+                                    <ul class="social-buttons">                                       
+                                        <li class="fb"><a class="addthis_button_facebook" href="#" ><span class="fa fa-facebook"></span></a></li>
+                                        <li class="tw"><a class ="addthis_button_twitter" href="#"><span class="fa fa-twitter"></span></a></li>
+                                        <li class="gp"><a class="addthis_button_google_plusone_share" href="#"><span class="fa fa-google-plus"></span></a></li>
+                                    </ul>
+                                    <div class="view-btn"><a href="#" data-bind="attr:{ href: '/Details/Index?id=' + Id}"> View Details </a></div>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <div class="view-btn"><a href="#" data-bind="event: {click: LoadMore}"> LOAD MORE... </a></div>
+            </div>
+            <div class="add2"><img src="http://ariyaunlimited.com/images/add2.png" width="100%"></div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <footer>
+        <div id="footer-inn">
+            <div class="fsocialmedia-icons">
+                <div class="flogo"><a href="/Home/Index"><img src="http://ariyaunlimited.com/images/flogo.png" /></a></div>
+                <div class="socialmedia-icons">
+                    <ul>
+                        <li><a href="#"><img src="http://ariyaunlimited.com/images/sm-1.png" /></a></li>
+                        <li><a href="#"><img src="http://ariyaunlimited.com/images/sm-2.png" /></a></li>
+                        <li><a href="#"><img src="http://ariyaunlimited.com/images/sm-3.png" /></a></li>
+                        <li><a href="#"><img src="http://ariyaunlimited.com/images/sm-4.png" /></a></li>
+                        <li><a href="#"><img src="http://ariyaunlimited.com/images/sm-5.png" /></a></li>
+                        <li><a href="#"><img src="http://ariyaunlimited.com/images/sm-6.png" /></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fright-colmn">
+                <div class="colmn-1">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Experience</a></li>
+                        <li><a href="#">Exploit</a></li>
+                        <li><a href="#">Express</a></li>
+                    </ul>
+                </div>
+                <div class="colmn-1">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Chat</a></li>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="colmn-1">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="clr"></div>
+    <div id="copyright">
+        <div class="inner-sec">
+            © 2015 <a href="/Home/Index">ariya</a> | relax - enjoy. All Rights Reserved
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Scripts/require.js" data-main="/App/category"></script>
+    <script type="text/javascript" src="~/App/RequireConfig.js"></script>
+   
+</body>
+</html>
+
+

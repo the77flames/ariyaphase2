@@ -1559,3 +1559,10 @@ body.profile .blog-content .btns span.read-more{
 
 }
 
+.registration-error{
+    color: red !important;
+}
+
+.email-available{
+    color: green !important;
+}
