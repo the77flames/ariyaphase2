@@ -8,7 +8,7 @@ body{
 	font-family: Roboto, Arial, Helvetica, sans-serif;
 	font-size:12px;
 	color:#686868;
-	background:url(http://ariyademo.naijadelight.com/images/mainxululab-background.gif) repeat;
+	background:url(http://ariyaunlimited.com/images/mainxululab-background.gif) repeat;
 	overflow-x:hidden;
 
 	}
@@ -29,51 +29,51 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 	
 @font-face {
     font-family: Raleway-Regular;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Regular.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-Regular.ttf);
 }
 
 @font-face {
     font-family: Raleway-Bold;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Bold.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-Bold.ttf);
 }
 
 @font-face {
     font-family: Raleway-ExtraBold;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-ExtraBold.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-ExtraBold.ttf);
 }
 
 @font-face {
     font-family: Raleway-ExtraLight;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-ExtraLight.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-ExtraLight.ttf);
 }
 @font-face {
     font-family: Raleway-Heavy;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Heavy.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-Heavy.ttf);
 }
 @font-face {
     font-family: Raleway-Light;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Light.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-Light.ttf);
 }
 @font-face {
     font-family: Raleway-Medium;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Medium.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-Medium.ttf);
 }
 
 @font-face {
     font-family: Raleway-SemiBold;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-SemiBold.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-SemiBold.ttf);
 }
 
 @font-face {
     font-family: Raleway-Thin;
-    src:url(http://ariyademo.naijadelight.com/fonts/Raleway-Thin.ttf);
+    src:url(http://ariyaunlimited.com/fonts/Raleway-Thin.ttf);
 }
 
 
 #header-wrap{
 	width:100%;
 	float:left;
-	background:url(http://ariyademo.naijadelight.com/images/bg-top-panel.jpg) repeat-x;
+	background:url(http://ariyaunlimited.com/images/bg-top-panel.jpg) repeat-x;
 	
 	}
 
@@ -123,7 +123,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
     width: 282px;
 }
 .members-field {
-    background: url("http://ariyademo.naijadelight.com/images/search-icon.png") no-repeat scroll 5px 6px #fff;
+    background: url("http://ariyaunlimited.com/images/search-icon.png") no-repeat scroll 5px 6px #fff;
     border: 1px solid #898781;
     color: #7b7a7b;
     font-family: Roboto, sans-serif;
@@ -149,7 +149,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
 
 
 .login-cart ul li:first-child {
-    background: url("http://ariyademo.naijadelight.com/images/basket-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/basket-icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     cursor: pointer;
     display: block;
     height: 26px;
@@ -157,7 +157,7 @@ h1,h2,h3,h4,h5,h6,ul,p,input,form,fieldset,img{
     width: 26px;
 }
 .login-cart ul li:first-child:hover{
-	background:url("http://ariyademo.naijadelight.com/images/basket-icon-hover.png") 0 0 no-repeat;
+	background:url("http://ariyaunlimited.com/images/basket-icon-hover.png") 0 0 no-repeat;
 	}
 
 .login-cart ul li a{
@@ -252,7 +252,7 @@ margin: 0;
 
 #slider-wrap{
 	width: 100%;
-	background: url("http://ariyademo.naijadelight.com/images/main-bg.gif") no-repeat;
+	background: url("http://ariyaunlimited.com/images/main-bg.gif") no-repeat;
 	background-size:cover;
 	height: 500px;
 	border-bottom: 4px solid #000;
@@ -284,19 +284,19 @@ margin: 0;
 body.signup #content{
 	width:100%;
 	margin:auto;
-	background:url(http://ariyademo.naijadelight.com/images/signup-bg.png) no-repeat center top;
+	background:url(http://ariyaunlimited.com/images/signup-bg.png) no-repeat center top;
 	}
 body.billing #content{
 	width:100%;
 	margin:auto;
-	background:url(http://ariyademo.naijadelight.com/images/billing-bg.png) no-repeat center top;
+	background:url(http://ariyaunlimited.com/images/billing-bg.png) no-repeat center top;
 	}
 
 body.login #content{
 	width:100%;
 	padding-bottom:120px;
 	margin:auto;
-	background:url(http://ariyademo.naijadelight.com/images/login-bg.png) no-repeat center top;
+	background:url(http://ariyaunlimited.com/images/login-bg.png) no-repeat center top;
 	}
 #content-inner{
 	width:1290px;
@@ -350,7 +350,7 @@ body.signup #content-inner, body.login #content-inner{
 
 
 .artist-detials {
-    background: url("http://ariyademo.naijadelight.com/images/artist-text-bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/artist-text-bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #aeaeae;
     height: 42px;
     padding: 1px 0 0 5px;
@@ -480,7 +480,7 @@ aside {
 
 
 .news-content {
-    background: url("http://ariyademo.naijadelight.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding: 10px 10px 40px;
     width: 318px;
 }
@@ -586,7 +586,7 @@ aside {
 }
 
 .ticket-info-btn ul li a:hover{
-    background: url("http://ariyademo.naijadelight.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #303030;
     border-radius: 2px;
     color: #24a730;
@@ -676,7 +676,7 @@ footer{
 	
 
 #copywright {
-    background:url(http://ariyademo.naijadelight.com/images/bg-top-panel.jpg) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    background:url(http://ariyaunlimited.com/images/bg-top-panel.jpg) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
     height: 25px;
     padding-top: 15px;
     text-align: center;
@@ -798,7 +798,7 @@ body.login #signup-form{
 	
 }
 #signup-form .form-field  .select-container{
-   background: url("http://ariyademo.naijadelight.com/images/select-arrow.png") no-repeat scroll right center  rgba(255, 255, 255, 0.77);
+   background: url("http://ariyaunlimited.com/images/select-arrow.png") no-repeat scroll right center  rgba(255, 255, 255, 0.77);
     display: inline-block;
     margin-left: 0;
     overflow: hidden;
@@ -956,7 +956,7 @@ body.login #signup-form{
 	
 }
 #billing-form .form-field  .select-container{
-   background: url("http://ariyademo.naijadelight.com/images/select-arrow.png") no-repeat scroll right center  rgba(255, 255, 255, 0.77);
+   background: url("http://ariyaunlimited.com/images/select-arrow.png") no-repeat scroll right center  rgba(255, 255, 255, 0.77);
     display: inline-block;
     margin-left: 0;
     overflow: hidden;
@@ -1106,7 +1106,7 @@ body.artist-detail .listing-wrap{
 
 
 #main-video .video-detail {
-    background: url("http://ariyademo.naijadelight.com/images/vieo-detail-bg-videodetails.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/vieo-detail-bg-videodetails.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #c0ac90;
     height: 39px;
     padding: 10px;
@@ -1115,7 +1115,7 @@ body.artist-detail .listing-wrap{
 
 
 .artist-info {
-    background: url("http://ariyademo.naijadelight.com/images/artist-text-bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/artist-text-bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #aeaeae;
     height: 42px;
     padding: 1px 0 0 5px;
@@ -1236,7 +1236,7 @@ body.artist-detail .sidebar-slider .audio-listing{
 
 body.artist-detail .sidebar-slider .audio-listing li{
 	border-bottom:1px solid #b0b0b0;
-	background:url(http://ariyademo.naijadelight.com/images/audio-listing-bg.png) repeat-x;
+	background:url(http://ariyaunlimited.com/images/audio-listing-bg.png) repeat-x;
 	height:48px;
 	line-height:48px;
 	font-family:verdana;
@@ -1322,7 +1322,7 @@ body.profile #profile-left .follow-selection{
 }
 
 body.profile .event-content,body.profile .blog-content{
-  background: url("http://ariyademo.naijadelight.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: url("http://ariyaunlimited.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
   padding: 10px 10px 35px;
   width: 315px;
   margin-bottom:10px;
@@ -1386,7 +1386,7 @@ body.profile .follow-selection .form-field span{
 	
 }
 body.profile .follow-selection .form-field  .select-container{
-   background: url("http://ariyademo.naijadelight.com/images/profile-select-arrow.png") no-repeat scroll right center  rgba(255, 255, 255, 0.77);
+   background: url("http://ariyaunlimited.com/images/profile-select-arrow.png") no-repeat scroll right center  rgba(255, 255, 255, 0.77);
     display: inline-block;
     margin-left: 0;
     overflow: hidden;
@@ -1456,7 +1456,7 @@ body.profile .blog-content .btns .read-more a{
 
 
 body.profile .blog-content .btns .read-more a:hover{
-    background: url("http://ariyademo.naijadelight.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("http://ariyaunlimited.com/images/aside-bg-strip.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #303030;
     border-radius: 2px;
     color: #24a730;
@@ -1490,7 +1490,7 @@ body.profile .blog-content .btns span.read-more{
 
 
 .gallery-info{
-   background: url("http://ariyademo.naijadelight.com/images/gallery-info-bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+   background: url("http://ariyaunlimited.com/images/gallery-info-bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #aeaeae;
     font-family: arial;
     font-size: 10px;
@@ -1527,7 +1527,7 @@ body.profile .blog-content .btns span.read-more{
 }
 
 .fan-info{
-   background: url("http://ariyademo.naijadelight.com/images/fan-info-bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+   background: url("http://ariyaunlimited.com/images/fan-info-bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 1px solid #aeaeae;
     font-size: 10px;
     height: 31px;
@@ -1554,7 +1554,7 @@ body.profile .blog-content .btns span.read-more{
 	font-size:11px;
 	font-family:Arial, Helvetica, sans-serif;
 	margin-top:3px;
- background: url(http://ariyademo.naijadelight.com/images/points-bg.png) no-repeat left center;
+ background: url(http://ariyaunlimited.com/images/points-bg.png) no-repeat left center;
  padding-left:15px;
 
 }
@@ -1565,4 +1565,8 @@ body.profile .blog-content .btns span.read-more{
 
 .email-available{
     color: green !important;
+}
+
+.videoloading {
+  background: black url(http://ariyaunlimited.com/images/loader.gif) center center no-repeat;
 }

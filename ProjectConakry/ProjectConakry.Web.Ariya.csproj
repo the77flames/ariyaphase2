@@ -411,6 +411,7 @@
     <Content Include="images\intro\3.png" />
     <Content Include="images\intro\4.png" />
     <Content Include="images\intro\5.png" />
+    <Content Include="images\loader.gif" />
     <Content Include="images\logo-md-clr.png" />
     <Content Include="images\logo-md.png" />
     <Content Include="images\logo.png" />

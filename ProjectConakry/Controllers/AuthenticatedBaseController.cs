@@ -16,7 +16,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         {
             base.OnActionExecuting(filterContext);
             CustomPrincipal principal = System.Web.HttpContext.Current.Session["currentUser"] as CustomPrincipal;
-            ViewBag.UserId = (principal.Customer as Customer).Id;
+            ViewBag.UserId = principal == null ? new Customer().Id : (principal.Customer as Customer).Id;
             ViewBag.ImagePath = ControllerConstants.ImagePath;
         }
 

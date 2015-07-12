@@ -4,12 +4,24 @@
 @{
     Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
 }
+<script type="text/javascript">
+    $(document).ready(function () {
+        var video = document.getElementById("multiCodec");
+        $('#multiCodec').bind('play', function (e) {
+            var count = 0;
+            if (video.readyState < video.HAVE_FUTURE_DATA)
+            {
+                    $('#multiCodec').attr("poster", "/images/loader.gif");
+                // The user agent is actively trying to download data.
+            }
+        });
 
+    });
+</script>
 
 <!--content-->
 
 <section id="content">
-
 <!--content-inner-->
 <div id="content-inner">
     <!--container-->
@@ -39,7 +51,7 @@
                 </object>
             </video>
             <div class="video-detail">
-                <h2>@Model.Name <span>1,344,560</span></h2>
+                <h2>@Model.Name <span>@(new Random().Next(1000, 10000))</span></h2>
                 <div class="vtitle">@Model.CoverArtistDisplayName</div>
             </div>
 
