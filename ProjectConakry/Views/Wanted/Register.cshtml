@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutPrelogIn.cshtml";
+}
+
+<div class="wanted-wrapper clr">
+    <section class="wanted-container section registration clr">
+        <div class="one-third float-left">
+            <div class="sidebar-image">
+                <img src="../img/2.png">
+            </div>
+        </div>
+        <div class="two-third float-left">
+            <h1 class="large bold caps dark-gold-color">Registration</h1>
+            <p class="small">Please read our <a href="#" onClick="openTerms()">Terms and Conditions</a> before filling this form</p>
+            <form class="register-form" id="" action="" method="">
+                <h2 class="medium bold caps light-gold-color">Personal</h2>
+                <fieldset>
+                    <legend class="bold">Gender</legend>
+                    <div class="field-container">
+                        <input type="radio" id="radio-male" name="gender" value="male"><label for="radio-male">Male</label><br />
+                        <input type="radio" id="radio-female" name="gender" value="female"><label for="radio-female">Female</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Name</legend>
+                    <div class="field-container">
+                        <input type="text" id="first-name" name="first-name" placeholder="First Name">
+                        <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Date and place of birth</legend>
+                    <div class="field-container">
+                        <input type="date" id="dob" name="dob" max="1998-01-01" min="1950-01-01">
+                        <input type="text" id="birth-place" name="birth-place" placeholder="Birth Place">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Stage Name</legend>
+                    <div class="field-container">
+                        <input type="text" id="stage-name" name="stage-name" placeholder="Stage Name">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Nationality</legend>
+                    <div class="field-container">
+                        <input type="text" id="nationality" name="nationality" placeholder="Nationality">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Brief Industry Experience</legend>
+                    <div class="field-container">
+                        <textarea id="experience" name="experience" placeholder="Describe your experience in brief"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Upload your video entry</legend>
+                    <div class="field-container">
+                        <input type="file" name="video" id="video" accept="video/*">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Give yourself a score out of ten</legend>
+                    <div class="field-container clear">
+                        <label for="commitment" class="range-label">Commitment to process</label>
+                        <input type="range" name="commitment" id="commitment" max="10" value="10">
+                        <div class="range-value bold" id="range-value-commitment"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="commitment" class="range-label">Communication skills</label>
+                        <input type="range" name="communication" id="communication" max="10" value="10">
+                        <div class="range-value bold" id="range-value-communication"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="dress" class="range-label">Dressing sense</label>
+                        <input type="range" name="dress" id="dress" max="10" value="10">
+                        <div class="range-value bold" id="range-value-dress"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="knowledge" class="range-label">Knowledge of comedy</label>
+                        <input type="range" name="knowledge" id="knowledge" max="10" value="10">
+                        <div class="range-value bold" id="range-value-knowledge"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="relationship" class="range-label">Relationship with people</label>
+                        <input type="range" name="relationship" id="relationship" max="10" value="10">
+                        <div class="range-value bold" id="range-value-relationship"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="memory" class="range-label">Retentive memory</label>
+                        <input type="range" name="memory" id="memory" max="10" value="10">
+                        <div class="range-value bold" id="range-value-memory"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="etiquette" class="range-label">Stage etiquette</label>
+                        <input type="range" name="etiquette" id="etiquette" max="10" value="10">
+                        <div class="range-value bold" id="range-value-etiquette"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="discipline" class="range-label">Self discipline</label>
+                        <input type="range" name="discipline" id="discipline" max="10" value="10">
+                        <div class="range-value bold" id="range-value-discipline"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="motivation" class="range-label">Self motivation</label>
+                        <input type="range" name="motivation" id="motivation" max="10" value="10">
+                        <div class="range-value bold" id="range-value-motivation"></div>
+                    </div>
+                    <div class="field-container clear">
+                        <label for="presense" class="range-label">Stage presense</label>
+                        <input type="range" name="presense" id="presense" max="10" value="10">
+                        <div class="range-value bold" id="range-value-presense"></div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Name two African comedians who inspire you</legend>
+                    <div class="field-container">
+                        <label for="inspire-1">1. </label>
+                        <input type="text" name="inspire-1" id="inspire-1" placeholder="First Comedian"><br /><br />
+                        <label for="inspire-2">2. </label>
+                        <input type="text" name="inspire-2" id="inspire-2" placeholder="Second Comedian">
+                    </div>
+                </fieldset>
+                <h2 class="medium bold caps light-gold-color">Final</h2>
+                <fieldset>
+                    <legend>Do you agree that you are participating by choice and therefore you elect never to institute any class or individual action against the IP owner, organizers, partners or sponsers of Wanted and ancillary activities and to resolve an and all disputes by arbitration?</legend>
+                    <div class="field-container">
+                        <input type="radio" id="final-yes" name="final" value="yes"><label for="final-yes">Yes</label><br />
+                        <input type="radio" id="final-no" name="final" value="no"><label for="final-no">No</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" id="agree-to-terms" name="agree-to-terms">
+                    <label for="agree-to-terms">I agree to <a href="#" onClick="openTerms()">Terms and Conditions</a></label>
+                </fieldset>
+                <input type="submit" class="large-button light-gold-bg caps" value="Continue">
+                <br /><br /><p class="small semi-opaque">For further information please contact: Olukayode Olubunmi<br />+18189325678; okayhouse@gmail.com &copy;2015 <span class="light-gold-color caps">Okayhouse</span> LLC.</p>
+            </form>
+        </div>
+    </section>
+
+    <div class="overlay"></div>
+    <div class="modal">
+        <div class="close-modal"><img src="../img/close.png"></div>
+        <h1 class="bold caps large">Terms and Conditions</h1>
+        <h2 class="bold caps medium light-gold-color">Important information about the use of your data</h2>
+        <p class="small"><span class="bold dark-gold-color">Kindly note that your video skits will not be returned to you</span>. If you are short listed during the selection process, the Broadcaster and the Producers will ensure that any information provided for the purpose of producing <span class="bold light-gold-color">Wanted<sup>TM</sup></span> will be kept secure and treated as confidential. Any disclosures of information will only be made with your permission.</p>
+        <p class="small">However, if you are selected for the <span class="bold light-gold-color">Wanted<sup>TM</sup></span> project, the Producers reserve the right to use any of your details and information supplied by you for the purpose of the <span class="bold light-gold-color">Wanted<sup>TM</sup></span> production, publicity and broadcast, the only exception being your address and contact details.</p>
+        <p class="small">The Producers and the broadcaster would like to retain the application forms of candidates for future related use when, for example, producing similar shows if you have been short listed. If you do not consent to the future use of your information, your application forms will be destroyed once the selection process has been completed.</p>
+        <p class="small">Please fill in and submit the form within one week of receipt. Submission of this form will be considered as your acceptance of the rules and requirements detailed above.</p>
+    </div>
+</div>
