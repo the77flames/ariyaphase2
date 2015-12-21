@@ -13,14 +13,9 @@
         <div class="two-third float-left subscribe-inner">
             <div class="large bold">Subscribe to ariyaUNLTD for a chance to enter the WANTED competition. <span class="light-gold-color">Subscription is currently free</span>. However, there is a $20 application fee to enter the competition.</div><br /><br />
 
-            <form class="subscribe-form" id="" action="" method="">
+            <form class="subscribe-form" id="" action="ProcessPayPalPayment" method="POST">
+                <input type="hidden" id= "customerId" name="customerId" value="@ViewBag.CustomerId" />
                 <h2 class="medium bold caps light-gold-color">Email Preferences</h2>
-                <fieldset>
-                    <legend class="bold">Email</legend>
-                    <div class="field-container">
-                        <input type="text" id="email" name="email" placeholder="Enter your email">
-                    </div>
-                </fieldset>
                 <fieldset>
                     <legend class="bold">Add me to the list for Ariya events, parties and happenings.</legend>
                     <div class="field-container">
@@ -38,7 +33,7 @@
                 <h2 class="medium bold caps light-gold-color">Payment options</h2>
                 <fieldset>
                     <div class="field-container">
-                        <input type="radio" id="payment_option-paypal" name="payment_option" value="paypal"><label for="payment_option-paypal" class="payment-option-label"><img src="../img/paypal.png"><span>Paypal</span></label>
+                        <input type="radio" id="payment_option-paypal" name="payment_option" value="paypal" checked="checked" disabled="disabled"><label for="payment_option-paypal" class="payment-option-label"><img src="../img/paypal.png"><span>Paypal</span></label>
                     </div>
                 </fieldset>
                 <!-- 				<fieldset>
@@ -53,13 +48,13 @@
                                         <input type="month" id="card-expiry" name="card-expiry">
                                     </div>
                                 </fieldset> -->
-                <fieldset>
+                @*<fieldset>
                     <legend class="bold">Billing Address</legend>
                     <div class="field-container">
                         <input type="text" id="address1" name="address1" placeholder="Address line 1" class="full-width-input">
                         <input type="text" id="address2" name="address2" placeholder="Address line 2" class="full-width-input">
                     </div>
-                </fieldset>
+                </fieldset>*@
                 <input type="submit" value="Submit Application" class="large-button light-gold-bg">
             </form>
             <img src="../img/movies.png" class="movie-posters">

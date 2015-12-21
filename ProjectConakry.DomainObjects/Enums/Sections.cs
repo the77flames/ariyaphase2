@@ -12,6 +12,6 @@ namespace ProjectConakry.DomainObjects
         Top10,
         Featured,
         New,
-        Trending
+        Trending,
     }
 }

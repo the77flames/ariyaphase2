@@ -1,4 +1,5 @@
-﻿using ProjectConakry.Data;
+﻿using MongoDB.Bson;
+using ProjectConakry.Data;
 using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
@@ -37,5 +38,11 @@ namespace ProjectConakry.BusinessServices
             _customerRepository.Delete(id);
         }
 
+        public Customer GetCustomerbyId(string Id)
+        {
+            var bsonId = new ObjectId(Id);
+            var customer = _customerRepository.GetCustomerByCustomerID(bsonId);
+            return customer;
+        }
     }
 }

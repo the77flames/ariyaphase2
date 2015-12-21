@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProjectConakry.DomainObjects.WantedUser
+@{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_LayoutPrelogIn.cshtml";
 }
@@ -11,47 +12,51 @@
             </div>
         </div>
         <div class="two-third float-left">
+            @*please change someerrorclass into a real css class*@
+            <div class="someerrorclass">@TempData["SignUpError"]</div>
             <h1 class="large bold caps dark-gold-color">Registration</h1>
             <p class="small">Please read our <a href="#" onClick="openTerms()">Terms and Conditions</a> before filling this form</p>
-            <form class="register-form" id="" action="" method="">
+            <form class="register-form" id="wantedRegistrationForm" action="Register" enctype="multipart/form-data" method="POST">
                 <h2 class="medium bold caps light-gold-color">Personal</h2>
                 <fieldset>
                     <legend class="bold">Gender</legend>
                     <div class="field-container">
-                        <input type="radio" id="radio-male" name="gender" value="male"><label for="radio-male">Male</label><br />
-                        <input type="radio" id="radio-female" name="gender" value="female"><label for="radio-female">Female</label>
+                        @Html.RadioButtonFor(n => n.Gender, "Male", new {id="radio-male", name="gender"})
+                        <label for="radio-male">Male</label><br />
+                        @Html.RadioButtonFor(n => n.Gender, "Female", new {id="radio-female", name="gender"})
+                        <label for="radio-female">Female</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Name</legend>
                     <div class="field-container">
-                        <input type="text" id="first-name" name="first-name" placeholder="First Name">
-                        <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+                        @Html.TextBoxFor(n => n.FirstName, new { id="first-name", name="first-name", placeholder="First Name"})
+                        @Html.TextBoxFor(n => n.LastName, new { id="last-name", name="last-name", placeholder="Last Name"})
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Date and place of birth</legend>
                     <div class="field-container">
-                        <input type="date" id="dob" name="dob" max="1998-01-01" min="1950-01-01">
-                        <input type="text" id="birth-place" name="birth-place" placeholder="Birth Place">
+                        @Html.TextBoxFor(model => model.DOB, new { type = "date", id="dob", name="dob", max="1998-01-01", min="1950-01-01"})
+                        @Html.TextBoxFor(n => n.BirthPlace, new {id="birth-place", name="birth-place", placeholder="Birth Place"})
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Stage Name</legend>
                     <div class="field-container">
-                        <input type="text" id="stage-name" name="stage-name" placeholder="Stage Name">
+                        @Html.TextBoxFor(n => n.StageName, new {id="stage-name", name="stage-name", placeholder="Stage Name"})
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Nationality</legend>
                     <div class="field-container">
-                        <input type="text" id="nationality" name="nationality" placeholder="Nationality">
+                        @Html.TextBoxFor(n => n.Nationality, new {id="nationality", name="nationality", placeholder="Nationality"})
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Brief Industry Experience</legend>
                     <div class="field-container">
-                        <textarea id="experience" name="experience" placeholder="Describe your experience in brief"></textarea>
+                        @Html.TextAreaFor(n => n.BriefIndustryExperience,  new {id="experience", name="experience", placeholder="Describe your experience in brief"})
                     </div>
                 </fieldset>
                 <fieldset>
@@ -64,52 +69,52 @@
                     <legend class="bold">Give yourself a score out of ten</legend>
                     <div class="field-container clear">
                         <label for="commitment" class="range-label">Commitment to process</label>
-                        <input type="range" name="commitment" id="commitment" max="10" value="10">
+                        @Html.TextBoxFor(model => model.CommitmentToProcessScore, new { type = "range", name="commitment", id="commitment", max="10", value="10"})
                         <div class="range-value bold" id="range-value-commitment"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="commitment" class="range-label">Communication skills</label>
-                        <input type="range" name="communication" id="communication" max="10" value="10">
+                        @Html.TextBoxFor(model => model.CommunicationSkillsScore, new { type = "range", name="communication", id="communication", max="10", value="10"})
                         <div class="range-value bold" id="range-value-communication"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="dress" class="range-label">Dressing sense</label>
-                        <input type="range" name="dress" id="dress" max="10" value="10">
+                        @Html.TextBoxFor(model => model.DressingSenseScore, new { type = "range", name="dress", id="dress", max="10", value="10"})
                         <div class="range-value bold" id="range-value-dress"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="knowledge" class="range-label">Knowledge of comedy</label>
-                        <input type="range" name="knowledge" id="knowledge" max="10" value="10">
+                        @Html.TextBoxFor(model => model.KnowledgeOfComedyScore, new { type = "range", name="knowledge", id="knowledge", max="10", value="10"})
                         <div class="range-value bold" id="range-value-knowledge"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="relationship" class="range-label">Relationship with people</label>
-                        <input type="range" name="relationship" id="relationship" max="10" value="10">
+                        @Html.TextBoxFor(model => model.RelationshipWithPeopleScore, new { type = "range", name="relationship", id="relationship", max="10", value="10"})
                         <div class="range-value bold" id="range-value-relationship"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="memory" class="range-label">Retentive memory</label>
-                        <input type="range" name="memory" id="memory" max="10" value="10">
+                        @Html.TextBoxFor(model => model.RetentiveMemoryScore, new { type = "range", name="memory", id="memory", max="10", value="10" })
                         <div class="range-value bold" id="range-value-memory"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="etiquette" class="range-label">Stage etiquette</label>
-                        <input type="range" name="etiquette" id="etiquette" max="10" value="10">
+                        @Html.TextBoxFor(model => model.StageEtiqueteScore, new { type = "range", name="etiquette", id="etiquette", max="10", value="10"})
                         <div class="range-value bold" id="range-value-etiquette"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="discipline" class="range-label">Self discipline</label>
-                        <input type="range" name="discipline" id="discipline" max="10" value="10">
+                        @Html.TextBoxFor(model => model.SelfDisciplineScore, new { type = "range", name="discipline", id="discipline", max="10", value="10" })
                         <div class="range-value bold" id="range-value-discipline"></div>
                     </div>
                     <div class="field-container clear">
                         <label for="motivation" class="range-label">Self motivation</label>
-                        <input type="range" name="motivation" id="motivation" max="10" value="10">
+                        @Html.TextBoxFor(model => model.SelfMotivationScore, new { type = "range", name="motivation", id="motivation", max="10", value="10"})
                         <div class="range-value bold" id="range-value-motivation"></div>
                     </div>
                     <div class="field-container clear">
-                        <label for="presense" class="range-label">Stage presense</label>
-                        <input type="range" name="presense" id="presense" max="10" value="10">
+                        <label for="presense" class="range-label">Stage presence</label>
+                        @Html.TextBoxFor(model => model.StagePresenceScore, new { type = "range", name="presense", id="presense", max="10", value="10"})
                         <div class="range-value bold" id="range-value-presense"></div>
                     </div>
                 </fieldset>
@@ -117,20 +122,30 @@
                     <legend class="bold">Name two African comedians who inspire you</legend>
                     <div class="field-container">
                         <label for="inspire-1">1. </label>
-                        <input type="text" name="inspire-1" id="inspire-1" placeholder="First Comedian"><br /><br />
+                        @Html.TextBoxFor(n => n.FirstComedianInspiration, new {name="inspire-1", id="inspire-1", placeholder="First Comedian"})
+                        <br /><br />
                         <label for="inspire-2">2. </label>
-                        <input type="text" name="inspire-2" id="inspire-2" placeholder="Second Comedian">
+                        @Html.TextBoxFor(n => n.SecondComedianInspiration, new {name="inspire-2", id="inspire-2", placeholder="Second Comedian"})
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="bold">Email</legend>
+                    <div class="field-container">
+                        <input type="text" id="email" name="email" placeholder="Enter your email">
                     </div>
                 </fieldset>
                 <h2 class="medium bold caps light-gold-color">Final</h2>
                 <fieldset>
                     <legend>Do you agree that you are participating by choice and therefore you elect never to institute any class or individual action against the IP owner, organizers, partners or sponsers of Wanted and ancillary activities and to resolve an and all disputes by arbitration?</legend>
                     <div class="field-container">
-                        <input type="radio" id="final-yes" name="final" value="yes"><label for="final-yes">Yes</label><br />
-                        <input type="radio" id="final-no" name="final" value="no"><label for="final-no">No</label>
+                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "Yes", new {id="final-yes", name="final"})
+                        <label for="final-yes">Yes</label><br />
+                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "No", new {id="final-no", name="final"})
+                        <label for="final-no">No</label>
                     </div>
                 </fieldset>
                 <fieldset>
+                    @Html.HiddenFor(n => n.AgreedToTermsOfService, true)
                     <input type="checkbox" id="agree-to-terms" name="agree-to-terms">
                     <label for="agree-to-terms">I agree to <a href="#" onClick="openTerms()">Terms and Conditions</a></label>
                 </fieldset>

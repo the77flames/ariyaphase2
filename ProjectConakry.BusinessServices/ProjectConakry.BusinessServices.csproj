@@ -53,6 +53,8 @@
     <Compile Include="AddressManagementService.cs" />
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="AdminUserManagermentService.cs" />
+    <Compile Include="Interfaces\IWantedUserManagementService.cs" />
+    <Compile Include="WantedUserManagermentService.cs" />
     <Compile Include="Interfaces\ISearchService.cs" />
     <Compile Include="Interfaces\IMailService.cs" />
     <Compile Include="LoungeItemManagementService.cs" />

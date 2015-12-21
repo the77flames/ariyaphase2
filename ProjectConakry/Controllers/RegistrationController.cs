@@ -78,7 +78,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
                }
                 _customerManagementService.Enroll(customer);
                 customer = _customerManagementService.GetCustomerByEmail(email);
-                _addressManagementService.AddNewAddress(new CustomerAddress { CustomerID = customer.Id  });
+                _addressManagementService.AddNewAddress(new CustomerAddress { CustomerID = customer.Id });
                 MailAPI.SendWelcomeMessage(email, firstname);
                 return RedirectToAction("Index", "LogIn");
             }
