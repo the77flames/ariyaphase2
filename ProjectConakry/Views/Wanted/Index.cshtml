@@ -5,12 +5,14 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: "/Wanted/GetNumberRegistered",
-            success: function(response) {
-                $('#totalNumberRegistered').val(response);
+            success: function (response) {
+                debugger;
+                $('#totalNumberRegistered').text(response);
             },
             error: function (error) {
+                debugger;
                 $('#updateDiv').hide();
             }
         });

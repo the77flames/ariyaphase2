@@ -173,7 +173,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         public JsonResult GetNumberRegistered()
         {
             long ret = _wantedUserManagementService.GetTotalRegisteredUsers();
-            return Json(ret);
+            return Json(ret, JsonRequestBehavior.AllowGet);
         }
     }
 }
