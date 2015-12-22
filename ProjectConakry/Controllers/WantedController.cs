@@ -128,6 +128,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(Duration = 36480)]
         public ActionResult Register()
         {
             return View();

@@ -15,7 +15,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
     {
        
         [HttpGet]
-       // [OutputCache(Duration = 120)]
+        [OutputCache(Duration = 36480)]
         public ActionResult Index()
         {
             ViewBag.ImagePath = ControllerConstants.ImagePath;
@@ -26,7 +26,6 @@ namespace ProjectConakry.Web.Ariya.Controllers
 
         public ActionResult Intro()
         {
-
             return View();
         }
         
