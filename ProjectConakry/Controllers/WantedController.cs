@@ -3,6 +3,7 @@ using ProjectConakry.BusinessServices;
 using ProjectConakry.DomainObjects;
 using ProjectConakry.Web.Ariya.RESTFulAPIs;
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -61,7 +62,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
                     new Transaction
                     {
                         description = "Transaction description.",
-                        invoice_number = "001",
+                        invoice_number = Guid.NewGuid().ToString(null, CultureInfo.InvariantCulture),
                         amount = new Amount
                         {
                             currency = "USD",
