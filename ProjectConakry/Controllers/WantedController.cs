@@ -167,5 +167,12 @@ namespace ProjectConakry.Web.Ariya.Controllers
                 return RedirectToAction("Register");
             }
         }
+
+        [HttpGet]
+        public JsonResult GetNumberRegistered()
+        {
+            long ret = _wantedUserManagementService.GetTotalRegisteredUsers();
+            return Json(ret);
+        }
     }
 }

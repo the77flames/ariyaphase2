@@ -2,6 +2,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPrelogIn.cshtml";
 }
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            type: "POST",
+            url: "/Wanted/GetNumberRegistered",
+            success: function(response) {
+                $('#totalNumberRegistered').val(response);
+            },
+            error: function (error) {
+                $('#updateDiv').hide();
+            }
+        });
+    })
+</script>
 <div class="wanted-wrapper clr">
 <section class="full-width center landing-section">
     <img src="../img/landing.jpg" alt="" class="landing-bg">
@@ -9,7 +23,7 @@
         <img src="../img/wanted-logo.png" alt="" class="logo-langing-page">
         <div class="large">Registration begins</div>
         <div class="extra-large light-gold-color bold">Dec 26th to Jan 26th</div>
-        <div class="medium">98 participants registered</div>
+        <div id="updateDiv" class="medium"><span id="totalNumberRegistered"></span> participants registered</div>
         <a href="/Wanted/Register" class="large-button light-gold-bg caps">Register now</a>
     </div>
     <div class="landing-share">

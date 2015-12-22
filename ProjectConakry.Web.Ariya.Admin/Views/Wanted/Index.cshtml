@@ -1,0 +1,51 @@
+﻿@using ProjectConakry.DomainObjects
+@model IEnumerable<WantedUser>
+@{
+    ViewBag.Title = "Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#AddSongButton').click(function () {
+
+            $('#AddSongForm').submit();
+        });
+
+    });
+
+</script>
+<!-- Content -->
+<section id="content" class="container">
+    <div class="tile">
+        <h2 class="tile-title">All Wanted Subscribers</h2>
+        <div class="tile-config dropdown">
+            <a title="" class="tooltips tile-menu" href="" data-original-title="Options" data-toggle="dropdown"></a>
+        </div>
+
+        <div class="listview narrow sortable ui-sortable">
+            @if (Model == null || !Model.Any())
+{
+    <span style="padding-left: 40px;"> There are no songs in the database ! </span>
+}
+else
+{
+
+    foreach (var subscriber in Model)
+    {
+        <div class="media p-l-5">
+            <div class="media-body">
+                <small class="text-muted">@subscriber.FirstName</small><br>
+                <a class="t-overflow" href="">@subscriber.LastName</a>
+
+            </div>
+        </div>
+   }
+}
+            <div class="media p-5 text-center l-100">
+                <a href="#"><small>VIEW ALL</small></a>
+            </div>
+        </div>
+    </div>
+</section>

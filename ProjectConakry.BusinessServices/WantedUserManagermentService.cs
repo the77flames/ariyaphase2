@@ -3,9 +3,6 @@ using ProjectConakry.Data;
 using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectConakry.BusinessServices
 {
@@ -34,6 +31,18 @@ namespace ProjectConakry.BusinessServices
             var customerObjectId = new ObjectId(customerId);
             WantedUser wantedUser = _wantedRepository.GetWantedUserById(customerObjectId);
             return wantedUser;
+        }
+
+        public long GetTotalRegisteredUsers()
+        {
+            long ret = _wantedRepository.GetTotalCount();
+            return ret;
+        }
+
+        public IEnumerable<WantedUser> GetWantedSubscribers(int skip, int pagesize)
+        {
+            IEnumerable<WantedUser> ret = _wantedRepository.GetAllWantedUsers(pagesize, skip);
+            return ret;
         }
     }
 }

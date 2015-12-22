@@ -200,6 +200,7 @@
     <Compile Include="ConakryAdmin.cs" />
     <Compile Include="Controllers\AnimationController.cs" />
     <Compile Include="Controllers\AdsController.cs" />
+    <Compile Include="Controllers\WantedController.cs" />
     <Compile Include="Controllers\LoungeController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -746,6 +747,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\News\EditNews.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Wanted\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

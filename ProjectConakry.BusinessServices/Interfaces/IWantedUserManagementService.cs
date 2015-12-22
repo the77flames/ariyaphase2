@@ -1,9 +1,5 @@
-﻿using ProjectConakry.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ProjectConakry.DomainObjects;
 
 namespace ProjectConakry.BusinessServices
 {
@@ -14,5 +10,9 @@ namespace ProjectConakry.BusinessServices
         void Update(WantedUser wantedUser);
 
         WantedUser GetWantedUserByCustomerId(string customerId);
+
+        long GetTotalRegisteredUsers();
+
+        IEnumerable<WantedUser> GetWantedSubscribers(int skip, int pagesize);
     }
 }

@@ -17,8 +17,17 @@ namespace ProjectConakry.Data
             var gamesCursor = this.MongoConnectionManager.MongoCollection.FindAllAs<WantedUser>()
                 .SetSortOrder(SortBy<WantedUser>.Descending(g => g.CreatedDate))
                 .SetLimit(limit)
-                .SetSkip(skip)
-                .SetFields(Fields<WantedUser>.Include(g => g.Id, g => g.LastName, g => g.FirstName));
+                .SetSkip(skip);
+            return gamesCursor;
+        }
+
+        public IEnumerable<WantedUser> GetAllSubscribedWantedUsers(int limit, int skip)
+        {
+            var query = Query<WantedUser>.EQ(n => n.Subscribed, true);
+            var gamesCursor = this.MongoConnectionManager.MongoCollection.FindAs<WantedUser>(query)
+                .SetSortOrder(SortBy<WantedUser>.Descending(g => g.CreatedDate))
+                .SetLimit(limit)
+                .SetSkip(skip);
             return gamesCursor;
         }
 
@@ -42,6 +51,13 @@ namespace ProjectConakry.Data
                 return null;
 
             return gamesCursor.FirstOrDefault();
+        }
+
+        public long GetTotalCount()
+        {
+            MongoCursor<WantedUser> gamesCursor = this.MongoConnectionManager.MongoCollection.FindAll();
+            long totalCount = gamesCursor.Count();
+            return totalCount;
         }
 
     }
