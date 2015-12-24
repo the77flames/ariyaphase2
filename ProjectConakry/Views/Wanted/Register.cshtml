@@ -25,6 +25,7 @@
                         <label for="radio-male">Male</label><br />
                         @Html.RadioButtonFor(n => n.Gender, "Female", new {id="radio-female", name="gender"})
                         <label for="radio-female">Female</label>
+                        <div class="error" id="gender_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -32,6 +33,7 @@
                     <div class="field-container">
                         @Html.TextBoxFor(n => n.FirstName, new { id="first-name", name="first-name", placeholder="First Name"})
                         @Html.TextBoxFor(n => n.LastName, new { id="last-name", name="last-name", placeholder="Last Name"})
+                        <div class="error" id="name_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -39,30 +41,35 @@
                     <div class="field-container">
                         @Html.TextBoxFor(model => model.DOB, new { type = "date", id="dob", name="dob", max="1998-01-01", min="1950-01-01"})
                         @Html.TextBoxFor(n => n.BirthPlace, new {id="birth-place", name="birth-place", placeholder="Birth Place"})
+                        <div class="error" id="birth_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Stage Name</legend>
                     <div class="field-container">
                         @Html.TextBoxFor(n => n.StageName, new {id="stage-name", name="stage-name", placeholder="Stage Name"})
+                        <div class="error" id="stagename_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Nationality</legend>
                     <div class="field-container">
                         @Html.TextBoxFor(n => n.Nationality, new {id="nationality", name="nationality", placeholder="Nationality"})
+                        <div class="error" id="nationality_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Brief Industry Experience</legend>
                     <div class="field-container">
                         @Html.TextAreaFor(n => n.BriefIndustryExperience,  new {id="experience", name="experience", placeholder="Describe your experience in brief"})
+                        <div class="error" id="experience_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Upload your video entry</legend>
                     <div class="field-container">
                         <input type="file" name="video" id="video" accept="video/*">
+                        <div class="error" id="video_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -117,6 +124,7 @@
                         @Html.TextBoxFor(model => model.StagePresenceScore, new { type = "range", name="presense", id="presense", max="10", value="10"})
                         <div class="range-value bold" id="range-value-presense"></div>
                     </div>
+                    <div class="error" id="score_error">Error</div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Name two African comedians who inspire you</legend>
@@ -126,22 +134,26 @@
                         <br /><br />
                         <label for="inspire-2">2. </label>
                         @Html.TextBoxFor(n => n.SecondComedianInspiration, new {name="inspire-2", id="inspire-2", placeholder="Second Comedian"})
+                        <div class="error" id="inspire_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">Email</legend>
                     <div class="field-container">
-                        <input type="text" id="email" name="email" placeholder="Enter your email">
+                        @Html.TextBoxFor(n => n.Email, new { id = "reg_email", name = "reg_email", placeholder = "Enter your email" })
+                        @*<input type="text" id="reg_email" name="reg_email" placeholder="Enter your email">*@
+                        <div class="error" id="regemail_error">Error</div>
                     </div>
                 </fieldset>
                 <h2 class="medium bold caps light-gold-color">Final</h2>
                 <fieldset>
                     <legend>Do you agree that you are participating by choice and therefore you elect never to institute any class or individual action against the IP owner, organizers, partners or sponsers of Wanted and ancillary activities and to resolve an and all disputes by arbitration?</legend>
                     <div class="field-container">
-                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "Yes", new {id="final-yes", name="final"})
-                        <label for="final-yes">Yes</label><br />
-                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "No", new {id="final-no", name="final"})
-                        <label for="final-no">No</label>
+                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "Yes", new {id="agreement-yes", name= "agreement" })
+                        <label for="agreement-yes">Yes</label><br />
+                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "No", new {id= "agreement-no", name= "agreement" })
+                        <label for="agreement-no">No</label>
+                        <div class="error" id="agreement_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -149,8 +161,8 @@
                     <input type="checkbox" id="agree-to-terms" name="agree-to-terms">
                     <label for="agree-to-terms">I agree to <a href="#" onClick="openTerms()">Terms and Conditions</a></label>
                 </fieldset>
-                <input type="submit" class="large-button light-gold-bg caps" value="Continue">
-                <br /><br /><p class="small semi-opaque">For further information please contact: Olukayode Olubunmi<br />+18189325678; okayhouse@gmail.com &copy;2015 <span class="light-gold-color caps">Okayhouse</span> LLC.</p>
+                <input type="button" id="register" class="large-button light-gold-bg caps" value="Continue">
+                <br /><br /><p class="small semi-opaque">For further information please contact: okayhouse@gmail.com &copy;2015 <span class="light-gold-color caps">Okayhouse</span> LLC.</p>
             </form>
         </div>
     </section>
