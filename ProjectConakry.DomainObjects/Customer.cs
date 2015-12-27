@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectConakry.DomainObjects
 {
@@ -18,5 +14,6 @@ namespace ProjectConakry.DomainObjects
         public DateTime DOB {get; set;}
         public string AccountType { get; set; }
         public DateTime CreatedDate { get; set; }
+        public bool HasVoted { get; set; }
     }
 }

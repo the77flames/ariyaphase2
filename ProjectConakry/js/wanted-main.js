@@ -99,20 +99,12 @@ var validate_registration = function(){
 	    $('#regemail_error').hide();
 	}
 
-	if($('#agreement-yes').val() == 'Yes'){
-		$('#agreement_error').hide();
-	} else {
-	    isValidEntries = false;
-		$('#agreement_error').show().text("Please accept the agreement");
-	}
-
 	if($('#agree-to-terms').is(':checked')){
 		$('#terms_error').hide();
 	} else {
 	    isValidEntries = false;
 		$('#terms_error').show().text("Please accept the terms and conditions");
 	}
-	debugger;
 	if(isValidEntries)
 	{
 	    $('#wantedRegistrationForm').submit();

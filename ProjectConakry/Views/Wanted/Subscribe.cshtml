@@ -13,20 +13,20 @@
         <div class="two-third float-left subscribe-inner">
             <div class="large bold">Subscribe to ariyaUNLTD for a chance to enter the WANTED competition. <span class="light-gold-color">Subscription is currently free</span>. However, there is a $20 application fee to enter the competition.</div><br /><br />
 
-            <form class="subscribe-form" id="" action="ProcessPayPalPayment" method="POST">
+            <form class="subscribe-form" id="" action="/Paypal/ProcessPayPalPayment" method="POST">
                 <input type="hidden" id= "customerId" name="customerId" value="@ViewBag.CustomerId" />
                 <h2 class="medium bold caps light-gold-color">Email Preferences</h2>
                 <fieldset>
                     <legend class="bold">Add me to the list for Ariya events, parties and happenings.</legend>
                     <div class="field-container">
-                        <input type="radio" id="ariyalist-yes" name="ariyalist" value="yes"><label for="ariyalist-yes">Yes</label><br />
+                        <input type="radio" id="ariyalist-yes" name="ariyalist" value="yes" checked><label for="ariyalist-yes">Yes</label><br />
                         <input type="radio" id="ariyalist-no" name="ariyalist" value="no"><label for="ariyalist-no">No</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend class="bold">I would like to receive special offers and discounts by email on behalf of third parties specially selected by Ariya.</legend>
                     <div class="field-container">
-                        <input type="radio" id="offer-yes" name="offer" value="yes"><label for="offer-yes">Yes</label><br />
+                        <input type="radio" id="offer-yes" name="offer" value="yes" checked><label for="offer-yes">Yes</label><br />
                         <input type="radio" id="offer-no" name="offer" value="no"><label for="offer-no">No</label>
                     </div>
                 </fieldset>

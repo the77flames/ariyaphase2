@@ -44,5 +44,10 @@ namespace ProjectConakry.BusinessServices
             var customer = _customerRepository.GetCustomerByCustomerID(bsonId);
             return customer;
         }
+
+        public void Update(Customer customer)
+        {
+            _customerRepository.Update(customer);
+        }
     }
 }

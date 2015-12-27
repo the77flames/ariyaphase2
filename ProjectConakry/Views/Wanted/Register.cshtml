@@ -17,7 +17,7 @@
             <h1 class="large bold caps dark-gold-color">Registration</h1>
             <p class="small">Please read our <a href="#" onClick="openTerms()">Terms and Conditions</a> before filling this form</p>
             <form class="register-form" id="wantedRegistrationForm" action="Register" enctype="multipart/form-data" method="POST">
-                <h2 class="medium bold caps light-gold-color">Personal</h2>
+                <h2 class="medium bold caps light-gold-color">Personal Information</h2>
                 <fieldset>
                     <legend class="bold">Gender</legend>
                     <div class="field-container">
@@ -39,29 +39,30 @@
                 <fieldset>
                     <legend class="bold">Date and place of birth</legend>
                     <div class="field-container">
-                        @Html.TextBoxFor(model => model.DOB, new { type = "date", id="dob", name="dob", max="1998-01-01", min="1950-01-01"})
+                        @Html.TextBoxFor(n => n.DOB, new { type = "date", id="dob", name="dob", max="1998-01-01", min="1950-01-01"})
                         @Html.TextBoxFor(n => n.BirthPlace, new {id="birth-place", name="birth-place", placeholder="Birth Place"})
                         <div class="error" id="birth_error">Error</div>
                     </div>
                 </fieldset>
+                <fieldset>
+                    <legend class="bold">Nationality</legend>
+                    <div class="field-container">
+                        @Html.TextBoxFor(n => n.Nationality, new { id = "nationality", name = "nationality", placeholder = "Nationality" })
+                        <div class="error" id="nationality_error">Error</div>
+                    </div>
+                </fieldset>
+                <h2 class="medium bold caps light-gold-color">Professional Information</h2>
                 <fieldset>
                     <legend class="bold">Stage Name</legend>
                     <div class="field-container">
                         @Html.TextBoxFor(n => n.StageName, new {id="stage-name", name="stage-name", placeholder="Stage Name"})
                         <div class="error" id="stagename_error">Error</div>
                     </div>
-                </fieldset>
+                </fieldset>            
                 <fieldset>
-                    <legend class="bold">Nationality</legend>
+                    <legend class="bold">Summary of Qualifications or Professional Highlights</legend>
                     <div class="field-container">
-                        @Html.TextBoxFor(n => n.Nationality, new {id="nationality", name="nationality", placeholder="Nationality"})
-                        <div class="error" id="nationality_error">Error</div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="bold">Brief Industry Experience</legend>
-                    <div class="field-container">
-                        @Html.TextAreaFor(n => n.BriefIndustryExperience,  new {id="experience", name="experience", placeholder="Describe your experience in brief"})
+                        @Html.TextAreaFor(n => n.BriefIndustryExperience,  new {id="experience", name="experience", maxlength = "250", placeholder ="Please limit entry to 250 characters."})
                         <div class="error" id="experience_error">Error</div>
                     </div>
                 </fieldset>
@@ -140,20 +141,9 @@
                 <fieldset>
                     <legend class="bold">Email</legend>
                     <div class="field-container">
-                        @Html.TextBoxFor(n => n.Email, new { id = "reg_email", name = "reg_email", placeholder = "Enter your email" })
+                        &nbsp;&nbsp;&nbsp;@Html.TextBoxFor(n => n.Email, new { id = "reg_email", name = "reg_email", placeholder = "Enter your email" })
                         @*<input type="text" id="reg_email" name="reg_email" placeholder="Enter your email">*@
                         <div class="error" id="regemail_error">Error</div>
-                    </div>
-                </fieldset>
-                <h2 class="medium bold caps light-gold-color">Final</h2>
-                <fieldset>
-                    <legend>Do you agree that you are participating by choice and therefore you elect never to institute any class or individual action against the IP owner, organizers, partners or sponsers of Wanted and ancillary activities and to resolve an and all disputes by arbitration?</legend>
-                    <div class="field-container">
-                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "Yes", new {id="agreement-yes", name= "agreement" })
-                        <label for="agreement-yes">Yes</label><br />
-                        @Html.RadioButtonFor(n => n.AgreedToDisclaimer, "No", new {id= "agreement-no", name= "agreement" })
-                        <label for="agreement-no">No</label>
-                        <div class="error" id="agreement_error">Error</div>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -162,7 +152,7 @@
                     <label for="agree-to-terms">I agree to <a href="#" onClick="openTerms()">Terms and Conditions</a></label>
                 </fieldset>
                 <input type="button" id="register" class="large-button light-gold-bg caps" value="Continue">
-                <br /><br /><p class="small semi-opaque">For further information please contact: okayhouse@gmail.com &copy;2015 <span class="light-gold-color caps">Okayhouse</span> LLC.</p>
+                <br /><br /><p class="small semi-opaque">For further information please contact: wanted@ariyaunlimited.com &copy;2015 <span class="light-gold-color caps">Okayhouse</span> LLC.</p>
             </form>
         </div>
     </section>
@@ -175,6 +165,7 @@
         <p class="small"><span class="bold dark-gold-color">Kindly note that your video skits will not be returned to you</span>. If you are short listed during the selection process, the Broadcaster and the Producers will ensure that any information provided for the purpose of producing <span class="bold light-gold-color">Wanted<sup>TM</sup></span> will be kept secure and treated as confidential. Any disclosures of information will only be made with your permission.</p>
         <p class="small">However, if you are selected for the <span class="bold light-gold-color">Wanted<sup>TM</sup></span> project, the Producers reserve the right to use any of your details and information supplied by you for the purpose of the <span class="bold light-gold-color">Wanted<sup>TM</sup></span> production, publicity and broadcast, the only exception being your address and contact details.</p>
         <p class="small">The Producers and the broadcaster would like to retain the application forms of candidates for future related use when, for example, producing similar shows if you have been short listed. If you do not consent to the future use of your information, your application forms will be destroyed once the selection process has been completed.</p>
-        <p class="small">Please fill in and submit the form within one week of receipt. Submission of this form will be considered as your acceptance of the rules and requirements detailed above.</p>
+        <p class="small">You are participating by choice and therefore you elect never to institute any class or individual action against the IP owner, organizers, partners or sponsers of Wanted and ancillary activities and to resolve an and all disputes by arbitration.</p>
+        <p class="small">Please fill in and submit the form. Submission of this form will be considered as your acceptance of the rules and requirements detailed above.</p>
     </div>
 </div>

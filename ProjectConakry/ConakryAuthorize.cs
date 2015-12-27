@@ -24,7 +24,7 @@ namespace ProjectConakry.Web.Ariya
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            System.Web.HttpContext.Current.Session["redirectPath"] = System.Web.HttpContext.Current.Request.Url.PathAndQuery;
+            System.Web.HttpContext.Current.Session["redirectPath"] = System.Web.HttpContext.Current.Request.Url.ToString();
             filterContext.Result = new RedirectToRouteResult(
                         new RouteValueDictionary(
                             new

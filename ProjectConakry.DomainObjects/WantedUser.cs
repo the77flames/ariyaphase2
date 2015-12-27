@@ -1,11 +1,13 @@
 ﻿
+using System;
 using MongoDB.Bson;
 namespace ProjectConakry.DomainObjects
 {
-    public class WantedUser : Customer
+    public class WantedUser : Customer, IVoteable
     {
         public ObjectId CustomerId { get; set; }
         public string EntryVideoFileName { get; set; }
+        public string EntryVideoContentType { get; set; }
         public string BirthPlace { get; set; }
         public string StageName { get; set; }
         public string BriefIndustryExperience { get; set; }
@@ -26,5 +28,6 @@ namespace ProjectConakry.DomainObjects
         public bool AgreedToDisclaimer { get; set; }
         public bool AgreedToTermsOfService { get; set; }
         public bool Subscribed { get; set; }
+        public int TotalVotes { get; set; }
     }
 }

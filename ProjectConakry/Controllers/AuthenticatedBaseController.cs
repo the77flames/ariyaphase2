@@ -11,12 +11,14 @@ namespace ProjectConakry.Web.Ariya.Controllers
 {
     public class AuthenticatedBaseController : Controller
     {
+        protected Customer CurrentUser { get; set; }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             base.OnActionExecuting(filterContext);
             CustomPrincipal principal = System.Web.HttpContext.Current.Session["currentUser"] as CustomPrincipal;
-            ViewBag.UserId = principal == null ? new Customer().Id : (principal.Customer as Customer).Id;
+            CurrentUser = principal.Customer as Customer;
+            ViewBag.UserId = principal == null ? new Customer().Id : CurrentUser.Id;
             ViewBag.ImagePath = ControllerConstants.ImagePath;
         }
 

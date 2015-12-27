@@ -60,8 +60,8 @@ namespace ProjectConakry.Web.Ariya.Controllers
                     Password = password,
                     Gender = gender,
                     DOB = dateofbirth,
-                    AccountType = accounttype
-                    
+                    AccountType = accounttype,
+                    CreatedDate = DateTime.Now
                 };
             try
             {

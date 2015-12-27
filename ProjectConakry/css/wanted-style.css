@@ -474,3 +474,83 @@ input[type=range]:focus::-ms-fill-upper {
 	right: 30px;
 	cursor: pointer;
 }
+
+
+
+
+
+/* Thank You */
+.thankyou{
+	margin: 0 auto;
+	width: 80%;
+	padding: 100px;
+	text-align: center;
+}
+.thankyou h1{
+	font-size: 3.6em;
+	font-family: 'Brandon Bold', sans-serif;
+}
+.thankyou p{
+	font-family: 'Brandon Regular', sans-serif;
+	font-size: 2em;
+}
+
+
+
+
+
+
+/* Media Queries */
+@media(max-width: 1024px){
+    .landing-section{
+		height: 150vh;
+	}
+	.landing-share{
+		padding: 0px;
+		text-align: center;
+		bottom: 20px;
+	}
+    input[type=text], input[type=date]{
+        width: 80%;
+    }
+	.one-third{
+		width: 100%;
+	}
+	.two-third{
+		width: 100%;
+	}
+	.sidebar-title{
+		position: relative;
+		top: 0;
+		left: 0;
+		padding: 0;
+		margin: 20px 0;
+	}
+	.sidebar-image img{
+		display: none;
+	}
+	.sidebar-image{
+		padding: 0;
+	}
+	.container{
+		width: 90%;
+	}
+	.register-form, .subscribe-form{
+		width: 100%;
+	}
+	textarea{
+		width: 80%;
+	}
+	.modal{
+		width: 90%;
+		height: 80vh;
+		overflow-y: scroll;
+	}
+	.movie-posters{
+		display: none;
+	}
+    .thankyou{
+		width: 100%;
+		padding: 10px;
+	}
+}

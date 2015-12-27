@@ -32,32 +32,28 @@ namespace ProjectConakry.Web.Ariya.Controllers
         {
             ViewBag.Error = TempData["LogInError"];
             ViewBag.ImagePath = ControllerConstants.ImagePath;
-            if (System.Web.HttpContext.Current.Session != null)
-            {
-                ViewBag.RedirectUrl = System.Web.HttpContext.Current.Session["redirectPath"];
-                System.Web.HttpContext.Current.Session["redirectPath"] = null;
-            }           
+
             return View();
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> TryLogIn(string email, string passWord, string redirectUrl)
+        public async Task<ActionResult> TryLogIn(string email, string passWord)
         {
-            var errorMsg = "Bad username or password";
+            string c_defaultAuthErrorMessage = "Bad username or password";
+            string redirectUrl = System.Web.HttpContext.Current.Session["redirectPath"] as string;
+
             if (_authenticationService.Authenticate(email, passWord))
             {
                 await LogInUser(email);
-                if(!String.IsNullOrEmpty(redirectUrl))
+                if(!string.IsNullOrEmpty(redirectUrl))
                 {
-                    var request = Request;
-                    var address = string.Format("{0}://{1}", request.Url.Scheme, request.Url.Authority);
-                    Response.Redirect(address + redirectUrl);
+                    Response.Redirect(redirectUrl);
                 }
-                errorMsg = String.Empty;
+                c_defaultAuthErrorMessage = string.Empty;
                
             }
-            TempData["LogInError"] = errorMsg;
+            TempData["LogInError"] = c_defaultAuthErrorMessage;
 
             return RedirectToAction("Index", "Account");
         }

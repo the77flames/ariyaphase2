@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="AdminUser.cs" />
     <Compile Include="Enums\EntityTypes.cs" />
+    <Compile Include="Interfaces\IVoteable.cs" />
     <Compile Include="LoungeItem.cs" />
     <Compile Include="News.cs" />
     <Compile Include="Events.cs" />

@@ -18,5 +18,7 @@ namespace ProjectConakry.BusinessServices
         Customer GetCustomerByEmail(string email);
 
         Customer GetCustomerbyId(string Id);
+
+        void Update(Customer customer);
     }
 }

@@ -264,7 +264,11 @@
     <Compile Include="Controllers\DurandalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\PaypalController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\ThankYouController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Controllers\VotingProfileController.cs" />
     <Compile Include="Controllers\WantedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -680,7 +684,8 @@
     <Content Include="Views\Wanted\Index.cshtml" />
     <Content Include="Views\Wanted\Register.cshtml" />
     <Content Include="Views\Wanted\Subscribe.cshtml" />
-    <Content Include="Views\Wanted\ThankYou.cshtml" />
+    <Content Include="Views\ThankYou\Index.cshtml" />
+    <Content Include="Views\VotingProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
