@@ -1,6 +1,7 @@
 ﻿using ProjectConakry.DomainObjects;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,6 +21,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
             CurrentUser = principal.Customer as Customer;
             ViewBag.UserId = principal == null ? new Customer().Id : CurrentUser.Id;
             ViewBag.ImagePath = ControllerConstants.ImagePath;
+            ViewBag.MediaPath = ConfigurationManager.AppSettings["baseVideoPath"];
         }
 
         

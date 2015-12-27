@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Vote";
     Layout = "~/Views/Shared/_LayoutNoJs.cshtml";
+    string fileExtension = Path.GetExtension(Model.EntryVideoFileName);
+    string videoPath = ViewBag.MediaPath + Model.CustomerId + fileExtension;
 }
 
 <section class="container section clear">
@@ -11,13 +13,9 @@
             @*<h1 class="light-gold-color">Author :@Model.FirstName</h1>*@
         </div>
         <div class="authorVideo">
-            <video width="320" height="240" controls autoplay="autoplay">
-                <source src="@Url.Action("Index","Video", new { customerId = Model.CustomerId})" type="video/ogg">
+            <video width="800" height="600" controls autoplay="autoplay">
+                <source src="@videoPath" type="video/mp4"/>
             </video>
-            @*<div>
-                <!-- http://localhost:54941/Home/Media/3  -->
-                <embed width="100%" height="500" name="plugin" src="@Url.Action("Index","Video", new { customerId = Model.CustomerId})" type="@Model.EntryVideoContentType">
-            </div>*@
         </div>
         <div class="authorVote">
             @if (!((bool)ViewBag.ShowVoteButton))

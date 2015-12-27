@@ -19,8 +19,13 @@ namespace ProjectConakry.Web.Ariya.Controllers
             var wantedUser = _wantedUserManagementService.GetWantedUserByCustomerId(customerId);
             var memoryStream = new MemoryStream(wantedUser.EntryVideo);
             memoryStream.Seek(0, SeekOrigin.Begin);
-            return File(wantedUser.EntryVideo, wantedUser.EntryVideoContentType);            //(, MimeMapping.GetMimeMapping(wantedUser.EntryVideoFileName));
-            //return new VideoResult(wantedUser.EntryVideo, wantedUser.EntryVideoFileName, wantedUser.EntryVideoContentType);
+            string mime = MimeMapping.GetMimeMapping(wantedUser.EntryVideoFileName);
+            string fileExtension = Path.GetExtension(wantedUser.EntryVideoFileName);
+            FileStream fileStream = System.IO.File.Create("media\\" + customerId + fileExtension);
+            memoryStream.CopyTo(fileStream);
+            fileStream.Close();
+            //return File(wantedUser.EntryVideo, mime, wantedUser.EntryVideoFileName);            //(, MimeMapping.GetMimeMapping(wantedUser.EntryVideoFileName));
+            return new FileStreamResult(memoryStream, mime);
         }
     }
 

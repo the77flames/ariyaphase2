@@ -1,5 +1,8 @@
 ﻿using ProjectConakry.BusinessServices;
 using ProjectConakry.DomainObjects;
+using System;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ProjectConakry.Web.Ariya.Controllers
@@ -19,6 +22,7 @@ namespace ProjectConakry.Web.Ariya.Controllers
         public ActionResult Index(string customerId)
         {
             var wantedUser = _wantedUserManagementService.GetWantedUserByCustomerId(customerId);
+            DownloadVideoToFile(wantedUser);
             ViewBag.ShowVoteButton = CurrentUser.HasVoted;
             return View(wantedUser);
         }
@@ -35,6 +39,17 @@ namespace ProjectConakry.Web.Ariya.Controllers
             _customerManagementService.Update(CurrentUser);
 
             return RedirectToAction("Index", "ThankYou", new { customerId = CurrentUser.Id });
+        }
+
+        private void DownloadVideoToFile(WantedUser wantedUser)
+        {
+            var memoryStream = new MemoryStream(wantedUser.EntryVideo);
+            memoryStream.Seek(0, SeekOrigin.Begin);
+            string mime = MimeMapping.GetMimeMapping(wantedUser.EntryVideoFileName);
+            string fileExtension = Path.GetExtension(wantedUser.EntryVideoFileName);
+            FileStream fileStream = System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + @"\media\" + wantedUser.CustomerId + fileExtension);
+            memoryStream.CopyTo(fileStream);
+            fileStream.Close();
         }
     }
 }
